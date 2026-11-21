@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
-import { ClipboardList, GraduationCap, LogOut, Menu, ShieldCheck } from "lucide-react";
+import { GraduationCap, LogOut, Menu, ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
@@ -104,22 +104,17 @@ export function SiteHeader({ ui, nav, hrefs, user, account }: SiteHeaderProps) {
                       </span>
                     </DropdownMenuLabel>
                   </DropdownMenuGroup>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem
-                    className="min-h-10 px-2 text-base"
-                    render={<Link href="/tracker" />}
-                  >
-                    <ClipboardList aria-hidden="true" />
-                    {t(account.myTracker)}
-                  </DropdownMenuItem>
                   {isStaff && (
-                    <DropdownMenuItem
-                      className="min-h-10 px-2 text-base"
-                      render={<Link href="/admin/schemes" />}
-                    >
-                      <ShieldCheck aria-hidden="true" />
-                      {t(account.admin)}
-                    </DropdownMenuItem>
+                    <>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem
+                        className="min-h-10 px-2 text-base"
+                        render={<Link href="/admin/schemes" />}
+                      >
+                        <ShieldCheck aria-hidden="true" />
+                        {t(account.admin)}
+                      </DropdownMenuItem>
+                    </>
                   )}
                   <DropdownMenuSeparator />
                   <DropdownMenuItem
@@ -185,12 +180,6 @@ export function SiteHeader({ ui, nav, hrefs, user, account }: SiteHeaderProps) {
                     {t(link.label)}
                   </a>
                 ))}
-                {user && (
-                  <Link href="/tracker" onClick={() => setOpen(false)} className={cn(NAV_LINK, "flex gap-2")}>
-                    <ClipboardList aria-hidden="true" className="size-4" />
-                    {t(account.myTracker)}
-                  </Link>
-                )}
                 {isStaff && (
                   <Link href="/admin/schemes" onClick={() => setOpen(false)} className={cn(NAV_LINK, "flex gap-2")}>
                     <ShieldCheck aria-hidden="true" className="size-4" />

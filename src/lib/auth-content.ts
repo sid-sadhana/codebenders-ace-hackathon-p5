@@ -34,7 +34,6 @@ const authSchema = z.object({
   }),
   account: z.object({
     menuLabel: s,
-    myTracker: s,
     admin: s,
     logout: s,
     roles: z.object({ citizen: s, volunteer: s, admin: s }),
@@ -44,7 +43,6 @@ const authSchema = z.object({
     welcome: s,
     check: pageSchema,
     about: pageSchema,
-    tracker: pageSchema,
     admin: pageSchema,
   }),
 });
