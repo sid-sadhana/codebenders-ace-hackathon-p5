@@ -46,11 +46,6 @@ export async function findUserById(id: string): Promise<PublicUser | null> {
   return doc ? toPublicUser(doc) : null;
 }
 
-export async function findUserByUsername(username: string): Promise<PublicUser | null> {
-  const doc = await (await usersCollection()).findOne({ username });
-  return doc ? toPublicUser(doc) : null;
-}
-
 export async function verifyCredentials(
   username: string,
   password: string,

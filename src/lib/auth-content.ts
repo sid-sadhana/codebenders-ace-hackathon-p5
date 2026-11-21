@@ -10,10 +10,9 @@ const authSchema = z.object({
   login: z.object({
     metaTitle: s,
     title: s,
-    subtitle: s,
-    benefits: z.array(s).length(3),
     demoNotice: s,
     quickLoginHeading: s,
+    usernamesHint: s,
     groups: z.object({
       student: s,
       senior: s,
@@ -29,7 +28,6 @@ const authSchema = z.object({
     hidePassword: s,
     submit: s,
     submitting: s,
-    hint: s,
     errors: z.object({ invalid: s, tooMany: s, unavailable: s }),
     guestNote: s,
     guestCta: s,

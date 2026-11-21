@@ -2,18 +2,25 @@ import bcrypt from "bcryptjs";
 import { MongoClient } from "mongodb";
 import { seedUsers } from "../src/lib/auth/demo-accounts";
 
-// The shared demo password is read from the local env file and never
-// committed. Only its bcrypt hash is stored in the database.
-const DEMO_PASSWORD = process.env.SEED_DEMO_PASSWORD ?? "";
+// Passwords never live in the repo. Each account's password is built from
+// SEED_PASSWORD_TEMPLATE in the local env file, where {username} is replaced
+// by the account's username. Only bcrypt hashes are stored in the database.
+function passwordFor(template: string, username: string): string {
+  return template.replaceAll("{username}", username);
+}
 
 async function main() {
   const uri = process.env.MONGODB_URI;
   const dbName = process.env.MONGODB_DB || "claim_whats_yours";
+  const template = process.env.SEED_PASSWORD_TEMPLATE;
+
   if (!uri) {
     throw new Error("MONGODB_URI is missing. Add it to .env.local (see .env.example).");
   }
-  if (DEMO_PASSWORD.length < 8) {
-    throw new Error("SEED_DEMO_PASSWORD is missing or shorter than 8 characters.");
+  if (!template || !template.includes("{username}") || template.length < 12) {
+    throw new Error(
+      "SEED_PASSWORD_TEMPLATE is missing or invalid. It must contain {username} and be at least 12 characters.",
+    );
   }
 
   const client = new MongoClient(uri, { serverSelectionTimeoutMS: 10000 });
@@ -22,11 +29,10 @@ async function main() {
   try {
     const users = client.db(dbName).collection("users");
     await users.createIndex({ username: 1 }, { unique: true });
-
-    const passwordHash = await bcrypt.hash(DEMO_PASSWORD, 10);
     const now = new Date();
 
     for (const user of seedUsers) {
+      const passwordHash = await bcrypt.hash(passwordFor(template, user.username), 10);
       await users.updateOne(
         { username: user.username },
         {

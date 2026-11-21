@@ -2,8 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { z } from "zod";
-import { findUserByUsername, verifyCredentials } from "@/lib/db/users";
-import { isDemoUsername } from "./demo-accounts";
+import { verifyCredentials } from "@/lib/db/users";
 import { homeFor, safeNext } from "./redirects";
 import { createSession, destroySession } from "./session";
 import { usernameSchema, type PublicUser } from "./types";
@@ -79,25 +78,6 @@ export async function loginAction(
   failures.delete(username);
   await createSession(user);
   redirect(safeNext(next) ?? homeFor(user.role));
-}
-
-export async function demoLoginAction(
-  _prev: LoginState,
-  formData: FormData,
-): Promise<LoginState> {
-  const parsed = usernameSchema.safeParse(formData.get("username"));
-  if (!parsed.success || !isDemoUsername(parsed.data)) return { error: "invalid" };
-
-  let user: PublicUser | null;
-  try {
-    user = await findUserByUsername(parsed.data);
-  } catch {
-    return { error: "unavailable" };
-  }
-  if (!user) return { error: "unavailable" };
-
-  await createSession(user);
-  redirect(safeNext(readNext(formData)) ?? homeFor(user.role));
 }
 
 export async function logoutAction(): Promise<void> {

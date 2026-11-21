@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 import { Eye, EyeOff, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,10 +11,28 @@ import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 const initialState: LoginState = { error: null };
 
-export function LoginForm({ content, next }: { content: LoginContent; next: string | null }) {
+export type PickedUsername = { username: string; at: number } | null;
+
+type LoginFormProps = {
+  content: LoginContent;
+  next: string | null;
+  picked: PickedUsername;
+};
+
+export function LoginForm({ content, next, picked }: LoginFormProps) {
   const { t } = useLanguage();
   const [state, formAction, pending] = useActionState(loginAction, initialState);
   const [showPassword, setShowPassword] = useState(false);
+  const usernameRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+
+  // A username chosen from the list fills the field and moves to the password.
+  useEffect(() => {
+    if (!picked || !usernameRef.current || !passwordRef.current) return;
+    usernameRef.current.value = picked.username;
+    passwordRef.current.value = "";
+    passwordRef.current.focus();
+  }, [picked]);
 
   const errorText = state.error ? t(content.errors[state.error]) : null;
 
@@ -27,6 +45,7 @@ export function LoginForm({ content, next }: { content: LoginContent; next: stri
           {t(content.usernameLabel)}
         </Label>
         <Input
+          ref={usernameRef}
           id="username"
           name="username"
           autoComplete="username"
@@ -46,13 +65,14 @@ export function LoginForm({ content, next }: { content: LoginContent; next: stri
         </Label>
         <div className="relative">
           <Input
+            ref={passwordRef}
             id="password"
             name="password"
             type={showPassword ? "text" : "password"}
             autoComplete="current-password"
             required
             aria-invalid={errorText ? true : undefined}
-            aria-describedby={errorText ? "password-hint login-error" : "password-hint"}
+            aria-describedby={errorText ? "login-error" : undefined}
             className="h-11 pr-12 text-base md:text-base"
           />
           <Button
@@ -67,9 +87,6 @@ export function LoginForm({ content, next }: { content: LoginContent; next: stri
             {showPassword ? <EyeOff aria-hidden="true" /> : <Eye aria-hidden="true" />}
           </Button>
         </div>
-        <p id="password-hint" className="text-sm text-muted-foreground">
-          {t(content.hint)}
-        </p>
       </div>
 
       {errorText && (
