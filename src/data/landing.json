@@ -1,0 +1,916 @@
+{
+  "meta": {
+    "title": {
+      "te": "క్లెయిమ్ వాట్స్ యువర్స్",
+      "en": "Claim What's Yours"
+    },
+    "description": {
+      "te": "మీకు అర్హత ఉండే అవకాశం ఉన్న ప్రభుత్వ స్కాలర్‌షిప్‌లు, స్కీమ్‌లు చూడండి.",
+      "en": "Find government scholarships and schemes you may be likely eligible for."
+    }
+  },
+  "ui": {
+    "skipToContent": {
+      "te": "కంటెంట్‌కు వెళ్లండి",
+      "en": "Skip to content"
+    },
+    "languageGroupLabel": {
+      "te": "భాష ఎంచుకోండి",
+      "en": "Choose language"
+    },
+    "languageOptions": {
+      "te": {
+        "te": "తెలుగు",
+        "en": "తెలుగు"
+      },
+      "en": {
+        "te": "English",
+        "en": "English"
+      }
+    },
+    "mobileMenuOpen": {
+      "te": "మెనూ తెరవండి",
+      "en": "Open menu"
+    },
+    "mobileMenuTitle": {
+      "te": "మెనూ",
+      "en": "Menu"
+    },
+    "opensNewTab": {
+      "en": "(opens in a new tab)",
+      "te": "(కొత్త ట్యాబ్‌లో తెరుచుకుంటుంది)"
+    }
+  },
+  "nav": {
+    "brandName": {
+      "te": "క్లెయిమ్ వాట్స్ యువర్స్",
+      "en": "Claim What's Yours"
+    },
+    "links": [
+      {
+        "href": "#how-it-works",
+        "label": {
+          "te": "ఇది ఎలా పనిచేస్తుంది",
+          "en": "How it works"
+        }
+      },
+      {
+        "href": "#features",
+        "label": {
+          "te": "మీకు ఏమి లభిస్తుంది",
+          "en": "Features"
+        }
+      },
+      {
+        "href": "#faq",
+        "label": {
+          "te": "ప్రశ్నలు",
+          "en": "FAQ"
+        }
+      }
+    ],
+    "demoPill": {
+      "te": "డెమో",
+      "en": "Demo"
+    },
+    "loginLabel": {
+      "te": "లాగిన్",
+      "en": "Login"
+    }
+  },
+  "hero": {
+    "headline": {
+      "te": "మీకు అర్హత ఉండవచ్చే ప్రభుత్వ స్కీమ్‌లు. నిమిషాల్లో, ఉచితంగా కనుగొనండి.",
+      "en": "Government schemes you may be entitled to. Found in minutes, free."
+    },
+    "subtext": {
+      "te": "తెలంగాణలోని విద్యార్థులు, సీనియర్ సిటిజన్లు, రైతులు, మహిళలు, కుటుంబాలు: మీ పరిస్థితిని మీ సొంత మాటల్లో చెప్పండి, ఏ స్కీమ్‌లు సరిపోవచ్చో, ప్రతిదానికి కారణంతో సహా చూడండి.",
+      "en": "Students, senior citizens, farmers, women and families in Telangana: describe your situation in your own words and see which schemes may fit, with the reason for each."
+    },
+    "demoLabel": {
+      "te": "ఉదాహరణ: ఒక వ్యక్తి తన పరిస్థితిని తన మాటల్లో చెబుతున్నారు",
+      "en": "Example: a person describing their situation in their own words"
+    },
+    "primaryCta": {
+      "te": "నా స్కీమ్‌లు చూడండి",
+      "en": "Find my schemes"
+    },
+    "trustLine": {
+      "te": "ఉచితం · ఆధార్ అవసరం లేదు · అధికారిక మూలాలు మాత్రమే",
+      "en": "Free · No Aadhaar needed · Official sources only"
+    },
+    "useCases": [
+      {
+        "id": "student",
+        "icon": "GraduationCap",
+        "chipLabel": {
+          "te": "విద్యార్థి",
+          "en": "Student"
+        },
+        "placeholder": {
+          "te": "నేను వరంగల్‌లో B.Com 2వ సంవత్సరం చదువుతున్నాను. మా నాన్న రోజు కూలీ పని చేస్తారు. మేము BC-B, మా కుటుంబ ఆదాయం సుమారు 1.5 లక్షలు…",
+          "en": "I'm in 2nd year B.Com in Warangal. My father is a daily-wage worker. We are BC-B, and our family income is about 1.5 lakh…"
+        }
+      },
+      {
+        "id": "senior",
+        "icon": "HeartHandshake",
+        "chipLabel": {
+          "te": "సీనియర్ సిటిజన్",
+          "en": "Senior citizen"
+        },
+        "placeholder": {
+          "te": "నాకు 63 ఏళ్లు, వితంతువుని. ఖమ్మం జిల్లా పల్లెలో ఉంటాను. మా దగ్గర వైట్ రేషన్ కార్డు ఉంది, కానీ నాకు ఎలాంటి పింఛను రావడం లేదు…",
+          "en": "I'm 63, a widow, living in a village in Khammam. We have a white ration card, but I don't get any pension…"
+        }
+      },
+      {
+        "id": "farmer",
+        "icon": "Sprout",
+        "chipLabel": {
+          "te": "రైతు",
+          "en": "Farmer"
+        },
+        "placeholder": {
+          "te": "నాకు 72 ఏళ్లు. మెదక్‌లో 2 ఎకరాల భూమి ఉంది, నా దగ్గర పట్టాదార్ పాస్‌బుక్ ఉంది…",
+          "en": "I'm 72. I have 2 acres of land in Medak, and I have a pattadar passbook…"
+        }
+      },
+      {
+        "id": "women",
+        "icon": "Users",
+        "chipLabel": {
+          "te": "మహిళలు",
+          "en": "Women"
+        },
+        "placeholder": {
+          "te": "నేను నిజామాబాద్‌లో స్వయం సహాయక సంఘంలో ఉన్నాను. టైలరింగ్ యూనిట్ మొదలుపెట్టడానికి లోన్ కావాలి…",
+          "en": "I'm in a self-help group in Nizamabad, and I want a loan to start a tailoring unit…"
+        }
+      },
+      {
+        "id": "family",
+        "icon": "Home",
+        "chipLabel": {
+          "te": "కుటుంబం",
+          "en": "Family"
+        },
+        "placeholder": {
+          "te": "మేము హైదరాబాద్‌లో నలుగురం. అద్దె ఇంట్లో ఉంటాం. మావారు ఆటో నడుపుతారు, ఏడాదికి ఆదాయం సుమారు 1.8 లక్షలు…",
+          "en": "We are a family of 4 in Hyderabad. We rent a house. My husband drives an auto, and our income is about 1.8 lakh a year…"
+        }
+      }
+    ]
+  },
+  "problem": {
+    "title": {
+      "te": "ఇప్పుడు ఇది ఎందుకు కష్టం",
+      "en": "Why it's hard today"
+    },
+    "intro": {
+      "te": "ప్రభుత్వ సహాయం పొందడం ఇంత కష్టంగా ఉండకూడదు.",
+      "en": "Getting government help should not be this hard."
+    },
+    "items": [
+      {
+        "title": {
+          "te": "సమాచారం చెల్లాచెదురుగా ఉంటుంది",
+          "en": "Information is scattered"
+        },
+        "text": {
+          "te": "స్కాలర్‌షిప్, పింఛను, ఆరోగ్య బీమా, ఇళ్లు, వ్యవసాయ సహాయం వివరాలు చాలా వెబ్‌సైట్లలో ఉంటాయి.",
+          "en": "Scheme details for scholarships, pensions, health cover, housing and farm support are spread across many websites."
+        }
+      },
+      {
+        "title": {
+          "te": "నియమాలు చదవడానికి కష్టంగా ఉంటాయి",
+          "en": "Rules are hard to read"
+        },
+        "text": {
+          "te": "ఆదాయ పరిమితులు, కేటగిరీలు, వయసు వివరాలు క్లిష్టమైన భాషలో రాసి ఉంటాయి.",
+          "en": "Income limits, categories and ages are written in technical language."
+        }
+      },
+      {
+        "title": {
+          "te": "ఉచిత సహాయానికి దళారులు డబ్బులు అడుగుతారు",
+          "en": "Middlemen charge for free help"
+        },
+        "text": {
+          "te": "ఉచితంగా చేసుకోగల దరఖాస్తులకు కూడా ఏజెంట్లకు డబ్బులు ఇస్తుంటారు.",
+          "en": "People pay agents for applications that are free."
+        }
+      }
+    ]
+  },
+  "how": {
+    "title": {
+      "te": "ఇది ఎలా పనిచేస్తుంది",
+      "en": "How it works"
+    },
+    "intro": {
+      "te": "మీరు ఎవరైనా, నాలుగు దశలు చాలు.",
+      "en": "Four steps, whoever you are."
+    },
+    "steps": [
+      {
+        "title": {
+          "te": "మీ పరిస్థితి చెప్పండి",
+          "en": "Describe your situation"
+        },
+        "text": {
+          "te": "మీ గురించి మీ మాటల్లో చెప్పండి, తెలుగులో లేదా ఇంగ్లీషులో.",
+          "en": "Tell us about yourself in your own words, in Telugu or English."
+        }
+      },
+      {
+        "title": {
+          "te": "ఏ స్కీమ్‌లు సరిపోవచ్చో, ఎందుకో చూడండి",
+          "en": "See which schemes may fit, and why"
+        },
+        "text": {
+          "te": "ప్రతి సరిపోలికలో అది కలిసే నియమం, మీరు చెప్పిన వివరాలు ఉంటాయి.",
+          "en": "Each match shows the rule it meets and what you told us."
+        }
+      },
+      {
+        "title": {
+          "te": "కావాల్సిన పత్రాల జాబితా పొందండి",
+          "en": "Get your document checklist"
+        },
+        "text": {
+          "te": "మీకు కావాల్సిన పత్రాల జాబితా, ప్రతి పత్రం ఎక్కడ దొరుకుతుందో ఒకే చోట.",
+          "en": "One list of the papers you need, and where to get each one."
+        }
+      },
+      {
+        "title": {
+          "te": "మీ గడువులు ట్రాక్ చేయండి",
+          "en": "Track your deadlines"
+        },
+        "text": {
+          "te": "ప్రతి దరఖాస్తును అనుసరించండి, దాని గడువును మీ క్యాలెండర్‌లో చేర్చుకోండి.",
+          "en": "Follow each application and add its deadline to your calendar."
+        }
+      }
+    ]
+  },
+  "features": {
+    "title": {
+      "te": "మీకు ఏమి లభిస్తుంది",
+      "en": "What you get"
+    },
+    "intro": {
+      "te": "యాప్ చేసే ప్రతిదీ, ఒకే చోట.",
+      "en": "Everything the app does, in one place."
+    },
+    "items": [
+      {
+        "title": {
+          "te": "తెలుగు లేదా ఇంగ్లీషులో మాట్లాడండి లేదా టైప్ చేయండి",
+          "en": "Talk or type in Telugu or English"
+        },
+        "text": {
+          "te": "సాధారణ భాష. పెద్ద ఫారాలు లేవు.",
+          "en": "Plain language. No long forms."
+        }
+      },
+      {
+        "title": {
+          "te": "ఎందుకు సరిపోతుందో చూడండి",
+          "en": "See why a scheme fits"
+        },
+        "text": {
+          "te": "ప్రతి సరిపోలిక ఏ నియమంతో సరిపోయిందో, మీరు చెప్పిన వివరాలు చూపిస్తుంది.",
+          "en": "Every match shows the exact rule and what you told us."
+        }
+      },
+      {
+        "title": {
+          "te": "అవసరమైనదే అడుగుతాం",
+          "en": "Asks only what matters"
+        },
+        "text": {
+          "te": "ఏదైనా వివరం లేకపోతే, పెద్ద ఫారం కాకుండా ఒకే సింపుల్ ప్రశ్న అడుగుతాం.",
+          "en": "If a detail is missing, we ask one simple question instead of a long form."
+        }
+      },
+      {
+        "title": {
+          "te": "మీ పత్రాల జాబితా",
+          "en": "Your document checklist"
+        },
+        "text": {
+          "te": "అన్ని స్కీమ్‌ల కోసం ఒకే జాబితా. ప్రతి పత్రం మీసేవ లేదా MRO ఆఫీసులో ఎక్కడ దొరుకుతుందో చూపిస్తుంది.",
+          "en": "One combined list across schemes, with where to get each paper, such as MeeSeva or the MRO office."
+        }
+      },
+      {
+        "title": {
+          "te": "దశల వారీ దరఖాస్తు మార్గదర్శకం",
+          "en": "Step-by-step application guide"
+        },
+        "text": {
+          "te": "ఎక్కడ, ఎలా దరఖాస్తు చేయాలో, దరఖాస్తు తర్వాత ఏమి జరుగుతుందో చూడండి.",
+          "en": "Where and how to apply, and what happens after you apply."
+        }
+      },
+      {
+        "title": {
+          "te": "గడువు గుర్తులు, ట్రాకింగ్",
+          "en": "Deadline reminders and tracking"
+        },
+        "text": {
+          "te": "ప్రతి దరఖాస్తును ట్రాక్ చేయండి, గడువులను మీ క్యాలెండర్‌లో చేర్చండి.",
+          "en": "Track each application and add deadlines to your calendar."
+        }
+      },
+      {
+        "title": {
+          "te": "నిజాయితీగా స్కీమ్ స్థితి",
+          "en": "Honest scheme status"
+        },
+        "text": {
+          "te": "స్కీమ్ ఇప్పుడు తెరిచి ఉందా, తర్వాత తెరుస్తారా, ఆటోమేటిక్‌గా చెల్లిస్తారా, లేక ప్రకటించారు కానీ ఇంకా చెల్లించడం లేదా అని చూపిస్తాం.",
+          "en": "We show if a scheme is open now, opens later, is paid automatically, or is announced but not being paid yet."
+        }
+      },
+      {
+        "title": {
+          "te": "ప్రతి స్కీమ్‌కు అధికారిక మూలం",
+          "en": "Official source on every scheme"
+        },
+        "text": {
+          "te": "ప్రభుత్వ పోర్టల్‌కు లింక్, మేము స్కీమ్‌ను చివరిగా తనిఖీ చేసిన తేదీ.",
+          "en": "A link to the government portal, and the date we last checked the scheme."
+        }
+      }
+    ],
+    "adminNote": {
+      "te": "NGO వాలంటీర్లు, మీసేవ ఆపరేటర్ల కోసం: స్కీమ్ నియమాలను తాజాగా ఉంచడానికి ఒక సింపుల్ ఎడిటర్.",
+      "en": "For NGO volunteers and MeeSeva operators: a simple editor to keep scheme rules up to date."
+    }
+  },
+  "example": {
+    "title": {
+      "te": "ఇది ఎలా ఉంటుందో చూడండి",
+      "en": "See it in action"
+    },
+    "intro": {
+      "te": "ఇవి వేర్వేరు వ్యక్తులకు వచ్చే ఫలితాల ఉదాహరణలు. ఇవి నిజమైన వ్యక్తులు కాదు.",
+      "en": "Here's what results look like for different people. These are examples, not real people."
+    },
+    "badge": {
+      "te": "ఉదాహరణ",
+      "en": "Example"
+    },
+    "whyTitle": {
+      "te": "ఎందుకు?",
+      "en": "Why?"
+    },
+    "cards": [
+      {
+        "id": "student",
+        "groupLabel": {
+          "te": "విద్యార్థి",
+          "en": "Student"
+        },
+        "schemeName": {
+          "te": "తెలంగాణ ఈ-పాస్ పోస్ట్-మెట్రిక్ స్కాలర్‌షిప్",
+          "en": "Telangana ePASS Post-Matric Scholarship"
+        },
+        "status": "likely",
+        "statusLabel": {
+          "te": "అర్హత ఉండే అవకాశం ఉంది",
+          "en": "Likely eligible"
+        },
+        "why": [
+          {
+            "kind": "ok",
+            "text": {
+              "te": "కేటగిరీ BC-B. మీరు చెప్పింది BC-B.",
+              "en": "Category BC-B. You said BC-B."
+            }
+          },
+          {
+            "kind": "ok",
+            "text": {
+              "te": "కుటుంబ ఆదాయం ₹2,00,000 వరకు (పట్టణం). మీరు చెప్పింది సుమారు ₹1,50,000.",
+              "en": "Family income up to ₹2,00,000 (urban). You said about ₹1,50,000."
+            }
+          },
+          {
+            "kind": "ok",
+            "text": {
+              "te": "కన్వీనర్ సీటులో రెగ్యులర్ కోర్సు. మీరు చెప్పింది B.Com 2వ సంవత్సరం.",
+              "en": "Regular course on a convener seat. You said B.Com 2nd year."
+            }
+          }
+        ],
+        "questionRow": null,
+        "benefit": {
+          "te": "పూర్తి ఫీజు రీయింబర్స్‌మెంట్, నెలకు మెయింటెనెన్స్ సాయం",
+          "en": "Full fee reimbursement and monthly maintenance"
+        },
+        "statusLine": {
+          "te": "తెరిచి ఉంది. చివరి తేదీ 31 Mar 2027.",
+          "en": "Open. Last date 31 Mar 2027."
+        },
+        "source": {
+          "url": "https://telanganaepass.cgg.gov.in",
+          "host": "telanganaepass.cgg.gov.in"
+        },
+        "pendingVerification": false,
+        "note": null
+      },
+      {
+        "id": "senior",
+        "groupLabel": {
+          "te": "సీనియర్ సిటిజన్",
+          "en": "Senior citizen"
+        },
+        "schemeName": {
+          "te": "చేయూత పింఛను (వితంతువులు)",
+          "en": "Cheyutha Pension (Widow)"
+        },
+        "status": "likely",
+        "statusLabel": {
+          "te": "అర్హత ఉండే అవకాశం ఉంది",
+          "en": "Likely eligible"
+        },
+        "why": [
+          {
+            "kind": "ok",
+            "text": {
+              "te": "వితంతువు, 18 ఏళ్లు పైబడినవారు. మీరు చెప్పింది వితంతువు, 63 ఏళ్లు.",
+              "en": "Widow, age 18 or above. You said widow, 63."
+            }
+          },
+          {
+            "kind": "ok",
+            "text": {
+              "te": "వేరే పింఛను రావడం లేదు. మీరు చెప్పింది ఏదీ లేదు.",
+              "en": "Not getting another pension. You said none."
+            }
+          }
+        ],
+        "questionRow": null,
+        "benefit": {
+          "te": "నెలకు ₹2,016",
+          "en": "₹2,016 per month"
+        },
+        "statusLine": {
+          "te": "ఇప్పుడు తెరిచి లేదు. దరఖాస్తులు ప్రత్యేక డ్రైవ్‌ల ద్వారా జరుగుతాయి.",
+          "en": "Not open right now. Applications run in special drives."
+        },
+        "source": {
+          "url": "https://cheyutha.telangana.gov.in",
+          "host": "cheyutha.telangana.gov.in"
+        },
+        "pendingVerification": false,
+        "note": null
+      },
+      {
+        "id": "farmer",
+        "groupLabel": {
+          "te": "రైతు",
+          "en": "Farmer"
+        },
+        "schemeName": {
+          "te": "రైతు భరోసా",
+          "en": "Rythu Bharosa"
+        },
+        "status": "likely",
+        "statusLabel": {
+          "te": "అర్హత ఉండే అవకాశం ఉంది",
+          "en": "Likely eligible"
+        },
+        "why": [
+          {
+            "kind": "ok",
+            "text": {
+              "te": "మీ పేరు మీద భూమి (పట్టాదార్). మీరు అవును, పాస్‌బుక్ ఉంది అన్నారు.",
+              "en": "Land in your name (pattadar). You said yes, with passbook."
+            }
+          },
+          {
+            "kind": "ok",
+            "text": {
+              "te": "సాగుకు యోగ్యమైన భూమి. మీరు చెప్పింది 2 ఎకరాలు.",
+              "en": "Cultivable land. You said 2 acres."
+            }
+          }
+        ],
+        "questionRow": null,
+        "benefit": {
+          "te": "ఎకరానికి ఏడాదికి ₹12,000, రెండు సీజన్లలో",
+          "en": "₹12,000 per acre per year, in two seasons"
+        },
+        "statusLine": {
+          "te": "ఆటోమేటిక్‌గా చెల్లిస్తారు. చెల్లింపు రాకపోతే, మీ వ్యవసాయ విస్తరణ అధికారిని కలవండి.",
+          "en": "Paid automatically. If a payment is missed, contact your Agriculture Extension Officer."
+        },
+        "source": {
+          "url": "https://rythubharosa.telangana.gov.in",
+          "host": "rythubharosa.telangana.gov.in"
+        },
+        "pendingVerification": false,
+        "note": null
+      },
+      {
+        "id": "women",
+        "groupLabel": {
+          "te": "మహిళలు",
+          "en": "Women"
+        },
+        "schemeName": {
+          "te": "ఇందిర మహిళా శక్తి వడ్డీ లేని SHG లోన్లు",
+          "en": "Indira Mahila Shakti interest-free SHG loans"
+        },
+        "status": "likely",
+        "statusLabel": {
+          "te": "అర్హత ఉండే అవకాశం ఉంది",
+          "en": "Likely eligible"
+        },
+        "why": [
+          {
+            "kind": "ok",
+            "text": {
+              "te": "స్వయం సహాయక సంఘంలో సభ్యులు. మీరు అవును అన్నారు.",
+              "en": "Member of a self-help group. You said yes."
+            }
+          },
+          {
+            "kind": "ok",
+            "text": {
+              "te": "బ్యాంకు లేదా స్త్రీనిధి ద్వారా లోన్. మీరు టైలరింగ్ కోసం లోన్ కావాలన్నారు.",
+              "en": "Loan through a bank or Streenidhi. You want a loan for tailoring."
+            }
+          }
+        ],
+        "questionRow": null,
+        "benefit": {
+          "te": "₹10 లక్షల వరకు SHG లోన్ల వడ్డీని ప్రభుత్వం చెల్లిస్తుంది",
+          "en": "Government pays the interest on SHG loans up to ₹10 lakh"
+        },
+        "statusLine": {
+          "te": "మీ గ్రామ సంఘం ద్వారా ఎప్పుడైనా దరఖాస్తు చేయండి.",
+          "en": "Apply any time through your Village Organisation."
+        },
+        "source": {
+          "url": "https://serp.telangana.gov.in",
+          "host": "serp.telangana.gov.in"
+        },
+        "pendingVerification": true,
+        "note": null
+      },
+      {
+        "id": "family",
+        "groupLabel": {
+          "te": "కుటుంబం",
+          "en": "Family"
+        },
+        "schemeName": {
+          "te": "రాజీవ్ ఆరోగ్యశ్రీ ఆరోగ్య బీమా",
+          "en": "Rajiv Aarogyasri health cover"
+        },
+        "status": "maybe",
+        "statusLabel": {
+          "te": "అర్హత ఉండవచ్చు, ఇంకో ప్రశ్న",
+          "en": "May be eligible, 1 more question"
+        },
+        "why": [
+          {
+            "kind": "ok",
+            "text": {
+              "te": "తెలంగాణ కుటుంబం. మీరు హైదరాబాద్ అన్నారు.",
+              "en": "Telangana family. You said Hyderabad."
+            }
+          },
+          {
+            "kind": "question",
+            "text": {
+              "te": "కుటుంబానికి వైట్ రేషన్ కార్డు ఉంది. ఇది ఇంకా మాకు తెలియదు.",
+              "en": "Family has a white ration card. We don't know this yet."
+            }
+          }
+        ],
+        "questionRow": {
+          "question": {
+            "te": "మీ దగ్గర వైట్ రేషన్ కార్డు ఉందా?",
+            "en": "Do you have a white ration card?"
+          },
+          "options": [
+            {
+              "te": "అవును",
+              "en": "Yes"
+            },
+            {
+              "te": "లేదు",
+              "en": "No"
+            },
+            {
+              "te": "తెలియదు",
+              "en": "Don't know"
+            }
+          ]
+        },
+        "benefit": {
+          "te": "ఏడాదికి కుటుంబానికి ₹10 లక్షల వరకు నగదు రహిత చికిత్స",
+          "en": "Cashless treatment up to ₹10 lakh per family per year"
+        },
+        "statusLine": {
+          "te": "ఎంపానెల్ ఆసుపత్రుల్లో ఎప్పుడైనా ఉపయోగించండి.",
+          "en": "Use any time at empanelled hospitals."
+        },
+        "source": {
+          "url": "https://rajivaarogyasri.telangana.gov.in",
+          "host": "rajivaarogyasri.telangana.gov.in"
+        },
+        "pendingVerification": false,
+        "note": null
+      },
+      {
+        "id": "honesty",
+        "groupLabel": {
+          "te": "నిజాయితీ తనిఖీ",
+          "en": "Honesty check"
+        },
+        "schemeName": {
+          "te": "మహాలక్ష్మి, మహిళలకు నెలకు ₹2,500",
+          "en": "Mahalakshmi ₹2,500 per month for women"
+        },
+        "status": "announced",
+        "statusLabel": {
+          "te": "ప్రకటించారు, ఇంకా చెల్లించడం లేదు",
+          "en": "Announced, not being paid yet"
+        },
+        "why": [],
+        "questionRow": null,
+        "benefit": null,
+        "statusLine": {
+          "te": "21 Nov 2026న తనిఖీ చేశాం: అధికారిక పోర్టల్ లేదు",
+          "en": "Checked on 21 Nov 2026: no official portal"
+        },
+        "source": null,
+        "pendingVerification": false,
+        "note": {
+          "te": "దీన్ని ప్రకటించారు, కానీ ఇంకా చెల్లింపులు మొదలు కాలేదు. అధికారిక దరఖాస్తు లేదు. మిమ్మల్ని నమోదు చేయమని ఎవరికీ డబ్బులు ఇవ్వవద్దు.",
+          "en": "This was announced, but no payments have started. There is no official application. Don't pay anyone to register you."
+        }
+      }
+    ],
+    "illustrativeNote": {
+      "te": "ఉదాహరణ కార్డులు. నియమాలు అధికారిక స్కీమ్‌ల నుండి తీసుకున్నవి. మీ ఫలితం మీరిచ్చిన సమాధానాలపై ఆధారపడి ఉంటుంది.",
+      "en": "Example cards. Rules are from the official schemes. Your result depends on your answers."
+    },
+    "sourceLabel": {
+      "te": "మూలం:",
+      "en": "Source:"
+    },
+    "verifiedLabel": {
+      "te": "చివరిగా ధృవీకరించిన తేదీ: 21 Nov 2026",
+      "en": "Last verified: 21 Nov 2026"
+    },
+    "pendingLabel": {
+      "en": "Details pending verification. Check the official portal.",
+      "te": "వివరాలు ఇంకా ధృవీకరణలో ఉన్నాయి. అధికారిక పోర్టల్‌లో తనిఖీ చేయండి."
+    }
+  },
+  "audience": {
+    "title": {
+      "te": "ఇది ఎవరి కోసం",
+      "en": "Who it's for"
+    },
+    "intro": {
+      "te": "ప్రధానంగా తెలంగాణలోని తక్కువ ఆదాయ కుటుంబాల విద్యార్థుల కోసం. ఇదే సాధనం కింద ఉన్నవారికీ సహాయం చేస్తుంది.",
+      "en": "Main focus: students from low-income families in Telangana. The same tool also helps the people below."
+    },
+    "groups": [
+      {
+        "id": "students",
+        "icon": "GraduationCap",
+        "title": {
+          "te": "విద్యార్థులు",
+          "en": "Students"
+        },
+        "schemes": [
+          {
+            "te": "ఈ-పాస్ స్కాలర్‌షిప్‌లు",
+            "en": "ePASS scholarships"
+          },
+          {
+            "te": "NSP కేంద్ర స్కాలర్‌షిప్‌లు",
+            "en": "NSP central scholarships"
+          },
+          {
+            "te": "విదేశీ చదువు సహాయం",
+            "en": "Overseas study support"
+          }
+        ]
+      },
+      {
+        "id": "senior",
+        "icon": "HeartHandshake",
+        "title": {
+          "te": "సీనియర్ సిటిజన్లు",
+          "en": "Senior citizens"
+        },
+        "schemes": [
+          {
+            "te": "చేయూత పింఛన్లు",
+            "en": "Cheyutha pensions"
+          },
+          {
+            "te": "ఆరోగ్యశ్రీ",
+            "en": "Aarogyasri"
+          },
+          {
+            "te": "ఆయుష్మాన్ వయ వందన (70+)",
+            "en": "Ayushman Vay Vandana (70+)"
+          }
+        ]
+      },
+      {
+        "id": "farmers",
+        "icon": "Sprout",
+        "title": {
+          "te": "రైతులు",
+          "en": "Farmers"
+        },
+        "schemes": [
+          {
+            "te": "రైతు భరోసా",
+            "en": "Rythu Bharosa"
+          },
+          {
+            "te": "PM-KISAN",
+            "en": "PM-KISAN"
+          },
+          {
+            "te": "కిసాన్ క్రెడిట్ కార్డ్",
+            "en": "Kisan Credit Card"
+          }
+        ]
+      },
+      {
+        "id": "women",
+        "icon": "Users",
+        "title": {
+          "te": "మహిళలు",
+          "en": "Women"
+        },
+        "schemes": [
+          {
+            "te": "మహాలక్ష్మి ఉచిత బస్సు",
+            "en": "Mahalakshmi free bus"
+          },
+          {
+            "te": "₹500 గ్యాస్ సిలిండర్",
+            "en": "₹500 gas cylinder"
+          },
+          {
+            "te": "SHG వడ్డీ లేని లోన్లు",
+            "en": "SHG interest-free loans"
+          }
+        ]
+      },
+      {
+        "id": "families",
+        "icon": "Home",
+        "title": {
+          "te": "కుటుంబాలు",
+          "en": "Families"
+        },
+        "schemes": [
+          {
+            "te": "వైట్ రేషన్ కార్డు",
+            "en": "White ration card"
+          },
+          {
+            "te": "గృహ జ్యోతి ఉచిత విద్యుత్",
+            "en": "Gruha Jyothi free power"
+          },
+          {
+            "te": "ఇందిరమ్మ ఇళ్లు",
+            "en": "Indiramma housing"
+          }
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "title": {
+      "te": "ప్రశ్నలు",
+      "en": "Questions"
+    },
+    "intro": {
+      "te": "విద్యార్థులు, కుటుంబాలు, రైతులు, సీనియర్ సిటిజన్లు అడిగే సాధారణ ప్రశ్నలకు చిన్న జవాబులు.",
+      "en": "Short answers to common questions, for students, families, farmers and senior citizens alike."
+    },
+    "items": [
+      {
+        "question": {
+          "te": "ఇది ఉచితమా?",
+          "en": "Is it free?"
+        },
+        "answer": {
+          "te": "అవును. ఈ యాప్ ఉచితం, ప్రభుత్వ స్కీమ్‌లకు దరఖాస్తు కూడా ఉచితమే. మీ తరఫున దరఖాస్తు చేయడానికి ఎవరికీ డబ్బులు ఇవ్వవద్దు.",
+          "en": "Yes. Using this app is free, and applying for government schemes is free too. Never pay anyone to apply for you."
+        }
+      },
+      {
+        "question": {
+          "te": "మీకు నా ఆధార్ కావాలా?",
+          "en": "Do you need my Aadhaar?"
+        },
+        "answer": {
+          "te": "లేదు. మేము మీ ఆధార్ గానీ, ఏ ID నంబర్ గానీ అడగము.",
+          "en": "No. We never ask for your Aadhaar or any ID number."
+        }
+      },
+      {
+        "question": {
+          "te": "అర్హత పక్కాగా వస్తుందా?",
+          "en": "Is eligibility guaranteed?"
+        },
+        "answer": {
+          "te": "లేదు. అర్హత ఉండే అవకాశం ఉన్న స్కీమ్‌లను చూపిస్తాం. తుది నిర్ణయం సంబంధిత శాఖ తీసుకుంటుంది.",
+          "en": "No. We show schemes you are likely eligible for. The issuing department makes the final decision."
+        }
+      },
+      {
+        "question": {
+          "te": "సమాచారం ఎక్కడ నుండి వస్తుంది?",
+          "en": "Where does the data come from?"
+        },
+        "answer": {
+          "te": "అధికారిక ప్రభుత్వ మూలాల నుండి, ప్రజలకు అందుబాటులో ఉన్న సమాచారం నుండి. ప్రతి స్కీమ్ దాని మూలాన్ని, చివరిగా తనిఖీ చేసిన తేదీని చూపిస్తుంది.",
+          "en": "From official government sources and public information. Each scheme shows its source and the date we last checked it."
+        }
+      },
+      {
+        "question": {
+          "te": "స్కీమ్ ఇప్పుడు తెరిచి లేకపోతే?",
+          "en": "What if a scheme isn't open right now?"
+        },
+        "answer": {
+          "te": "అది తర్వాత తెరుస్తారా, ఆటోమేటిక్‌గా చెల్లిస్తారా, లేక ప్రకటన మాత్రమేనా అని చూపిస్తాం. మీరు ట్రాక్ చేసుకోవచ్చు, తెరిచినప్పుడు గుర్తు చేస్తాం.",
+          "en": "We show whether it opens later, is paid automatically, or is only announced, so you know what to expect. You can track it and get a reminder when it opens."
+        }
+      },
+      {
+        "question": {
+          "te": "తెలుగులో వాడొచ్చా?",
+          "en": "Can I use it in Telugu?"
+        },
+        "answer": {
+          "te": "అవును. యాప్ తెలుగులోనే మొదలవుతుంది. పైన ఇంగ్లీష్‌కు మార్చుకోవచ్చు.",
+          "en": "Yes. The app opens in Telugu by default. You can switch to English at the top."
+        }
+      }
+    ]
+  },
+  "cta": {
+    "title": {
+      "te": "మీకు సరిపోవచ్చే స్కీమ్‌లు ఏవో తెలుసుకోండి",
+      "en": "Find out which schemes may fit you"
+    },
+    "text": {
+      "te": "కొన్ని నిమిషాలు చాలు. ఉచితం. ఆధార్ అవసరం లేదు.",
+      "en": "Takes a few minutes. Free. No Aadhaar needed."
+    },
+    "primaryCta": {
+      "te": "నా స్కీమ్‌లు చూడండి",
+      "en": "Find my schemes"
+    }
+  },
+  "footer": {
+    "disclaimer": {
+      "te": "ఇది మార్గదర్శకం మాత్రమే, అధికారిక నిర్ణయం కాదు. తుది అర్హతను సంబంధిత శాఖ నిర్ణయిస్తుంది.",
+      "en": "This is guidance, not an official decision. Final eligibility is decided by the issuing department."
+    },
+    "aboutLabel": {
+      "te": "మా గురించి",
+      "en": "About"
+    },
+    "loginLabel": {
+      "te": "లాగిన్",
+      "en": "Login"
+    },
+    "freeLine": {
+      "te": "ఉచితం. అధికారిక మూలాలు మాత్రమే.",
+      "en": "Free. Official sources only."
+    },
+    "projectNotice": {
+      "te": "ఇది హ్యాకథాన్ ప్రాజెక్ట్ (ACE Builders Hackathon 2026), విద్యా ప్రయోజనాల కోసం మాత్రమే తయారు చేసింది. ఇది ప్రభుత్వ వెబ్‌సైట్ కాదు, ఏ అధికారిక వెబ్‌సైట్‌ను అనుకరించడానికీ కాదు. స్కీమ్ సమాచారం ప్రజా మూలాల నుండి వచ్చింది, పాతది కావచ్చు. దరఖాస్తు చేసే ముందు ఎప్పుడూ అధికారిక పోర్టల్ చూడండి.",
+      "en": "This is a hackathon project (ACE Builders Hackathon 2026), built for educational purposes only. It is not a government website and does not intend to imitate any official website. Scheme information comes from public sources and may be out of date. Always check the official portal before applying."
+    }
+  },
+  "hrefs": {
+    "check": "/check",
+    "about": "/about",
+    "login": "/login"
+  }
+}
