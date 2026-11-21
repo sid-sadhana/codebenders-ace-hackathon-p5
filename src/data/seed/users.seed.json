@@ -1,0 +1,311 @@
+[
+  {
+    "username": "sravani",
+    "role": "citizen",
+    "group": "student",
+    "displayName": { "te": "శ్రావణి", "en": "Sravani" },
+    "avatarInitials": "S",
+    "useCase": {
+      "te": "బీసీ-బి · బి.టెక్ 2వ సంవత్సరం · ఆదాయం ₹1.2 లక్షలు",
+      "en": "BC-B · B.Tech 2nd year · ₹1.2 lakh income"
+    },
+    "profile": {
+      "state": "Telangana",
+      "district": "Nalgonda",
+      "area": "rural",
+      "age": 19,
+      "gender": "female",
+      "socialCategory": "BC-B",
+      "annualFamilyIncome": 120000,
+      "rationCard": "white_phh",
+      "maritalStatus": "unmarried",
+      "occupation": "student",
+      "educationLevel": "ug",
+      "courseType": "professional",
+      "courseYear": 2,
+      "institutionType": "private",
+      "parentOccupation": "farmer",
+      "hostelResident": false,
+      "isDisabled": false
+    }
+  },
+  {
+    "username": "kiran",
+    "role": "citizen",
+    "group": "student",
+    "displayName": { "te": "కిరణ్", "en": "Kiran" },
+    "avatarInitials": "K",
+    "useCase": {
+      "te": "ఎస్సీ · డిగ్రీ చివరి సంవత్సరం · 45% వైకల్యం",
+      "en": "SC · Degree final year · 45% disability"
+    },
+    "profile": {
+      "state": "Telangana",
+      "district": "Hyderabad",
+      "area": "urban",
+      "age": 21,
+      "gender": "male",
+      "socialCategory": "SC",
+      "annualFamilyIncome": 220000,
+      "rationCard": "none",
+      "maritalStatus": "unmarried",
+      "occupation": "student",
+      "educationLevel": "ug",
+      "courseType": "general",
+      "courseYear": 3,
+      "institutionType": "government",
+      "parentOccupation": "daily_wage",
+      "isDisabled": true,
+      "disabilityPercent": 45
+    }
+  },
+  {
+    "username": "ayesha",
+    "role": "citizen",
+    "group": "student",
+    "displayName": { "te": "ఆయేషా", "en": "Ayesha" },
+    "avatarInitials": "A",
+    "useCase": {
+      "te": "మైనారిటీ · బి.టెక్ పూర్తి · విదేశాల్లో చదువుకు అడ్మిషన్",
+      "en": "Minority · B.Tech done · Admission abroad"
+    },
+    "profile": {
+      "state": "Telangana",
+      "district": "Hyderabad",
+      "area": "urban",
+      "age": 23,
+      "gender": "female",
+      "socialCategory": "Minority",
+      "annualFamilyIncome": 350000,
+      "rationCard": "none",
+      "maritalStatus": "unmarried",
+      "occupation": "student",
+      "educationLevel": "pg",
+      "courseType": "technical",
+      "graduationPercentage": 72,
+      "plansStudyAbroad": true,
+      "hasForeignAdmission": true,
+      "parentOccupation": "self_employed",
+      "isDisabled": false
+    }
+  },
+  {
+    "username": "arjun",
+    "role": "citizen",
+    "group": "student",
+    "displayName": { "te": "అర్జున్", "en": "Arjun" },
+    "avatarInitials": "A",
+    "useCase": {
+      "te": "ఓసీ · బి.ఎస్సీ 2వ సంవత్సరం · ఆదాయం ₹6 లక్షలు",
+      "en": "OC · B.Sc 2nd year · ₹6 lakh income"
+    },
+    "profile": {
+      "state": "Telangana",
+      "district": "Warangal",
+      "area": "urban",
+      "age": 20,
+      "gender": "male",
+      "socialCategory": "General",
+      "annualFamilyIncome": 600000,
+      "rationCard": "none",
+      "maritalStatus": "unmarried",
+      "occupation": "student",
+      "educationLevel": "ug",
+      "courseType": "general",
+      "courseYear": 2,
+      "institutionType": "government",
+      "classXIIPercentile": 85,
+      "parentOccupation": "salaried",
+      "isDisabled": false
+    }
+  },
+  {
+    "username": "saraswathi",
+    "role": "citizen",
+    "group": "senior",
+    "displayName": { "te": "సరస్వతి", "en": "Saraswathi" },
+    "avatarInitials": "S",
+    "useCase": {
+      "te": "వితంతువు, 66 ఏళ్లు · తెల్ల రేషన్ కార్డు · గ్రామీణ",
+      "en": "Widow, 66 · White ration card · Rural"
+    },
+    "profile": {
+      "state": "Telangana",
+      "district": "Karimnagar",
+      "area": "rural",
+      "age": 66,
+      "gender": "female",
+      "socialCategory": "BC-A",
+      "annualFamilyIncome": 60000,
+      "rationCard": "white_phh",
+      "maritalStatus": "widowed",
+      "occupation": "homemaker",
+      "receivesPension": false,
+      "isIncomeTaxPayer": false,
+      "isGovtEmployeeFamily": false,
+      "isDisabled": false
+    }
+  },
+  {
+    "username": "narayana",
+    "role": "citizen",
+    "group": "senior",
+    "displayName": { "te": "నారాయణ", "en": "Narayana" },
+    "avatarInitials": "N",
+    "useCase": {
+      "te": "వయస్సు 74 · రిటైర్డ్ · తెల్ల రేషన్ కార్డు లేదు",
+      "en": "Age 74 · Retired · No white ration card"
+    },
+    "profile": {
+      "state": "Telangana",
+      "district": "Hyderabad",
+      "area": "urban",
+      "age": 74,
+      "gender": "male",
+      "socialCategory": "General",
+      "annualFamilyIncome": 300000,
+      "rationCard": "none",
+      "maritalStatus": "married",
+      "occupation": "retired",
+      "receivesPension": false,
+      "isIncomeTaxPayer": false,
+      "isDisabled": false
+    }
+  },
+  {
+    "username": "venkatesh",
+    "role": "citizen",
+    "group": "farmer",
+    "displayName": { "te": "వెంకటేష్", "en": "Venkatesh" },
+    "avatarInitials": "V",
+    "useCase": {
+      "te": "3 ఎకరాల సొంత భూమి · పట్టాదారు · తెల్ల రేషన్ కార్డు",
+      "en": "Owns 3 acres · Pattadar · White ration card"
+    },
+    "profile": {
+      "state": "Telangana",
+      "district": "Siddipet",
+      "area": "rural",
+      "age": 45,
+      "gender": "male",
+      "socialCategory": "BC-D",
+      "annualFamilyIncome": 150000,
+      "rationCard": "white_phh",
+      "maritalStatus": "married",
+      "occupation": "farmer_owner",
+      "landAcres": 3,
+      "isPattadar": true,
+      "hasMgnregsJobCard": false,
+      "isIncomeTaxPayer": false,
+      "isDisabled": false
+    }
+  },
+  {
+    "username": "mallesh",
+    "role": "citizen",
+    "group": "farmer",
+    "displayName": { "te": "మల్లేష్", "en": "Mallesh" },
+    "avatarInitials": "M",
+    "useCase": {
+      "te": "కౌలు రైతు · 2 ఎకరాలు కౌలుకు · తెల్ల రేషన్ కార్డు",
+      "en": "Tenant farmer · 2 acres leased · White ration card"
+    },
+    "profile": {
+      "state": "Telangana",
+      "district": "Khammam",
+      "area": "rural",
+      "age": 38,
+      "gender": "male",
+      "socialCategory": "SC",
+      "annualFamilyIncome": 90000,
+      "rationCard": "white_phh",
+      "maritalStatus": "married",
+      "occupation": "tenant_farmer",
+      "landAcres": 2,
+      "isPattadar": false,
+      "hasMgnregsJobCard": true,
+      "isIncomeTaxPayer": false,
+      "isDisabled": false
+    }
+  },
+  {
+    "username": "padma",
+    "role": "citizen",
+    "group": "women",
+    "displayName": { "te": "పద్మ", "en": "Padma" },
+    "avatarInitials": "P",
+    "useCase": {
+      "te": "స్వయం సహాయక సంఘం సభ్యురాలు · గృహిణి · గ్రామీణ",
+      "en": "SHG member · Homemaker · Rural"
+    },
+    "profile": {
+      "state": "Telangana",
+      "district": "Medak",
+      "area": "rural",
+      "age": 34,
+      "gender": "female",
+      "socialCategory": "BC-B",
+      "annualFamilyIncome": 100000,
+      "rationCard": "white_phh",
+      "maritalStatus": "married",
+      "occupation": "homemaker",
+      "isShgMember": true,
+      "hasLpgInOwnName": true,
+      "isDisabled": false
+    }
+  },
+  {
+    "username": "swapna",
+    "role": "citizen",
+    "group": "family",
+    "displayName": { "te": "స్వప్న", "en": "Swapna" },
+    "avatarInitials": "S",
+    "useCase": {
+      "te": "కూతురి పెళ్లి త్వరలో · పక్కా ఇల్లు లేదు · నెలకు 150 యూనిట్లు",
+      "en": "Daughter's wedding soon · No pucca house · 150 units a month"
+    },
+    "profile": {
+      "state": "Telangana",
+      "district": "Jangaon",
+      "area": "rural",
+      "age": 42,
+      "gender": "female",
+      "socialCategory": "SC",
+      "annualFamilyIncome": 110000,
+      "rationCard": "white_phh",
+      "maritalStatus": "married",
+      "occupation": "daily_wage",
+      "ownsPuccaHouse": false,
+      "hasDomesticElectricity": true,
+      "monthlyElectricityUnits": 150,
+      "hasLpgInOwnName": true,
+      "daughterMarriagePlanned": true,
+      "hasMgnregsJobCard": true,
+      "isDisabled": false
+    }
+  },
+  {
+    "username": "volunteer",
+    "role": "volunteer",
+    "group": null,
+    "displayName": { "te": "డెమో వాలంటీర్", "en": "Demo Volunteer" },
+    "avatarInitials": "DV",
+    "useCase": {
+      "te": "ప్రజలకు పథకాలు చూపిస్తారు · పథకాల సమాచారం సరిచేస్తారు",
+      "en": "Helps people check schemes · Edits scheme details"
+    },
+    "profile": null
+  },
+  {
+    "username": "admin",
+    "role": "admin",
+    "group": null,
+    "displayName": { "te": "డెమో అడ్మిన్", "en": "Demo Admin" },
+    "avatarInitials": "DA",
+    "useCase": {
+      "te": "పథకాల నిర్వహణకు పూర్తి అనుమతి",
+      "en": "Full access to manage schemes"
+    },
+    "profile": null
+  }
+]
