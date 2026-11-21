@@ -52,7 +52,7 @@ export const profileSchema = z
       "retired",
     ]),
 
-    educationLevel: z.enum(["class_9_10", "class_11_12", "diploma", "iti", "ug", "pg"]),
+    educationLevel: z.enum(["class_1_8", "class_9_10", "class_11_12", "diploma", "iti", "ug", "pg"]),
     courseType: z.enum(["general", "technical", "professional", "medical"]),
     courseYear: z.number().int().min(1).max(6),
     institutionType: z.enum(["government", "aided", "private"]),
@@ -61,7 +61,14 @@ export const profileSchema = z
     graduationPercentage: z.number().min(0).max(100),
     hostelResident: z.boolean(),
     isOrphan: z.boolean(),
-    parentOccupation: z.enum(["daily_wage", "farmer", "self_employed", "salaried", "other"]),
+    parentOccupation: z.enum([
+      "daily_wage",
+      "farmer",
+      "self_employed",
+      "salaried",
+      "hazardous_work",
+      "other",
+    ]),
     plansStudyAbroad: z.boolean(),
     hasForeignAdmission: z.boolean(),
 
@@ -86,11 +93,13 @@ export const profileSchema = z
     hasDomesticElectricity: z.boolean(),
     monthlyElectricityUnits: z.number().int().min(0),
     hasLpgInOwnName: z.boolean(),
+    householdHasLpg: z.boolean(),
     daughterMarriagePlanned: z.boolean(),
 
     isIncomeTaxPayer: z.boolean(),
     isGovtEmployeeFamily: z.boolean(),
     receivesPension: z.boolean(),
+    wantsToStartBusiness: z.boolean(),
   })
   .partial();
 

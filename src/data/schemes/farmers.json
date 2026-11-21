@@ -1,0 +1,109 @@
+[
+  {
+    "id": "ts-rythu-bharosa",
+    "name": { "te": "రైతు భరోసా", "en": "Rythu Bharosa" },
+    "level": "state",
+    "audience": ["farmer"],
+    "status": "automatic",
+    "confidence": "high",
+    "needsVerification": false,
+    "benefit": { "te": "ఎకరానికి ఏడాదికి ₹12,000 (ఒక్కో సీజన్‌కు ₹6,000), నేరుగా బ్యాంకు ఖాతాకు", "en": "₹12,000 per acre a year (₹6,000 per season), paid straight to the bank account" },
+    "benefitValue": 36000,
+    "usualWindow": { "te": "యాసంగి విడత సుమారు డిసెంబర్ 2026లో రావచ్చు", "en": "Yasangi instalment expected around December 2026" },
+    "officialSourceUrl": "https://rythubharosa.telangana.gov.in",
+    "lastVerified": "2026-11-21",
+    "rules": [
+      { "id": "pattadar", "text": { "te": "భూమి మీ పేరు మీద ఉంది (పట్టాదారు). కౌలు రైతులకు వర్తించదు.", "en": "Land is in your name (pattadar). Tenant farmers are not covered." }, "if": { "field": "isPattadar", "op": "is_true" } }
+    ],
+    "alsoRequired": [ { "te": "డబ్బులు రాకపోతే పాస్‌బుక్, బ్యాంకు వివరాలతో AEO/MAOని కలవండి", "en": "If you were missed, meet the AEO/MAO with your passbook and bank details" } ]
+  },
+  {
+    "id": "central-pm-kisan",
+    "name": { "te": "పీఎం కిసాన్", "en": "PM-KISAN" },
+    "level": "central",
+    "audience": ["farmer"],
+    "status": "rolling",
+    "confidence": "high",
+    "needsVerification": false,
+    "benefit": { "te": "ఏడాదికి ₹6,000, మూడు విడతల్లో", "en": "₹6,000 a year in 3 instalments" },
+    "benefitValue": 6000,
+    "officialSourceUrl": "https://pmkisan.gov.in",
+    "lastVerified": "2026-11-21",
+    "rules": [
+      { "id": "land", "text": { "te": "భూమి ఉన్న రైతు కుటుంబం (పట్టాదారు)", "en": "Landholding farmer family (pattadar)" }, "if": { "field": "isPattadar", "op": "is_true" } },
+      { "id": "no-tax", "exclusion": true, "text": { "te": "ఆదాయపు పన్ను కట్టేవారు కాదు", "en": "Not an income-tax payer" }, "if": { "field": "isIncomeTaxPayer", "op": "is_false" } },
+      { "id": "no-govt-job", "exclusion": true, "text": { "te": "ప్రభుత్వ ఉద్యోగి / రిటైర్డ్ ఉద్యోగి కాదు", "en": "Not a serving or retired government employee" }, "if": { "field": "isGovtEmployeeFamily", "op": "is_false" } }
+    ]
+  },
+  {
+    "id": "central-kcc",
+    "name": { "te": "కిసాన్ క్రెడిట్ కార్డు (వడ్డీ రాయితీ)", "en": "Kisan Credit Card (interest subvention)" },
+    "level": "central",
+    "audience": ["farmer"],
+    "status": "rolling",
+    "confidence": "high",
+    "needsVerification": false,
+    "benefit": { "te": "₹3 లక్షల వరకు పంట రుణం, సకాలంలో కడితే 4% వడ్డీ; ₹2 లక్షల వరకు హామీ అవసరం లేదు. కౌలు రైతులకూ వర్తిస్తుంది.", "en": "Crop loan up to ₹3 lakh at effectively 4% interest with prompt repayment; no collateral up to ₹2 lakh. Tenant farmers are covered." },
+    "benefitValue": 9000,
+    "officialSourceUrl": "https://www.jansamarth.in",
+    "lastVerified": "2026-11-21",
+    "rules": [
+      { "id": "farmer", "text": { "te": "రైతు (సొంత భూమి లేదా కౌలు)", "en": "Farmer (own land or tenant)" }, "if": { "field": "occupation", "op": "in", "value": ["farmer_owner", "tenant_farmer"] } }
+    ]
+  },
+  {
+    "id": "ts-indiramma-atmiya-bharosa",
+    "name": { "te": "ఇందిరమ్మ ఆత్మీయ భరోసా (నిలిచిపోయింది)", "en": "Indiramma Atmiya Bharosa (stalled)" },
+    "level": "state",
+    "audience": ["farmer", "worker"],
+    "status": "stalled",
+    "confidence": "low",
+    "needsVerification": true,
+    "verificationNotes": "Only the first instalment was paid (Jan 2025).",
+    "benefit": { "te": "భూమి లేని కూలీలకు ఏడాదికి ₹12,000 అని ప్రకటించారు, కానీ మొదటి విడత తర్వాత ఆగిపోయింది.", "en": "₹12,000 a year was announced for landless labourers, but payments stopped after the first instalment." },
+    "benefitValue": 0,
+    "officialSourceUrl": "https://www.telangana.gov.in",
+    "lastVerified": "2026-11-21",
+    "rules": [
+      { "id": "landless", "text": { "te": "సొంత భూమి లేదు", "en": "No land of your own" }, "if": { "field": "isPattadar", "op": "is_false" } },
+      { "id": "job-card", "text": { "te": "ఉపాధి హామీ జాబ్ కార్డు ఉంది", "en": "Has a MGNREGS job card" }, "if": { "field": "hasMgnregsJobCard", "op": "is_true" } },
+      { "id": "rural", "text": { "te": "గ్రామీణ ప్రాంతం", "en": "Rural area" }, "if": { "field": "area", "op": "eq", "value": "rural" } }
+    ]
+  },
+  {
+    "id": "ts-rythu-bima",
+    "name": { "te": "రైతు బీమా (గడువు ముగిసి ఉండొచ్చు)", "en": "Rythu Bima (cover likely lapsed)" },
+    "level": "state",
+    "audience": ["farmer"],
+    "status": "stalled",
+    "confidence": "medium",
+    "needsVerification": true,
+    "verificationNotes": "2026-27 premium not paid as of Aug 2026.",
+    "benefit": { "te": "₹5 లక్షల జీవిత బీమా. 2026-27 ప్రీమియం కట్టలేదు, కాబట్టి కవర్ ఆగిపోయి ఉండొచ్చు.", "en": "₹5 lakh life cover. The 2026-27 premium wasn't paid, so cover has likely lapsed." },
+    "benefitValue": 0,
+    "officialSourceUrl": "https://www.telangana.gov.in",
+    "lastVerified": "2026-11-21",
+    "rules": [
+      { "id": "pattadar", "text": { "te": "పట్టాదారు రైతు", "en": "Pattadar farmer" }, "if": { "field": "isPattadar", "op": "is_true" } },
+      { "id": "age", "text": { "te": "వయస్సు 18 నుంచి 59", "en": "Age 18 to 59" }, "if": { "field": "age", "op": "between", "value": [18, 59] } },
+      { "id": "land", "text": { "te": "5 ఎకరాల లోపు", "en": "Up to 5 acres" }, "if": { "field": "landAcres", "op": "lte", "value": 5 } }
+    ]
+  },
+  {
+    "id": "central-pmfby",
+    "name": { "te": "ప్రధాన మంత్రి ఫసల్ బీమా యోజన", "en": "PM Fasal Bima Yojana" },
+    "level": "central",
+    "audience": ["farmer"],
+    "status": "not_active",
+    "confidence": "medium",
+    "needsVerification": true,
+    "verificationNotes": "Telangana left the scheme in 2020; rejoining is unconfirmed.",
+    "benefit": { "te": "పంట బీమా. ప్రస్తుతం తెలంగాణలో అమలులో లేదు.", "en": "Crop insurance. Not currently running in Telangana." },
+    "benefitValue": 0,
+    "officialSourceUrl": "https://pmfby.gov.in",
+    "lastVerified": "2026-11-21",
+    "rules": [
+      { "id": "farmer", "text": { "te": "రైతు", "en": "Farmer" }, "if": { "field": "occupation", "op": "in", "value": ["farmer_owner", "tenant_farmer"] } }
+    ]
+  }
+]

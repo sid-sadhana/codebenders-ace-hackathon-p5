@@ -1,0 +1,60 @@
+[
+  {
+    "id": "ts-indira-mahila-shakti-vlr",
+    "name": { "te": "ఇందిరా మహిళా శక్తి (స్వయం సహాయక సంఘాలకు వడ్డీ లేని రుణాలు)", "en": "Indira Mahila Shakti (interest-free SHG loans)" },
+    "level": "state",
+    "audience": ["women"],
+    "status": "rolling",
+    "confidence": "medium",
+    "needsVerification": false,
+    "benefit": { "te": "సంఘం రుణాలపై ₹10 లక్షల వరకు వడ్డీ ప్రభుత్వమే కడుతుంది; సభ్యులకు ₹10 లక్షల ప్రమాద బీమా", "en": "The state pays all interest on SHG loans up to ₹10 lakh; ₹10 lakh accident cover for members" },
+    "benefitValue": 50000,
+    "officialSourceUrl": "https://serp.telangana.gov.in",
+    "lastVerified": "2026-11-21",
+    "rules": [
+      { "id": "female", "text": { "te": "మహిళ", "en": "Woman" }, "if": { "field": "gender", "op": "eq", "value": "female" } },
+      { "id": "shg", "text": { "te": "స్వయం సహాయక సంఘం (డ్వాక్రా) సభ్యురాలు", "en": "Member of a self-help group (DWCRA)" }, "if": { "field": "isShgMember", "op": "is_true" } }
+    ],
+    "alsoRequired": [ { "te": "బ్యాంకు / స్త్రీనిధి రుణం సకాలంలో కట్టాలి", "en": "Bank or Streenidhi loan repaid on time" } ]
+  },
+  {
+    "id": "central-stand-up-india",
+    "name": { "te": "స్టాండ్-అప్ ఇండియా", "en": "Stand-Up India" },
+    "level": "central",
+    "audience": ["women", "worker"],
+    "status": "rolling",
+    "confidence": "medium",
+    "needsVerification": true,
+    "verificationNotes": "Extended to 2031; new limits unconfirmed.",
+    "benefit": { "te": "కొత్త వ్యాపారానికి ₹10 లక్షల నుంచి ₹1 కోటి వరకు బ్యాంకు రుణం", "en": "Bank loan of ₹10 lakh to ₹1 crore for a new business" },
+    "benefitValue": 0,
+    "officialSourceUrl": "https://www.standupmitra.in",
+    "lastVerified": "2026-11-21",
+    "rules": [
+      { "id": "business", "text": { "te": "కొత్త వ్యాపారం మొదలుపెట్టాలి", "en": "Wants to start a new business" }, "if": { "field": "wantsToStartBusiness", "op": "is_true" } },
+      { "id": "who", "text": { "te": "మహిళ, లేదా ఎస్సీ / ఎస్టీ", "en": "A woman, or SC / ST" }, "if": { "any": [
+        { "field": "gender", "op": "eq", "value": "female" },
+        { "field": "socialCategory", "op": "in", "value": ["SC", "ST"] }
+      ] } },
+      { "id": "age", "text": { "te": "వయస్సు 18 పైన", "en": "Age 18 or above" }, "if": { "field": "age", "op": "gte", "value": 18 } }
+    ],
+    "alsoRequired": [ { "te": "వ్యాపారంలో 51% వాటా; బ్యాంకు రుణం ఎగవేసి ఉండకూడదు", "en": "At least 51% ownership; not a loan defaulter" } ]
+  },
+  {
+    "id": "central-pm-mudra",
+    "name": { "te": "పీఎం ముద్ర రుణాలు", "en": "PM Mudra loans" },
+    "level": "central",
+    "audience": ["women", "worker"],
+    "status": "rolling",
+    "confidence": "high",
+    "needsVerification": false,
+    "benefit": { "te": "చిన్న వ్యాపారానికి హామీ లేని రుణం: శిశు ₹50,000 వరకు, కిశోర్ ₹5 లక్షల వరకు, తరుణ్ ₹10-20 లక్షలు", "en": "Collateral-free loans for small businesses: Shishu up to ₹50,000, Kishor up to ₹5 lakh, Tarun ₹10 to 20 lakh" },
+    "benefitValue": 0,
+    "officialSourceUrl": "https://www.mudra.org.in",
+    "lastVerified": "2026-11-21",
+    "rules": [
+      { "id": "business", "text": { "te": "వ్యవసాయేతర చిన్న వ్యాపారం మొదలుపెట్టాలి / పెంచాలి", "en": "Wants to start or grow a small non-farm business" }, "if": { "field": "wantsToStartBusiness", "op": "is_true" } }
+    ],
+    "alsoRequired": [ { "te": "బ్యాంకు రుణం ఎగవేసి ఉండకూడదు", "en": "Not a loan defaulter" } ]
+  }
+]
