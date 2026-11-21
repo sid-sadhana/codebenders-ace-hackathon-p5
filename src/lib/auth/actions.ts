@@ -9,7 +9,7 @@ import { createSession, destroySession } from "./session";
 import { usernameSchema, type PublicUser } from "./types";
 
 export type LoginError = "invalid" | "tooMany" | "unavailable";
-export type LoginState = { error: LoginError | null };
+export type LoginState = { error: LoginError | null; username?: string };
 
 const MAX_FAILURES = 5;
 const WINDOW_MS = 10 * 60 * 1000;
@@ -57,21 +57,23 @@ export async function loginAction(
     password: formData.get("password"),
     next: readNext(formData),
   });
-  if (!parsed.success) return { error: "invalid" };
+  const typed = formData.get("username");
+  const echo = typeof typed === "string" ? typed.slice(0, 40) : undefined;
+  if (!parsed.success) return { error: "invalid", username: echo };
 
   const { username, password, next } = parsed.data;
-  if (isLocked(username)) return { error: "tooMany" };
+  if (isLocked(username)) return { error: "tooMany", username: echo };
 
   let user: PublicUser | null;
   try {
     user = await verifyCredentials(username, password);
   } catch {
-    return { error: "unavailable" };
+    return { error: "unavailable", username: echo };
   }
 
   if (!user) {
     recordFailure(username);
-    return { error: isLocked(username) ? "tooMany" : "invalid" };
+    return { error: isLocked(username) ? "tooMany" : "invalid", username: echo };
   }
 
   failures.delete(username);

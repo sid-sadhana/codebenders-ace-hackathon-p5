@@ -7,9 +7,11 @@ import type { LandingContent } from "@/lib/landing-content";
 export function SiteFooter({
   footer,
   hrefs,
+  showLogin = true,
 }: {
   footer: LandingContent["footer"];
   hrefs: LandingContent["hrefs"];
+  showLogin?: boolean;
 }) {
   const { t } = useLanguage();
 
@@ -30,9 +32,11 @@ export function SiteFooter({
             <Link href={hrefs.about} className={linkClass}>
               {t(footer.aboutLabel)}
             </Link>
-            <Link href={hrefs.login} className={linkClass}>
-              {t(footer.loginLabel)}
-            </Link>
+            {showLogin && (
+              <Link href={hrefs.login} className={linkClass}>
+                {t(footer.loginLabel)}
+              </Link>
+            )}
           </div>
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">

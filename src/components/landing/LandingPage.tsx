@@ -35,7 +35,10 @@ import {
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
+import { DocumentTitle } from "@/components/i18n/DocumentTitle";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import type { SessionUser } from "@/lib/auth/types";
+import type { AccountContent } from "@/lib/auth-content";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 import type { ExampleStatus, GroupIcon, LandingContent } from "@/lib/landing-content";
 import { cn } from "@/lib/utils";
@@ -45,6 +48,8 @@ import { SiteHeader } from "./SiteHeader";
 
 type LandingPageProps = {
   content: LandingContent;
+  user: SessionUser | null;
+  account: AccountContent;
 };
 
 const PROBLEM_ICONS: LucideIcon[] = [Shuffle, FileQuestion, Wallet];
@@ -87,11 +92,12 @@ const CARD = "h-full rounded-2xl border bg-card p-6 shadow-sm";
 const ICON_TILE =
   "mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-primary";
 
-export function LandingPage({ content }: LandingPageProps) {
+export function LandingPage({ content, user, account }: LandingPageProps) {
   const { t } = useLanguage();
 
   return (
     <>
+      <DocumentTitle title={content.meta.title} />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-50 focus:rounded-md focus:bg-card focus:px-4 focus:py-2 focus:ring-2 focus:ring-primary"
@@ -99,7 +105,13 @@ export function LandingPage({ content }: LandingPageProps) {
         {t(content.ui.skipToContent)}
       </a>
 
-      <SiteHeader content={content} />
+      <SiteHeader
+        ui={content.ui}
+        nav={content.nav}
+        hrefs={content.hrefs}
+        user={user}
+        account={account}
+      />
 
       <main id="main">
         <HeroUseCases content={content.hero} hrefs={content.hrefs} />
@@ -375,7 +387,7 @@ export function LandingPage({ content }: LandingPageProps) {
         </section>
       </main>
 
-      <SiteFooter footer={content.footer} hrefs={content.hrefs} />
+      <SiteFooter footer={content.footer} hrefs={content.hrefs} showLogin={!user} />
     </>
   );
 }
