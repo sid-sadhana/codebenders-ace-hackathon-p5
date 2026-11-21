@@ -52,7 +52,16 @@ export const profileSchema = z
       "retired",
     ]),
 
-    educationLevel: z.enum(["class_1_8", "class_9_10", "class_11_12", "diploma", "iti", "ug", "pg"]),
+    educationLevel: z.enum([
+      "none",
+      "class_1_8",
+      "class_9_10",
+      "class_11_12",
+      "diploma",
+      "iti",
+      "ug",
+      "pg",
+    ]),
     courseType: z.enum(["general", "technical", "professional", "medical"]),
     courseYear: z.number().int().min(1).max(6),
     institutionType: z.enum(["government", "aided", "private"]),

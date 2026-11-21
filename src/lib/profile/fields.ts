@@ -215,8 +215,9 @@ export const FIELD_SPECS: FieldSpec[] = [
     field: "educationLevel",
     kind: "enum",
     label: { te: "చదువు", en: "Education" },
-    values: ["class_1_8", "class_9_10", "class_11_12", "diploma", "iti", "ug", "pg"],
+    values: ["none", "class_1_8", "class_9_10", "class_11_12", "diploma", "iti", "ug", "pg"],
     valueLabels: {
+      none: yes("చదువుకోవడం లేదు", "Not studying"),
       class_1_8: yes("1 నుంచి 8వ తరగతి", "Class 1 to 8"),
       class_9_10: yes("9 లేదా 10వ తరగతి", "Class 9 or 10"),
       class_11_12: yes("ఇంటర్మీడియట్", "Intermediate"),
@@ -226,7 +227,7 @@ export const FIELD_SPECS: FieldSpec[] = [
       pg: yes("పీజీ / మాస్టర్స్", "PG / Masters"),
     },
     meaning:
-      "What the student is studying NOW (or the course they are admitted to). Intermediate/inter/+2 -> class_11_12. B.Tech, B.E, B.Sc, B.Com, B.A, degree, MBBS -> ug. M.Tech, MS, MBA, M.Sc, masters -> pg (also if they have an admission abroad for masters). Polytechnic -> diploma.",
+      "What the person is studying NOW (or the course they are admitted to). none = not studying (working, retired, homemaker, finished studies with no new admission). Intermediate/inter/+2 -> class_11_12. B.Tech, B.E, B.Sc, B.Com, B.A, degree, MBBS -> ug. M.Tech, MS, MBA, M.Sc, masters -> pg (also if they have an admission abroad for masters). Polytechnic -> diploma.",
   },
   {
     field: "courseType",

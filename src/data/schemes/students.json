@@ -1,9 +1,14 @@
 [
   {
     "id": "ts-epass-post-matric",
-    "name": { "te": "ఈపాస్ పోస్ట్-మెట్రిక్ స్కాలర్‌షిప్, ఫీజు రీయింబర్స్‌మెంట్", "en": "ePASS Post-Matric Scholarship and Fee Reimbursement" },
+    "name": {
+      "te": "ఈపాస్ పోస్ట్-మెట్రిక్ స్కాలర్‌షిప్, ఫీజు రీయింబర్స్‌మెంట్",
+      "en": "ePASS Post-Matric Scholarship and Fee Reimbursement"
+    },
     "level": "state",
-    "audience": ["student"],
+    "audience": [
+      "student"
+    ],
     "status": "open",
     "confidence": "high",
     "needsVerification": false,
@@ -18,16 +23,51 @@
     "rules": [
       {
         "id": "category",
-        "text": { "te": "ఎస్సీ, ఎస్టీ, బీసీ, ఈబీసీ, మైనారిటీ లేదా దివ్యాంగ విద్యార్థి", "en": "SC, ST, BC, EBC, Minority or disabled student" },
-        "if": { "any": [
-          { "field": "socialCategory", "op": "in", "value": ["SC", "ST", "BC-A", "BC-B", "BC-C", "BC-D", "BC-E", "EBC", "Minority"] },
-          { "field": "isDisabled", "op": "is_true" }
-        ] }
+        "text": {
+          "te": "ఎస్సీ, ఎస్టీ, బీసీ, ఈబీసీ, మైనారిటీ లేదా దివ్యాంగ విద్యార్థి",
+          "en": "SC, ST, BC, EBC, Minority or disabled student"
+        },
+        "if": {
+          "any": [
+            {
+              "field": "socialCategory",
+              "op": "in",
+              "value": [
+                "SC",
+                "ST",
+                "BC-A",
+                "BC-B",
+                "BC-C",
+                "BC-D",
+                "BC-E",
+                "EBC",
+                "Minority"
+              ]
+            },
+            {
+              "field": "isDisabled",
+              "op": "is_true"
+            }
+          ]
+        }
       },
       {
         "id": "level",
-        "text": { "te": "ఇంటర్, ఐటీఐ, డిప్లొమా, డిగ్రీ లేదా పీజీ చదువుతున్నారు", "en": "Studying Intermediate, ITI, diploma, degree or PG" },
-        "if": { "field": "educationLevel", "op": "in", "value": ["class_11_12", "iti", "diploma", "ug", "pg"] }
+        "text": {
+          "te": "ఇంటర్, ఐటీఐ, డిప్లొమా, డిగ్రీ లేదా పీజీ చదువుతున్నారు",
+          "en": "Studying Intermediate, ITI, diploma, degree or PG"
+        },
+        "if": {
+          "field": "educationLevel",
+          "op": "in",
+          "value": [
+            "class_11_12",
+            "iti",
+            "diploma",
+            "ug",
+            "pg"
+          ]
+        }
       },
       {
         "id": "income",
@@ -35,276 +75,1047 @@
           "te": "కుటుంబ ఆదాయం పరిమితిలో ఉండాలి: ఎస్సీ ₹2.5 లక్షలు, ఎస్టీ ₹2 లక్షలు, బీసీ/ఈబీసీ/మైనారిటీ ₹1.5 లక్షలు (గ్రామీణ) / ₹2 లక్షలు (పట్టణ), దివ్యాంగులు ₹1 లక్ష",
           "en": "Family income within the limit: SC ₹2.5 lakh, ST ₹2 lakh, BC/EBC/Minority ₹1.5 lakh (rural) / ₹2 lakh (urban), disabled ₹1 lakh"
         },
-        "if": { "any": [
-          { "all": [ { "field": "socialCategory", "op": "eq", "value": "SC" }, { "field": "annualFamilyIncome", "op": "lte", "value": 250000 } ] },
-          { "all": [ { "field": "socialCategory", "op": "eq", "value": "ST" }, { "field": "annualFamilyIncome", "op": "lte", "value": 200000 } ] },
-          { "all": [
-            { "field": "socialCategory", "op": "in", "value": ["BC-A", "BC-B", "BC-C", "BC-D", "BC-E", "EBC", "Minority"] },
-            { "any": [
-              { "field": "annualFamilyIncome", "op": "lte", "value": 150000 },
-              { "all": [ { "field": "area", "op": "eq", "value": "urban" }, { "field": "annualFamilyIncome", "op": "lte", "value": 200000 } ] }
-            ] }
-          ] },
-          { "all": [ { "field": "isDisabled", "op": "is_true" }, { "field": "annualFamilyIncome", "op": "lte", "value": 100000 } ] }
-        ] }
+        "if": {
+          "any": [
+            {
+              "all": [
+                {
+                  "field": "socialCategory",
+                  "op": "eq",
+                  "value": "SC"
+                },
+                {
+                  "field": "annualFamilyIncome",
+                  "op": "lte",
+                  "value": 250000
+                }
+              ]
+            },
+            {
+              "all": [
+                {
+                  "field": "socialCategory",
+                  "op": "eq",
+                  "value": "ST"
+                },
+                {
+                  "field": "annualFamilyIncome",
+                  "op": "lte",
+                  "value": 200000
+                }
+              ]
+            },
+            {
+              "all": [
+                {
+                  "field": "socialCategory",
+                  "op": "in",
+                  "value": [
+                    "BC-A",
+                    "BC-B",
+                    "BC-C",
+                    "BC-D",
+                    "BC-E",
+                    "EBC",
+                    "Minority"
+                  ]
+                },
+                {
+                  "any": [
+                    {
+                      "field": "annualFamilyIncome",
+                      "op": "lte",
+                      "value": 150000
+                    },
+                    {
+                      "all": [
+                        {
+                          "field": "area",
+                          "op": "eq",
+                          "value": "urban"
+                        },
+                        {
+                          "field": "annualFamilyIncome",
+                          "op": "lte",
+                          "value": 200000
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "all": [
+                {
+                  "field": "isDisabled",
+                  "op": "is_true"
+                },
+                {
+                  "field": "annualFamilyIncome",
+                  "op": "lte",
+                  "value": 100000
+                }
+              ]
+            }
+          ]
+        }
       }
     ],
     "alsoRequired": [
-      { "te": "కన్వీనర్ కోటా సీటు (మేనేజ్‌మెంట్ / స్పాట్ సీటు కాదు), రెగ్యులర్ కోర్సు", "en": "Convener-quota seat (not management or spot), regular course" },
-      { "te": "ఇంకో స్కాలర్‌షిప్ తీసుకోకూడదు", "en": "Not already getting another scholarship" }
+      {
+        "te": "కన్వీనర్ కోటా సీటు (మేనేజ్‌మెంట్ / స్పాట్ సీటు కాదు), రెగ్యులర్ కోర్సు",
+        "en": "Convener-quota seat (not management or spot), regular course"
+      },
+      {
+        "te": "ఇంకో స్కాలర్‌షిప్ తీసుకోకూడదు",
+        "en": "Not already getting another scholarship"
+      }
     ],
-    "conflictsWith": ["central-sector-scholarship-csss"]
+    "conflictsWith": [
+      "central-sector-scholarship-csss"
+    ]
   },
   {
     "id": "ts-epass-pre-matric-sc",
-    "name": { "te": "ఎస్సీ ప్రీ-మెట్రిక్ స్కాలర్‌షిప్", "en": "Pre-Matric Scholarship for SC students" },
+    "name": {
+      "te": "ఎస్సీ ప్రీ-మెట్రిక్ స్కాలర్‌షిప్",
+      "en": "Pre-Matric Scholarship for SC students"
+    },
     "level": "state",
-    "audience": ["student"],
+    "audience": [
+      "student"
+    ],
     "status": "window_closed",
     "confidence": "high",
     "needsVerification": false,
-    "benefit": { "te": "సంవత్సరానికి ₹3,500 (డే స్కాలర్) / ₹7,000 (హాస్టల్)", "en": "₹3,500 a year (day scholar) / ₹7,000 (hostel)" },
+    "benefit": {
+      "te": "సంవత్సరానికి ₹3,500 (డే స్కాలర్) / ₹7,000 (హాస్టల్)",
+      "en": "₹3,500 a year (day scholar) / ₹7,000 (hostel)"
+    },
     "benefitValue": 3500,
-    "usualWindow": { "te": "సాధారణంగా డిసెంబర్ నుంచి మార్చి మధ్య తెరుస్తారు", "en": "Usually opens between December and March" },
+    "usualWindow": {
+      "te": "సాధారణంగా డిసెంబర్ నుంచి మార్చి మధ్య తెరుస్తారు",
+      "en": "Usually opens between December and March"
+    },
     "officialSourceUrl": "https://telanganaepass.cgg.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "category", "text": { "te": "ఎస్సీ విద్యార్థి", "en": "SC student" }, "if": { "field": "socialCategory", "op": "eq", "value": "SC" } },
-      { "id": "level", "text": { "te": "9 లేదా 10వ తరగతి", "en": "Class 9 or 10" }, "if": { "field": "educationLevel", "op": "eq", "value": "class_9_10" } },
-      { "id": "income", "text": { "te": "కుటుంబ ఆదాయం ₹2.5 లక్షల లోపు", "en": "Family income up to ₹2.5 lakh" }, "if": { "field": "annualFamilyIncome", "op": "lte", "value": 250000 } }
+      {
+        "id": "category",
+        "text": {
+          "te": "ఎస్సీ విద్యార్థి",
+          "en": "SC student"
+        },
+        "if": {
+          "field": "socialCategory",
+          "op": "eq",
+          "value": "SC"
+        }
+      },
+      {
+        "id": "level",
+        "text": {
+          "te": "9 లేదా 10వ తరగతి",
+          "en": "Class 9 or 10"
+        },
+        "if": {
+          "field": "educationLevel",
+          "op": "eq",
+          "value": "class_9_10"
+        }
+      },
+      {
+        "id": "income",
+        "text": {
+          "te": "కుటుంబ ఆదాయం ₹2.5 లక్షల లోపు",
+          "en": "Family income up to ₹2.5 lakh"
+        },
+        "if": {
+          "field": "annualFamilyIncome",
+          "op": "lte",
+          "value": 250000
+        }
+      }
     ]
   },
   {
     "id": "ts-epass-pre-matric-hazardous",
-    "name": { "te": "ప్రమాదకర వృత్తుల తల్లిదండ్రుల పిల్లలకు ప్రీ-మెట్రిక్ స్కాలర్‌షిప్", "en": "Pre-Matric Scholarship for children of parents in hazardous work" },
+    "name": {
+      "te": "ప్రమాదకర వృత్తుల తల్లిదండ్రుల పిల్లలకు ప్రీ-మెట్రిక్ స్కాలర్‌షిప్",
+      "en": "Pre-Matric Scholarship for children of parents in hazardous work"
+    },
     "level": "state",
-    "audience": ["student"],
+    "audience": [
+      "student"
+    ],
     "status": "window_closed",
     "confidence": "high",
     "needsVerification": false,
-    "benefit": { "te": "సంవత్సరానికి ₹3,500 (డే స్కాలర్) / ₹8,000 (హాస్టల్). ఆదాయ పరిమితి లేదు.", "en": "₹3,500 a year (day scholar) / ₹8,000 (hostel). No income limit." },
+    "benefit": {
+      "te": "సంవత్సరానికి ₹3,500 (డే స్కాలర్) / ₹8,000 (హాస్టల్). ఆదాయ పరిమితి లేదు.",
+      "en": "₹3,500 a year (day scholar) / ₹8,000 (hostel). No income limit."
+    },
     "benefitValue": 3500,
-    "usualWindow": { "te": "సాధారణంగా డిసెంబర్ నుంచి మార్చి మధ్య", "en": "Usually opens between December and March" },
+    "usualWindow": {
+      "te": "సాధారణంగా డిసెంబర్ నుంచి మార్చి మధ్య",
+      "en": "Usually opens between December and March"
+    },
     "officialSourceUrl": "https://telanganaepass.cgg.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "parent", "text": { "te": "తల్లి లేదా తండ్రి ప్రమాదకర పని చేస్తారు (మాన్యువల్ స్కావెంజింగ్, చెత్త సేకరణ, తోలు పని)", "en": "A parent does hazardous work (manual scavenging, waste picking, tanning)" }, "if": { "field": "parentOccupation", "op": "eq", "value": "hazardous_work" } },
-      { "id": "level", "text": { "te": "1 నుంచి 10వ తరగతి", "en": "Class 1 to 10" }, "if": { "field": "educationLevel", "op": "in", "value": ["class_1_8", "class_9_10"] } }
+      {
+        "id": "parent",
+        "text": {
+          "te": "తల్లి లేదా తండ్రి ప్రమాదకర పని చేస్తారు (మాన్యువల్ స్కావెంజింగ్, చెత్త సేకరణ, తోలు పని)",
+          "en": "A parent does hazardous work (manual scavenging, waste picking, tanning)"
+        },
+        "if": {
+          "field": "parentOccupation",
+          "op": "eq",
+          "value": "hazardous_work"
+        }
+      },
+      {
+        "id": "level",
+        "text": {
+          "te": "1 నుంచి 10వ తరగతి",
+          "en": "Class 1 to 10"
+        },
+        "if": {
+          "field": "educationLevel",
+          "op": "in",
+          "value": [
+            "class_1_8",
+            "class_9_10"
+          ]
+        }
+      }
     ]
   },
   {
     "id": "ts-ambedkar-overseas-vidya-nidhi",
-    "name": { "te": "అంబేద్కర్ ఓవర్సీస్ విద్యా నిధి (ఎస్సీ / ఎస్టీ)", "en": "Ambedkar Overseas Vidya Nidhi (SC / ST)" },
+    "name": {
+      "te": "అంబేద్కర్ ఓవర్సీస్ విద్యా నిధి (ఎస్సీ / ఎస్టీ)",
+      "en": "Ambedkar Overseas Vidya Nidhi (SC / ST)"
+    },
     "level": "state",
-    "audience": ["student"],
+    "audience": [
+      "student"
+    ],
     "status": "window_closed",
     "confidence": "high",
     "needsVerification": true,
     "verificationNotes": "Next application window not confirmed.",
-    "benefit": { "te": "విదేశీ చదువుకు ₹20 లక్షల వరకు + ఒకవైపు విమాన టికెట్ + వీసా ఫీజు", "en": "Up to ₹20 lakh for studies abroad + one-way air ticket + visa fee" },
+    "benefit": {
+      "te": "విదేశీ చదువుకు ₹20 లక్షల వరకు + ఒకవైపు విమాన టికెట్ + వీసా ఫీజు",
+      "en": "Up to ₹20 lakh for studies abroad + one-way air ticket + visa fee"
+    },
     "benefitValue": 2000000,
-    "usualWindow": { "te": "తదుపరి తేదీలు ఇంకా ప్రకటించలేదు", "en": "Next dates not announced yet" },
+    "usualWindow": {
+      "te": "తదుపరి తేదీలు ఇంకా ప్రకటించలేదు",
+      "en": "Next dates not announced yet"
+    },
     "officialSourceUrl": "https://telanganaepass.cgg.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "category", "text": { "te": "ఎస్సీ లేదా ఎస్టీ", "en": "SC or ST" }, "if": { "field": "socialCategory", "op": "in", "value": ["SC", "ST"] } },
-      { "id": "income", "text": { "te": "కుటుంబ ఆదాయం ₹5 లక్షల లోపు", "en": "Family income below ₹5 lakh" }, "if": { "field": "annualFamilyIncome", "op": "lt", "value": 500000 } },
-      { "id": "marks", "text": { "te": "డిగ్రీలో 60% లేదా ఎక్కువ", "en": "60% or more in graduation" }, "if": { "field": "graduationPercentage", "op": "gte", "value": 60 } },
-      { "id": "admission", "text": { "te": "విదేశీ యూనివర్సిటీలో అడ్మిషన్ ఉంది", "en": "Has an admission at a foreign university" }, "if": { "field": "hasForeignAdmission", "op": "is_true" } }
+      {
+        "id": "level",
+        "text": {
+          "te": "డిగ్రీ పూర్తి చేశారు / పీజీకి వెళ్తున్నారు",
+          "en": "Finished a degree / going for PG"
+        },
+        "if": {
+          "field": "educationLevel",
+          "op": "in",
+          "value": [
+            "ug",
+            "pg"
+          ]
+        }
+      },
+      {
+        "id": "category",
+        "text": {
+          "te": "ఎస్సీ లేదా ఎస్టీ",
+          "en": "SC or ST"
+        },
+        "if": {
+          "field": "socialCategory",
+          "op": "in",
+          "value": [
+            "SC",
+            "ST"
+          ]
+        }
+      },
+      {
+        "id": "income",
+        "text": {
+          "te": "కుటుంబ ఆదాయం ₹5 లక్షల లోపు",
+          "en": "Family income below ₹5 lakh"
+        },
+        "if": {
+          "field": "annualFamilyIncome",
+          "op": "lt",
+          "value": 500000
+        }
+      },
+      {
+        "id": "marks",
+        "text": {
+          "te": "డిగ్రీలో 60% లేదా ఎక్కువ",
+          "en": "60% or more in graduation"
+        },
+        "if": {
+          "field": "graduationPercentage",
+          "op": "gte",
+          "value": 60
+        }
+      },
+      {
+        "id": "admission",
+        "text": {
+          "te": "విదేశీ యూనివర్సిటీలో అడ్మిషన్ ఉంది",
+          "en": "Has an admission at a foreign university"
+        },
+        "if": {
+          "field": "hasForeignAdmission",
+          "op": "is_true"
+        }
+      }
     ],
     "alsoRequired": [
-      { "te": "GRE/GMAT + TOEFL/IELTS/PTE స్కోర్లు", "en": "GRE/GMAT + TOEFL/IELTS/PTE scores" },
-      { "te": "కుటుంబంలో ఒక్కరికే; అమెరికా, యూకే, కెనడా, ఆస్ట్రేలియా, జర్మనీ వంటి దేశాల్లో అడ్మిషన్", "en": "One child per family; admission in the USA, UK, Canada, Australia, Germany or similar listed countries" }
+      {
+        "te": "GRE/GMAT + TOEFL/IELTS/PTE స్కోర్లు",
+        "en": "GRE/GMAT + TOEFL/IELTS/PTE scores"
+      },
+      {
+        "te": "కుటుంబంలో ఒక్కరికే; అమెరికా, యూకే, కెనడా, ఆస్ట్రేలియా, జర్మనీ వంటి దేశాల్లో అడ్మిషన్",
+        "en": "One child per family; admission in the USA, UK, Canada, Australia, Germany or similar listed countries"
+      }
     ]
   },
   {
     "id": "ts-mjp-bc-overseas-vidya-nidhi",
-    "name": { "te": "మహాత్మా జ్యోతిబా ఫూలే బీసీ ఓవర్సీస్ విద్యా నిధి", "en": "Mahatma Jyothiba Phule BC Overseas Vidya Nidhi" },
+    "name": {
+      "te": "మహాత్మా జ్యోతిబా ఫూలే బీసీ ఓవర్సీస్ విద్యా నిధి",
+      "en": "Mahatma Jyothiba Phule BC Overseas Vidya Nidhi"
+    },
     "level": "state",
-    "audience": ["student"],
+    "audience": [
+      "student"
+    ],
     "status": "window_closed",
     "confidence": "medium",
     "needsVerification": true,
     "verificationNotes": "Age limit is from news reports.",
-    "benefit": { "te": "విదేశీ చదువుకు ₹20 లక్షల వరకు", "en": "Up to ₹20 lakh for studies abroad" },
+    "benefit": {
+      "te": "విదేశీ చదువుకు ₹20 లక్షల వరకు",
+      "en": "Up to ₹20 lakh for studies abroad"
+    },
     "benefitValue": 2000000,
-    "usualWindow": { "te": "సాధారణంగా సంవత్సరానికి రెండుసార్లు (గత విండో: సెప్టెంబర్ 2026)", "en": "Usually twice a year (last window: September 2026)" },
+    "usualWindow": {
+      "te": "సాధారణంగా సంవత్సరానికి రెండుసార్లు (గత విండో: సెప్టెంబర్ 2026)",
+      "en": "Usually twice a year (last window: September 2026)"
+    },
     "officialSourceUrl": "https://telanganaepass.cgg.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "category", "text": { "te": "బీసీ లేదా ఈబీసీ", "en": "BC or EBC" }, "if": { "field": "socialCategory", "op": "in", "value": ["BC-A", "BC-B", "BC-C", "BC-D", "BC-E", "EBC"] } },
-      { "id": "income", "text": { "te": "కుటుంబ ఆదాయం ₹5 లక్షల లోపు", "en": "Family income below ₹5 lakh" }, "if": { "field": "annualFamilyIncome", "op": "lt", "value": 500000 } },
-      { "id": "marks", "text": { "te": "డిగ్రీలో 60% లేదా ఎక్కువ", "en": "60% or more in graduation" }, "if": { "field": "graduationPercentage", "op": "gte", "value": 60 } },
-      { "id": "admission", "text": { "te": "విదేశీ అడ్మిషన్ (I-20/CoE) ఉంది", "en": "Has a foreign admission (I-20/CoE)" }, "if": { "field": "hasForeignAdmission", "op": "is_true" } },
-      { "id": "age", "text": { "te": "వయస్సు 35 లోపు", "en": "Age 35 or below" }, "if": { "field": "age", "op": "lte", "value": 35 } }
+      {
+        "id": "level",
+        "text": {
+          "te": "డిగ్రీ పూర్తి చేశారు / పీజీకి వెళ్తున్నారు",
+          "en": "Finished a degree / going for PG"
+        },
+        "if": {
+          "field": "educationLevel",
+          "op": "in",
+          "value": [
+            "ug",
+            "pg"
+          ]
+        }
+      },
+      {
+        "id": "category",
+        "text": {
+          "te": "బీసీ లేదా ఈబీసీ",
+          "en": "BC or EBC"
+        },
+        "if": {
+          "field": "socialCategory",
+          "op": "in",
+          "value": [
+            "BC-A",
+            "BC-B",
+            "BC-C",
+            "BC-D",
+            "BC-E",
+            "EBC"
+          ]
+        }
+      },
+      {
+        "id": "income",
+        "text": {
+          "te": "కుటుంబ ఆదాయం ₹5 లక్షల లోపు",
+          "en": "Family income below ₹5 lakh"
+        },
+        "if": {
+          "field": "annualFamilyIncome",
+          "op": "lt",
+          "value": 500000
+        }
+      },
+      {
+        "id": "marks",
+        "text": {
+          "te": "డిగ్రీలో 60% లేదా ఎక్కువ",
+          "en": "60% or more in graduation"
+        },
+        "if": {
+          "field": "graduationPercentage",
+          "op": "gte",
+          "value": 60
+        }
+      },
+      {
+        "id": "admission",
+        "text": {
+          "te": "విదేశీ అడ్మిషన్ (I-20/CoE) ఉంది",
+          "en": "Has a foreign admission (I-20/CoE)"
+        },
+        "if": {
+          "field": "hasForeignAdmission",
+          "op": "is_true"
+        }
+      },
+      {
+        "id": "age",
+        "text": {
+          "te": "వయస్సు 35 లోపు",
+          "en": "Age 35 or below"
+        },
+        "if": {
+          "field": "age",
+          "op": "lte",
+          "value": 35
+        }
+      }
     ],
-    "alsoRequired": [ { "te": "వీసా + 3 పరీక్ష స్కోర్లలో ఏవైనా 2", "en": "Visa + any 2 of the 3 test scores" } ]
+    "alsoRequired": [
+      {
+        "te": "వీసా + 3 పరీక్ష స్కోర్లలో ఏవైనా 2",
+        "en": "Visa + any 2 of the 3 test scores"
+      }
+    ]
   },
   {
     "id": "ts-cm-overseas-minorities",
-    "name": { "te": "ముఖ్యమంత్రి ఓవర్సీస్ స్కాలర్‌షిప్ (మైనారిటీలు)", "en": "CM Overseas Scholarship for Minorities" },
+    "name": {
+      "te": "ముఖ్యమంత్రి ఓవర్సీస్ స్కాలర్‌షిప్ (మైనారిటీలు)",
+      "en": "CM Overseas Scholarship for Minorities"
+    },
     "level": "state",
-    "audience": ["student"],
+    "audience": [
+      "student"
+    ],
     "status": "window_closed",
     "confidence": "high",
     "needsVerification": false,
-    "benefit": { "te": "విదేశీ చదువుకు ₹20 లక్షల వరకు + విమాన టికెట్", "en": "Up to ₹20 lakh for studies abroad + air ticket" },
+    "benefit": {
+      "te": "విదేశీ చదువుకు ₹20 లక్షల వరకు + విమాన టికెట్",
+      "en": "Up to ₹20 lakh for studies abroad + air ticket"
+    },
     "benefitValue": 2000000,
-    "usualWindow": { "te": "గత చివరి తేదీ: 15 జూలై 2026", "en": "Last deadline was 15 July 2026" },
+    "usualWindow": {
+      "te": "గత చివరి తేదీ: 15 జూలై 2026",
+      "en": "Last deadline was 15 July 2026"
+    },
     "officialSourceUrl": "https://telanganaepass.cgg.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "category", "text": { "te": "మైనారిటీ విద్యార్థి", "en": "Minority student" }, "if": { "field": "socialCategory", "op": "eq", "value": "Minority" } },
-      { "id": "income", "text": { "te": "కుటుంబ ఆదాయం ₹5 లక్షల లోపు", "en": "Family income below ₹5 lakh" }, "if": { "field": "annualFamilyIncome", "op": "lt", "value": 500000 } },
-      { "id": "marks", "text": { "te": "డిగ్రీలో 60% లేదా ఎక్కువ", "en": "60% or more in graduation" }, "if": { "field": "graduationPercentage", "op": "gte", "value": 60 } },
-      { "id": "admission", "text": { "te": "విదేశీ యూనివర్సిటీలో అడ్మిషన్ ఉంది", "en": "Has an admission at a foreign university" }, "if": { "field": "hasForeignAdmission", "op": "is_true" } }
+      {
+        "id": "level",
+        "text": {
+          "te": "డిగ్రీ పూర్తి చేశారు / పీజీకి వెళ్తున్నారు",
+          "en": "Finished a degree / going for PG"
+        },
+        "if": {
+          "field": "educationLevel",
+          "op": "in",
+          "value": [
+            "ug",
+            "pg"
+          ]
+        }
+      },
+      {
+        "id": "category",
+        "text": {
+          "te": "మైనారిటీ విద్యార్థి",
+          "en": "Minority student"
+        },
+        "if": {
+          "field": "socialCategory",
+          "op": "eq",
+          "value": "Minority"
+        }
+      },
+      {
+        "id": "income",
+        "text": {
+          "te": "కుటుంబ ఆదాయం ₹5 లక్షల లోపు",
+          "en": "Family income below ₹5 lakh"
+        },
+        "if": {
+          "field": "annualFamilyIncome",
+          "op": "lt",
+          "value": 500000
+        }
+      },
+      {
+        "id": "marks",
+        "text": {
+          "te": "డిగ్రీలో 60% లేదా ఎక్కువ",
+          "en": "60% or more in graduation"
+        },
+        "if": {
+          "field": "graduationPercentage",
+          "op": "gte",
+          "value": 60
+        }
+      },
+      {
+        "id": "admission",
+        "text": {
+          "te": "విదేశీ యూనివర్సిటీలో అడ్మిషన్ ఉంది",
+          "en": "Has an admission at a foreign university"
+        },
+        "if": {
+          "field": "hasForeignAdmission",
+          "op": "is_true"
+        }
+      }
     ],
-    "alsoRequired": [ { "te": "GRE/GMAT + TOEFL/IELTS/PTE స్కోర్లు", "en": "GRE/GMAT + TOEFL/IELTS/PTE scores" } ]
+    "alsoRequired": [
+      {
+        "te": "GRE/GMAT + TOEFL/IELTS/PTE స్కోర్లు",
+        "en": "GRE/GMAT + TOEFL/IELTS/PTE scores"
+      }
+    ]
   },
   {
     "id": "ts-residential-schools-tgcet",
-    "name": { "te": "గురుకుల పాఠశాలల ప్రవేశం (TGCET)", "en": "Residential (Gurukul) schools admission (TGCET)" },
+    "name": {
+      "te": "గురుకుల పాఠశాలల ప్రవేశం (TGCET)",
+      "en": "Residential (Gurukul) schools admission (TGCET)"
+    },
     "level": "state",
-    "audience": ["student"],
+    "audience": [
+      "student"
+    ],
     "status": "window_closed",
     "confidence": "medium",
     "needsVerification": true,
     "verificationNotes": "Income limit for Class 5 entry is estimated.",
-    "benefit": { "te": "ఉచిత చదువు, హాస్టల్, భోజనం", "en": "Free schooling, boarding and food" },
+    "benefit": {
+      "te": "ఉచిత చదువు, హాస్టల్, భోజనం",
+      "en": "Free schooling, boarding and food"
+    },
     "benefitValue": 60000,
-    "usualWindow": { "te": "నోటిఫికేషన్ డిసెంబర్-జనవరి, పరీక్ష ఫిబ్రవరి", "en": "Notification Dec to Jan, exam in February" },
+    "usualWindow": {
+      "te": "నోటిఫికేషన్ డిసెంబర్-జనవరి, పరీక్ష ఫిబ్రవరి",
+      "en": "Notification Dec to Jan, exam in February"
+    },
     "officialSourceUrl": "https://tgcet.cgg.gov.in/TGCETWEB/",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "level", "text": { "te": "5వ తరగతిలో చేరే పిల్లలు (4వ తరగతి చదువుతున్నారు)", "en": "Child joining Class 5 (now in Class 4)" }, "if": { "field": "educationLevel", "op": "eq", "value": "class_1_8" } },
+      {
+        "id": "level",
+        "text": {
+          "te": "5వ తరగతిలో చేరే పిల్లలు (4వ తరగతి చదువుతున్నారు)",
+          "en": "Child joining Class 5 (now in Class 4)"
+        },
+        "if": {
+          "field": "educationLevel",
+          "op": "eq",
+          "value": "class_1_8"
+        }
+      },
       {
         "id": "income",
-        "text": { "te": "కుటుంబ ఆదాయం ₹1.5 లక్షలు (గ్రామీణ) / ₹2 లక్షలు (పట్టణ) లోపు", "en": "Family income up to ₹1.5 lakh (rural) / ₹2 lakh (urban)" },
-        "if": { "any": [
-          { "field": "annualFamilyIncome", "op": "lte", "value": 150000 },
-          { "all": [ { "field": "area", "op": "eq", "value": "urban" }, { "field": "annualFamilyIncome", "op": "lte", "value": 200000 } ] }
-        ] }
+        "text": {
+          "te": "కుటుంబ ఆదాయం ₹1.5 లక్షలు (గ్రామీణ) / ₹2 లక్షలు (పట్టణ) లోపు",
+          "en": "Family income up to ₹1.5 lakh (rural) / ₹2 lakh (urban)"
+        },
+        "if": {
+          "any": [
+            {
+              "field": "annualFamilyIncome",
+              "op": "lte",
+              "value": 150000
+            },
+            {
+              "all": [
+                {
+                  "field": "area",
+                  "op": "eq",
+                  "value": "urban"
+                },
+                {
+                  "field": "annualFamilyIncome",
+                  "op": "lte",
+                  "value": 200000
+                }
+              ]
+            }
+          ]
+        }
       }
     ],
-    "alsoRequired": [ { "te": "TGCET ప్రవేశ పరీక్ష రాయాలి", "en": "Must write the TGCET entrance exam" } ]
+    "alsoRequired": [
+      {
+        "te": "TGCET ప్రవేశ పరీక్ష రాయాలి",
+        "en": "Must write the TGCET entrance exam"
+      }
+    ]
   },
   {
     "id": "central-nmmss",
-    "name": { "te": "నేషనల్ మీన్స్-కమ్-మెరిట్ స్కాలర్‌షిప్ (NMMSS)", "en": "National Means-cum-Merit Scholarship (NMMSS)" },
+    "name": {
+      "te": "నేషనల్ మీన్స్-కమ్-మెరిట్ స్కాలర్‌షిప్ (NMMSS)",
+      "en": "National Means-cum-Merit Scholarship (NMMSS)"
+    },
     "level": "central",
-    "audience": ["student"],
+    "audience": [
+      "student"
+    ],
     "status": "window_closed",
     "confidence": "high",
     "needsVerification": false,
-    "benefit": { "te": "9 నుంచి 12వ తరగతి వరకు సంవత్సరానికి ₹12,000", "en": "₹12,000 a year for Class 9 to 12" },
+    "benefit": {
+      "te": "9 నుంచి 12వ తరగతి వరకు సంవత్సరానికి ₹12,000",
+      "en": "₹12,000 a year for Class 9 to 12"
+    },
     "benefitValue": 12000,
-    "usualWindow": { "te": "తదుపరి రిజిస్ట్రేషన్ సుమారు జూలై-ఆగస్టు 2027", "en": "Next registration around July to August 2027" },
+    "usualWindow": {
+      "te": "తదుపరి రిజిస్ట్రేషన్ సుమారు జూలై-ఆగస్టు 2027",
+      "en": "Next registration around July to August 2027"
+    },
     "officialSourceUrl": "https://bse.telangana.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "level", "text": { "te": "8వ తరగతి చదువుతున్నారు", "en": "Studying in Class 8" }, "if": { "field": "educationLevel", "op": "eq", "value": "class_1_8" } },
-      { "id": "school", "text": { "te": "ప్రభుత్వ లేదా ఎయిడెడ్ పాఠశాల", "en": "Government or aided school" }, "if": { "field": "institutionType", "op": "in", "value": ["government", "aided"] } },
-      { "id": "income", "text": { "te": "తల్లిదండ్రుల ఆదాయం ₹3.5 లక్షల లోపు", "en": "Parents' income below ₹3.5 lakh" }, "if": { "field": "annualFamilyIncome", "op": "lt", "value": 350000 } },
+      {
+        "id": "level",
+        "text": {
+          "te": "8వ తరగతి చదువుతున్నారు",
+          "en": "Studying in Class 8"
+        },
+        "if": {
+          "field": "educationLevel",
+          "op": "eq",
+          "value": "class_1_8"
+        }
+      },
+      {
+        "id": "school",
+        "text": {
+          "te": "ప్రభుత్వ లేదా ఎయిడెడ్ పాఠశాల",
+          "en": "Government or aided school"
+        },
+        "if": {
+          "field": "institutionType",
+          "op": "in",
+          "value": [
+            "government",
+            "aided"
+          ]
+        }
+      },
+      {
+        "id": "income",
+        "text": {
+          "te": "తల్లిదండ్రుల ఆదాయం ₹3.5 లక్షల లోపు",
+          "en": "Parents' income below ₹3.5 lakh"
+        },
+        "if": {
+          "field": "annualFamilyIncome",
+          "op": "lt",
+          "value": 350000
+        }
+      },
       {
         "id": "marks",
-        "text": { "te": "7వ తరగతిలో 55% (ఎస్సీ/ఎస్టీ 50%)", "en": "55% in Class 7 (SC/ST 50%)" },
-        "if": { "any": [
-          { "field": "marksPercentage", "op": "gte", "value": 55 },
-          { "all": [ { "field": "socialCategory", "op": "in", "value": ["SC", "ST"] }, { "field": "marksPercentage", "op": "gte", "value": 50 } ] }
-        ] }
+        "text": {
+          "te": "7వ తరగతిలో 55% (ఎస్సీ/ఎస్టీ 50%)",
+          "en": "55% in Class 7 (SC/ST 50%)"
+        },
+        "if": {
+          "any": [
+            {
+              "field": "marksPercentage",
+              "op": "gte",
+              "value": 55
+            },
+            {
+              "all": [
+                {
+                  "field": "socialCategory",
+                  "op": "in",
+                  "value": [
+                    "SC",
+                    "ST"
+                  ]
+                },
+                {
+                  "field": "marksPercentage",
+                  "op": "gte",
+                  "value": 50
+                }
+              ]
+            }
+          ]
+        }
       }
     ]
   },
   {
     "id": "central-sector-scholarship-csss",
-    "name": { "te": "సెంట్రల్ సెక్టార్ స్కాలర్‌షిప్ (కాలేజీ విద్యార్థులకు)", "en": "Central Sector Scholarship for College Students" },
+    "name": {
+      "te": "సెంట్రల్ సెక్టార్ స్కాలర్‌షిప్ (కాలేజీ విద్యార్థులకు)",
+      "en": "Central Sector Scholarship for College Students"
+    },
     "level": "central",
-    "audience": ["student"],
+    "audience": [
+      "student"
+    ],
     "status": "open",
     "confidence": "high",
     "needsVerification": false,
-    "benefit": { "te": "డిగ్రీ 1-3 సంవత్సరాలకు ఏడాదికి ₹12,000; పీజీ/ప్రొఫెషనల్ 4-5 సంవత్సరాలకు ₹20,000", "en": "₹12,000 a year for degree years 1 to 3; ₹20,000 for PG / professional years 4 and 5" },
+    "benefit": {
+      "te": "డిగ్రీ 1-3 సంవత్సరాలకు ఏడాదికి ₹12,000; పీజీ/ప్రొఫెషనల్ 4-5 సంవత్సరాలకు ₹20,000",
+      "en": "₹12,000 a year for degree years 1 to 3; ₹20,000 for PG / professional years 4 and 5"
+    },
     "benefitValue": 12000,
     "deadline": "2026-11-30",
     "officialSourceUrl": "https://scholarships.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "marks", "text": { "te": "ఇంటర్ బోర్డులో 80వ పర్సెంటైల్ పైన", "en": "Above the 80th percentile in the Class 12 board" }, "if": { "field": "classXIIPercentile", "op": "gte", "value": 80 } },
-      { "id": "level", "text": { "te": "రెగ్యులర్ డిగ్రీ లేదా పీజీ కోర్సు", "en": "Regular degree or PG course" }, "if": { "field": "educationLevel", "op": "in", "value": ["ug", "pg"] } },
-      { "id": "income", "text": { "te": "కుటుంబ ఆదాయం ₹4.5 లక్షల లోపు", "en": "Family income up to ₹4.5 lakh" }, "if": { "field": "annualFamilyIncome", "op": "lte", "value": 450000 } }
+      {
+        "id": "marks",
+        "text": {
+          "te": "ఇంటర్ బోర్డులో 80వ పర్సెంటైల్ పైన",
+          "en": "Above the 80th percentile in the Class 12 board"
+        },
+        "if": {
+          "field": "classXIIPercentile",
+          "op": "gte",
+          "value": 80
+        }
+      },
+      {
+        "id": "level",
+        "text": {
+          "te": "రెగ్యులర్ డిగ్రీ లేదా పీజీ కోర్సు",
+          "en": "Regular degree or PG course"
+        },
+        "if": {
+          "field": "educationLevel",
+          "op": "in",
+          "value": [
+            "ug",
+            "pg"
+          ]
+        }
+      },
+      {
+        "id": "income",
+        "text": {
+          "te": "కుటుంబ ఆదాయం ₹4.5 లక్షల లోపు",
+          "en": "Family income up to ₹4.5 lakh"
+        },
+        "if": {
+          "field": "annualFamilyIncome",
+          "op": "lte",
+          "value": 450000
+        }
+      }
     ],
-    "alsoRequired": [ { "te": "ఈపాస్ ఫీజు రీయింబర్స్‌మెంట్ లేదా ఇంకో స్కాలర్‌షిప్‌తో కలిపి తీసుకోలేరు", "en": "Cannot be combined with ePASS fee reimbursement or another scholarship" } ],
-    "conflictsWith": ["ts-epass-post-matric"]
+    "alsoRequired": [
+      {
+        "te": "ఈపాస్ ఫీజు రీయింబర్స్‌మెంట్ లేదా ఇంకో స్కాలర్‌షిప్‌తో కలిపి తీసుకోలేరు",
+        "en": "Cannot be combined with ePASS fee reimbursement or another scholarship"
+      }
+    ],
+    "conflictsWith": [
+      "ts-epass-post-matric"
+    ]
   },
   {
     "id": "central-pm-yasasvi-top-class",
-    "name": { "te": "పీఎం యశస్వి టాప్ క్లాస్ స్కాలర్‌షిప్", "en": "PM YASASVI Top Class Scholarship" },
+    "name": {
+      "te": "పీఎం యశస్వి టాప్ క్లాస్ స్కాలర్‌షిప్",
+      "en": "PM YASASVI Top Class Scholarship"
+    },
     "level": "central",
-    "audience": ["student"],
+    "audience": [
+      "student"
+    ],
     "status": "open",
     "confidence": "high",
     "needsVerification": true,
     "verificationNotes": "Amounts are medium confidence.",
-    "benefit": { "te": "కాలేజీ: పూర్తి ట్యూషన్ ఫీజు (ప్రైవేట్‌లో ₹2 లక్షల వరకు) + నెలకు ₹3,000 + పుస్తకాలు", "en": "College: full tuition (up to ₹2 lakh at private institutions) + ₹3,000 a month + books" },
+    "benefit": {
+      "te": "కాలేజీ: పూర్తి ట్యూషన్ ఫీజు (ప్రైవేట్‌లో ₹2 లక్షల వరకు) + నెలకు ₹3,000 + పుస్తకాలు",
+      "en": "College: full tuition (up to ₹2 lakh at private institutions) + ₹3,000 a month + books"
+    },
     "benefitValue": 200000,
     "deadline": "2026-11-30",
     "officialSourceUrl": "https://scholarships.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "category", "text": { "te": "బీసీ / ఈబీసీ / డీఎన్‌టీ", "en": "OBC (BC) / EBC / DNT" }, "if": { "field": "socialCategory", "op": "in", "value": ["BC-A", "BC-B", "BC-C", "BC-D", "BC-E", "EBC"] } },
-      { "id": "income", "text": { "te": "కుటుంబ ఆదాయం ₹2.5 లక్షల లోపు", "en": "Family income up to ₹2.5 lakh" }, "if": { "field": "annualFamilyIncome", "op": "lte", "value": 250000 } },
-      { "id": "level", "text": { "te": "కాలేజీ లేదా 9-12 తరగతి", "en": "College, or Class 9 to 12" }, "if": { "field": "educationLevel", "op": "in", "value": ["class_9_10", "class_11_12", "diploma", "ug", "pg"] } }
+      {
+        "id": "category",
+        "text": {
+          "te": "బీసీ / ఈబీసీ / డీఎన్‌టీ",
+          "en": "OBC (BC) / EBC / DNT"
+        },
+        "if": {
+          "field": "socialCategory",
+          "op": "in",
+          "value": [
+            "BC-A",
+            "BC-B",
+            "BC-C",
+            "BC-D",
+            "BC-E",
+            "EBC"
+          ]
+        }
+      },
+      {
+        "id": "income",
+        "text": {
+          "te": "కుటుంబ ఆదాయం ₹2.5 లక్షల లోపు",
+          "en": "Family income up to ₹2.5 lakh"
+        },
+        "if": {
+          "field": "annualFamilyIncome",
+          "op": "lte",
+          "value": 250000
+        }
+      },
+      {
+        "id": "level",
+        "text": {
+          "te": "కాలేజీ లేదా 9-12 తరగతి",
+          "en": "College, or Class 9 to 12"
+        },
+        "if": {
+          "field": "educationLevel",
+          "op": "in",
+          "value": [
+            "class_9_10",
+            "class_11_12",
+            "diploma",
+            "ug",
+            "pg"
+          ]
+        }
+      }
     ],
-    "alsoRequired": [ { "te": "ప్రభుత్వం గుర్తించిన టాప్ క్లాస్ స్కూల్ లేదా కాలేజీలో అడ్మిషన్", "en": "Admission at a notified top-class school or college" } ]
+    "alsoRequired": [
+      {
+        "te": "ప్రభుత్వం గుర్తించిన టాప్ క్లాస్ స్కూల్ లేదా కాలేజీలో అడ్మిషన్",
+        "en": "Admission at a notified top-class school or college"
+      }
+    ]
   },
   {
     "id": "central-aicte-pragati",
-    "name": { "te": "ఏఐసీటీఈ ప్రగతి స్కాలర్‌షిప్ (విద్యార్థినులకు)", "en": "AICTE Pragati Scholarship for girls" },
+    "name": {
+      "te": "ఏఐసీటీఈ ప్రగతి స్కాలర్‌షిప్ (విద్యార్థినులకు)",
+      "en": "AICTE Pragati Scholarship for girls"
+    },
     "level": "central",
-    "audience": ["student", "women"],
+    "audience": [
+      "student",
+      "women"
+    ],
     "status": "open",
     "confidence": "high",
     "needsVerification": false,
-    "benefit": { "te": "4 సంవత్సరాల వరకు ఏడాదికి ₹50,000", "en": "₹50,000 a year for up to 4 years" },
+    "benefit": {
+      "te": "4 సంవత్సరాల వరకు ఏడాదికి ₹50,000",
+      "en": "₹50,000 a year for up to 4 years"
+    },
     "benefitValue": 50000,
     "deadline": "2026-11-30",
     "officialSourceUrl": "https://scholarships.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "gender", "text": { "te": "విద్యార్థిని", "en": "Female student" }, "if": { "field": "gender", "op": "eq", "value": "female" } },
-      { "id": "course", "text": { "te": "ఏఐసీటీఈ టెక్నికల్ డిగ్రీ లేదా డిప్లొమా", "en": "AICTE technical degree or diploma" }, "if": { "all": [
-        { "field": "educationLevel", "op": "in", "value": ["ug", "diploma"] },
-        { "field": "courseType", "op": "in", "value": ["technical", "professional"] }
-      ] } },
-      { "id": "year", "text": { "te": "మొదటి సంవత్సరం", "en": "First year of the course" }, "if": { "field": "courseYear", "op": "eq", "value": 1 } },
-      { "id": "income", "text": { "te": "కుటుంబ ఆదాయం ₹8 లక్షల లోపు", "en": "Family income up to ₹8 lakh" }, "if": { "field": "annualFamilyIncome", "op": "lte", "value": 800000 } }
+      {
+        "id": "gender",
+        "text": {
+          "te": "విద్యార్థిని",
+          "en": "Female student"
+        },
+        "if": {
+          "field": "gender",
+          "op": "eq",
+          "value": "female"
+        }
+      },
+      {
+        "id": "course",
+        "text": {
+          "te": "ఏఐసీటీఈ టెక్నికల్ డిగ్రీ లేదా డిప్లొమా",
+          "en": "AICTE technical degree or diploma"
+        },
+        "if": {
+          "all": [
+            {
+              "field": "educationLevel",
+              "op": "in",
+              "value": [
+                "ug",
+                "diploma"
+              ]
+            },
+            {
+              "field": "courseType",
+              "op": "in",
+              "value": [
+                "technical",
+                "professional"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "year",
+        "text": {
+          "te": "మొదటి సంవత్సరం",
+          "en": "First year of the course"
+        },
+        "if": {
+          "field": "courseYear",
+          "op": "eq",
+          "value": 1
+        }
+      },
+      {
+        "id": "income",
+        "text": {
+          "te": "కుటుంబ ఆదాయం ₹8 లక్షల లోపు",
+          "en": "Family income up to ₹8 lakh"
+        },
+        "if": {
+          "field": "annualFamilyIncome",
+          "op": "lte",
+          "value": 800000
+        }
+      }
     ],
     "alsoRequired": [
-      { "te": "కుటుంబంలో ఇద్దరు అమ్మాయిలకు మాత్రమే", "en": "At most 2 girls per family" },
-      { "te": "2వ సంవత్సరం వారు లేటరల్ ఎంట్రీ అయితే మాత్రమే", "en": "Year 2 only if you joined through lateral entry" }
+      {
+        "te": "కుటుంబంలో ఇద్దరు అమ్మాయిలకు మాత్రమే",
+        "en": "At most 2 girls per family"
+      },
+      {
+        "te": "2వ సంవత్సరం వారు లేటరల్ ఎంట్రీ అయితే మాత్రమే",
+        "en": "Year 2 only if you joined through lateral entry"
+      }
     ]
   },
   {
     "id": "central-aicte-saksham",
-    "name": { "te": "ఏఐసీటీఈ సక్షమ్ స్కాలర్‌షిప్ (దివ్యాంగ విద్యార్థులకు)", "en": "AICTE Saksham Scholarship for students with disabilities" },
+    "name": {
+      "te": "ఏఐసీటీఈ సక్షమ్ స్కాలర్‌షిప్ (దివ్యాంగ విద్యార్థులకు)",
+      "en": "AICTE Saksham Scholarship for students with disabilities"
+    },
     "level": "central",
-    "audience": ["student"],
+    "audience": [
+      "student"
+    ],
     "status": "open",
     "confidence": "high",
     "needsVerification": false,
-    "benefit": { "te": "ఏడాదికి ₹50,000", "en": "₹50,000 a year" },
+    "benefit": {
+      "te": "ఏడాదికి ₹50,000",
+      "en": "₹50,000 a year"
+    },
     "benefitValue": 50000,
     "deadline": "2026-11-30",
     "officialSourceUrl": "https://scholarships.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "disability", "text": { "te": "40% లేదా ఎక్కువ వైకల్యం", "en": "Disability of 40% or more" }, "if": { "field": "disabilityPercent", "op": "gte", "value": 40 } },
-      { "id": "course", "text": { "te": "ఏఐసీటీఈ టెక్నికల్ డిగ్రీ లేదా డిప్లొమా", "en": "AICTE technical degree or diploma" }, "if": { "all": [
-        { "field": "educationLevel", "op": "in", "value": ["ug", "diploma"] },
-        { "field": "courseType", "op": "in", "value": ["technical", "professional"] }
-      ] } },
-      { "id": "year", "text": { "te": "మొదటి సంవత్సరం", "en": "First year of the course" }, "if": { "field": "courseYear", "op": "eq", "value": 1 } },
-      { "id": "income", "text": { "te": "కుటుంబ ఆదాయం ₹8 లక్షల లోపు", "en": "Family income up to ₹8 lakh" }, "if": { "field": "annualFamilyIncome", "op": "lte", "value": 800000 } }
+      {
+        "id": "disability",
+        "text": {
+          "te": "40% లేదా ఎక్కువ వైకల్యం",
+          "en": "Disability of 40% or more"
+        },
+        "if": {
+          "field": "disabilityPercent",
+          "op": "gte",
+          "value": 40
+        }
+      },
+      {
+        "id": "course",
+        "text": {
+          "te": "ఏఐసీటీఈ టెక్నికల్ డిగ్రీ లేదా డిప్లొమా",
+          "en": "AICTE technical degree or diploma"
+        },
+        "if": {
+          "all": [
+            {
+              "field": "educationLevel",
+              "op": "in",
+              "value": [
+                "ug",
+                "diploma"
+              ]
+            },
+            {
+              "field": "courseType",
+              "op": "in",
+              "value": [
+                "technical",
+                "professional"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "year",
+        "text": {
+          "te": "మొదటి సంవత్సరం",
+          "en": "First year of the course"
+        },
+        "if": {
+          "field": "courseYear",
+          "op": "eq",
+          "value": 1
+        }
+      },
+      {
+        "id": "income",
+        "text": {
+          "te": "కుటుంబ ఆదాయం ₹8 లక్షల లోపు",
+          "en": "Family income up to ₹8 lakh"
+        },
+        "if": {
+          "field": "annualFamilyIncome",
+          "op": "lte",
+          "value": 800000
+        }
+      }
     ]
   }
 ]
