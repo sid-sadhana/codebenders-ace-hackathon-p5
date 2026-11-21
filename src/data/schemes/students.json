@@ -174,6 +174,95 @@
     ],
     "conflictsWith": [
       "central-sector-scholarship-csss"
+    ],
+    "documents": [
+      {
+        "id": "caste-certificate",
+        "onlyIf": {
+          "field": "socialCategory",
+          "op": "in",
+          "value": [
+            "SC",
+            "ST",
+            "BC-A",
+            "BC-B",
+            "BC-C",
+            "BC-D",
+            "BC-E",
+            "EBC",
+            "Minority"
+          ]
+        }
+      },
+      {
+        "id": "income-certificate"
+      },
+      {
+        "id": "ssc-certificate"
+      },
+      {
+        "id": "previous-marksheet"
+      },
+      {
+        "id": "bonafide-certificate"
+      },
+      {
+        "id": "ration-card"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "cet-allotment-order",
+        "onlyIf": {
+          "field": "courseType",
+          "op": "in",
+          "value": [
+            "professional",
+            "technical",
+            "medical"
+          ]
+        }
+      },
+      {
+        "id": "study-certificates"
+      },
+      {
+        "id": "disability-certificate",
+        "onlyIf": {
+          "field": "isDisabled",
+          "op": "is_true"
+        }
+      }
+    ],
+    "steps": [
+      {
+        "te": "ఎస్సీ విద్యార్థులు: ఆధార్ పేరు SSC సర్టిఫికెట్ పేరుతో సరిపోలాలి; లేకపోతే మీసేవలో సరిచేయించుకోండి.",
+        "en": "SC students: your Aadhaar name must match your SSC certificate; fix it at MeeSeva if it doesn't."
+      },
+      {
+        "te": "ఈపాస్ వెబ్‌సైట్‌లో ఫ్రెష్ రిజిస్ట్రేషన్ చేయండి.",
+        "en": "Do a fresh registration on the ePASS website."
+      },
+      {
+        "te": "మీసేవలో బయోమెట్రిక్ ఆధార్ ఆథెంటికేషన్ చేయించుకోండి.",
+        "en": "Do biometric Aadhaar authentication at MeeSeva."
+      },
+      {
+        "te": "పూర్తి దరఖాస్తు నింపి పత్రాలు అప్‌లోడ్ చేయండి.",
+        "en": "Fill the full application and upload the documents."
+      },
+      {
+        "te": "సంతకం చేసిన ప్రింటౌట్‌ను అడ్మిషన్ తర్వాత 15 రోజుల్లో కాలేజీకి ఇవ్వండి.",
+        "en": "Give the signed printout to your college within 15 days of admission."
+      },
+      {
+        "te": "కాలేజీ వెరిఫై చేశాక జిల్లా సంక్షేమ అధికారి మంజూరు చేస్తారు.",
+        "en": "After the college verifies it, the district welfare officer sanctions it."
+      }
     ]
   },
   {
@@ -237,6 +326,37 @@
           "value": 250000
         }
       }
+    ],
+    "documents": [
+      {
+        "id": "caste-certificate"
+      },
+      {
+        "id": "income-certificate"
+      },
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "passport-photo"
+      }
+    ],
+    "steps": [
+      {
+        "te": "ఈపాస్‌లో ప్రీ-మెట్రిక్ విభాగంలో రిజిస్టర్ చేయండి.",
+        "en": "Register in the Pre-Matric section on ePASS."
+      },
+      {
+        "te": "ప్రధానోపాధ్యాయులు వెరిఫై చేస్తారు.",
+        "en": "The headmaster verifies it."
+      },
+      {
+        "te": "డబ్బులు నేరుగా బ్యాంకు ఖాతాకు వస్తాయి.",
+        "en": "Money is paid straight to the bank account."
+      }
     ]
   },
   {
@@ -290,6 +410,31 @@
             "class_9_10"
           ]
         }
+      }
+    ],
+    "documents": [
+      {
+        "id": "occupation-certificate"
+      },
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "bank-passbook"
+      }
+    ],
+    "steps": [
+      {
+        "te": "తల్లి / తండ్రి వృత్తి ధృవీకరణ పత్రం తీసుకోండి.",
+        "en": "Get the parent's occupation certificate."
+      },
+      {
+        "te": "ఈపాస్‌లో ప్రీ-మెట్రిక్ విభాగంలో దరఖాస్తు చేయండి.",
+        "en": "Apply in the Pre-Matric section on ePASS."
+      },
+      {
+        "te": "పాఠశాల వెరిఫై చేశాక డబ్బులు బ్యాంకుకు వస్తాయి.",
+        "en": "After the school verifies, money is paid to the bank."
       }
     ]
   },
@@ -393,6 +538,62 @@
       {
         "te": "కుటుంబంలో ఒక్కరికే; అమెరికా, యూకే, కెనడా, ఆస్ట్రేలియా, జర్మనీ వంటి దేశాల్లో అడ్మిషన్",
         "en": "One child per family; admission in the USA, UK, Canada, Australia, Germany or similar listed countries"
+      }
+    ],
+    "documents": [
+      {
+        "id": "caste-certificate",
+        "onlyIf": {
+          "field": "socialCategory",
+          "op": "in",
+          "value": [
+            "SC",
+            "ST",
+            "BC-A",
+            "BC-B",
+            "BC-C",
+            "BC-D",
+            "BC-E",
+            "EBC",
+            "Minority"
+          ]
+        }
+      },
+      {
+        "id": "income-certificate"
+      },
+      {
+        "id": "degree-marksheets"
+      },
+      {
+        "id": "test-scores"
+      },
+      {
+        "id": "admission-letter-abroad"
+      },
+      {
+        "id": "passport"
+      },
+      {
+        "id": "bank-passbook"
+      }
+    ],
+    "steps": [
+      {
+        "te": "విదేశీ యూనివర్సిటీ అడ్మిషన్, పరీక్ష స్కోర్లు సిద్ధం చేసుకోండి.",
+        "en": "Keep your foreign admission and test scores ready."
+      },
+      {
+        "te": "ఈపాస్ వెబ్‌సైట్‌లో ఓవర్సీస్ విభాగంలో రిజిస్టర్ చేయండి (విండో తెరిచినప్పుడు).",
+        "en": "Register in the Overseas section of the ePASS website when the window opens."
+      },
+      {
+        "te": "పత్రాలు అప్‌లోడ్ చేసి, ప్రింటౌట్ తీసుకోండి.",
+        "en": "Upload documents and keep the printout."
+      },
+      {
+        "te": "ఎంపిక తర్వాత డబ్బులు విడతలుగా వస్తాయి.",
+        "en": "After selection, the money is paid in instalments."
       }
     ]
   },
@@ -509,6 +710,62 @@
         "te": "వీసా + 3 పరీక్ష స్కోర్లలో ఏవైనా 2",
         "en": "Visa + any 2 of the 3 test scores"
       }
+    ],
+    "documents": [
+      {
+        "id": "caste-certificate",
+        "onlyIf": {
+          "field": "socialCategory",
+          "op": "in",
+          "value": [
+            "SC",
+            "ST",
+            "BC-A",
+            "BC-B",
+            "BC-C",
+            "BC-D",
+            "BC-E",
+            "EBC",
+            "Minority"
+          ]
+        }
+      },
+      {
+        "id": "income-certificate"
+      },
+      {
+        "id": "degree-marksheets"
+      },
+      {
+        "id": "test-scores"
+      },
+      {
+        "id": "admission-letter-abroad"
+      },
+      {
+        "id": "passport"
+      },
+      {
+        "id": "bank-passbook"
+      }
+    ],
+    "steps": [
+      {
+        "te": "విదేశీ యూనివర్సిటీ అడ్మిషన్, పరీక్ష స్కోర్లు సిద్ధం చేసుకోండి.",
+        "en": "Keep your foreign admission and test scores ready."
+      },
+      {
+        "te": "ఈపాస్ వెబ్‌సైట్‌లో ఓవర్సీస్ విభాగంలో రిజిస్టర్ చేయండి (విండో తెరిచినప్పుడు).",
+        "en": "Register in the Overseas section of the ePASS website when the window opens."
+      },
+      {
+        "te": "పత్రాలు అప్‌లోడ్ చేసి, ప్రింటౌట్ తీసుకోండి.",
+        "en": "Upload documents and keep the printout."
+      },
+      {
+        "te": "ఎంపిక తర్వాత డబ్బులు విడతలుగా వస్తాయి.",
+        "en": "After selection, the money is paid in instalments."
+      }
     ]
   },
   {
@@ -604,6 +861,62 @@
         "te": "GRE/GMAT + TOEFL/IELTS/PTE స్కోర్లు",
         "en": "GRE/GMAT + TOEFL/IELTS/PTE scores"
       }
+    ],
+    "documents": [
+      {
+        "id": "caste-certificate",
+        "onlyIf": {
+          "field": "socialCategory",
+          "op": "in",
+          "value": [
+            "SC",
+            "ST",
+            "BC-A",
+            "BC-B",
+            "BC-C",
+            "BC-D",
+            "BC-E",
+            "EBC",
+            "Minority"
+          ]
+        }
+      },
+      {
+        "id": "income-certificate"
+      },
+      {
+        "id": "degree-marksheets"
+      },
+      {
+        "id": "test-scores"
+      },
+      {
+        "id": "admission-letter-abroad"
+      },
+      {
+        "id": "passport"
+      },
+      {
+        "id": "bank-passbook"
+      }
+    ],
+    "steps": [
+      {
+        "te": "విదేశీ యూనివర్సిటీ అడ్మిషన్, పరీక్ష స్కోర్లు సిద్ధం చేసుకోండి.",
+        "en": "Keep your foreign admission and test scores ready."
+      },
+      {
+        "te": "ఈపాస్ వెబ్‌సైట్‌లో ఓవర్సీస్ విభాగంలో రిజిస్టర్ చేయండి (విండో తెరిచినప్పుడు).",
+        "en": "Register in the Overseas section of the ePASS website when the window opens."
+      },
+      {
+        "te": "పత్రాలు అప్‌లోడ్ చేసి, ప్రింటౌట్ తీసుకోండి.",
+        "en": "Upload documents and keep the printout."
+      },
+      {
+        "te": "ఎంపిక తర్వాత డబ్బులు విడతలుగా వస్తాయి.",
+        "en": "After selection, the money is paid in instalments."
+      }
     ]
   },
   {
@@ -679,6 +992,49 @@
       {
         "te": "TGCET ప్రవేశ పరీక్ష రాయాలి",
         "en": "Must write the TGCET entrance exam"
+      }
+    ],
+    "documents": [
+      {
+        "id": "caste-certificate",
+        "onlyIf": {
+          "field": "socialCategory",
+          "op": "in",
+          "value": [
+            "SC",
+            "ST",
+            "BC-A",
+            "BC-B",
+            "BC-C",
+            "BC-D",
+            "BC-E",
+            "EBC",
+            "Minority"
+          ]
+        }
+      },
+      {
+        "id": "income-certificate"
+      },
+      {
+        "id": "study-certificates"
+      },
+      {
+        "id": "passport-photo"
+      }
+    ],
+    "steps": [
+      {
+        "te": "డిసెంబర్-జనవరిలో TGCET నోటిఫికేషన్ చూడండి.",
+        "en": "Watch for the TGCET notification in December to January."
+      },
+      {
+        "te": "ఆన్‌లైన్‌లో ₹100 ఫీజుతో దరఖాస్తు చేయండి.",
+        "en": "Apply online with a ₹100 fee."
+      },
+      {
+        "te": "ఫిబ్రవరిలో ప్రవేశ పరీక్ష రాయండి; ర్యాంకు ప్రకారం సీటు వస్తుంది.",
+        "en": "Write the entrance exam in February; seats are given by rank."
       }
     ]
   },
@@ -779,6 +1135,49 @@
           ]
         }
       }
+    ],
+    "documents": [
+      {
+        "id": "income-certificate"
+      },
+      {
+        "id": "caste-certificate",
+        "onlyIf": {
+          "field": "socialCategory",
+          "op": "in",
+          "value": [
+            "SC",
+            "ST",
+            "BC-A",
+            "BC-B",
+            "BC-C",
+            "BC-D",
+            "BC-E",
+            "EBC",
+            "Minority"
+          ]
+        }
+      },
+      {
+        "id": "previous-marksheet"
+      },
+      {
+        "id": "aadhaar-card"
+      }
+    ],
+    "steps": [
+      {
+        "te": "పాఠశాల ద్వారా దరఖాస్తు చేసి ₹100 (ఎస్సీ/ఎస్టీ ₹50) ఫీజు కట్టండి.",
+        "en": "Apply through your school and pay ₹100 (₹50 for SC/ST)."
+      },
+      {
+        "te": "నవంబర్‌లో జరిగే పరీక్ష రాయండి.",
+        "en": "Write the exam held in November."
+      },
+      {
+        "te": "ఎంపికైతే నేషనల్ స్కాలర్‌షిప్ పోర్టల్‌లో దరఖాస్తు చేయండి.",
+        "en": "If selected, apply on the National Scholarship Portal."
+      }
     ]
   },
   {
@@ -851,6 +1250,37 @@
     ],
     "conflictsWith": [
       "ts-epass-post-matric"
+    ],
+    "documents": [
+      {
+        "id": "income-certificate"
+      },
+      {
+        "id": "previous-marksheet"
+      },
+      {
+        "id": "bonafide-certificate"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "aadhaar-card"
+      }
+    ],
+    "steps": [
+      {
+        "te": "నేషనల్ స్కాలర్‌షిప్ పోర్టల్‌లో OTR (వన్ టైమ్ రిజిస్ట్రేషన్) చేయండి (ఫేస్ ఆథెంటికేషన్).",
+        "en": "Do the One Time Registration (OTR) on the National Scholarship Portal (face authentication)."
+      },
+      {
+        "te": "స్కాలర్‌షిప్ ఎంచుకుని దరఖాస్తు నింపండి, పత్రాలు అప్‌లోడ్ చేయండి.",
+        "en": "Choose the scholarship, fill the form and upload documents."
+      },
+      {
+        "te": "మీ కాలేజీ వెరిఫై చేస్తుంది, తర్వాత రాష్ట్రం వెరిఫై చేస్తుంది.",
+        "en": "Your college verifies it, then the state verifies it."
+      }
     ]
   },
   {
@@ -930,6 +1360,40 @@
       {
         "te": "ప్రభుత్వం గుర్తించిన టాప్ క్లాస్ స్కూల్ లేదా కాలేజీలో అడ్మిషన్",
         "en": "Admission at a notified top-class school or college"
+      }
+    ],
+    "documents": [
+      {
+        "id": "income-certificate"
+      },
+      {
+        "id": "previous-marksheet"
+      },
+      {
+        "id": "bonafide-certificate"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "caste-certificate"
+      }
+    ],
+    "steps": [
+      {
+        "te": "నేషనల్ స్కాలర్‌షిప్ పోర్టల్‌లో OTR (వన్ టైమ్ రిజిస్ట్రేషన్) చేయండి (ఫేస్ ఆథెంటికేషన్).",
+        "en": "Do the One Time Registration (OTR) on the National Scholarship Portal (face authentication)."
+      },
+      {
+        "te": "స్కాలర్‌షిప్ ఎంచుకుని దరఖాస్తు నింపండి, పత్రాలు అప్‌లోడ్ చేయండి.",
+        "en": "Choose the scholarship, fill the form and upload documents."
+      },
+      {
+        "te": "మీ కాలేజీ వెరిఫై చేస్తుంది, తర్వాత రాష్ట్రం వెరిఫై చేస్తుంది.",
+        "en": "Your college verifies it, then the state verifies it."
       }
     ]
   },
@@ -1029,6 +1493,40 @@
         "te": "2వ సంవత్సరం వారు లేటరల్ ఎంట్రీ అయితే మాత్రమే",
         "en": "Year 2 only if you joined through lateral entry"
       }
+    ],
+    "documents": [
+      {
+        "id": "income-certificate"
+      },
+      {
+        "id": "previous-marksheet"
+      },
+      {
+        "id": "bonafide-certificate"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "cet-allotment-order"
+      }
+    ],
+    "steps": [
+      {
+        "te": "నేషనల్ స్కాలర్‌షిప్ పోర్టల్‌లో OTR (వన్ టైమ్ రిజిస్ట్రేషన్) చేయండి (ఫేస్ ఆథెంటికేషన్).",
+        "en": "Do the One Time Registration (OTR) on the National Scholarship Portal (face authentication)."
+      },
+      {
+        "te": "స్కాలర్‌షిప్ ఎంచుకుని దరఖాస్తు నింపండి, పత్రాలు అప్‌లోడ్ చేయండి.",
+        "en": "Choose the scholarship, fill the form and upload documents."
+      },
+      {
+        "te": "మీ కాలేజీ వెరిఫై చేస్తుంది, తర్వాత రాష్ట్రం వెరిఫై చేస్తుంది.",
+        "en": "Your college verifies it, then the state verifies it."
+      }
     ]
   },
   {
@@ -1115,6 +1613,43 @@
           "op": "lte",
           "value": 800000
         }
+      }
+    ],
+    "documents": [
+      {
+        "id": "income-certificate"
+      },
+      {
+        "id": "previous-marksheet"
+      },
+      {
+        "id": "bonafide-certificate"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "disability-certificate"
+      },
+      {
+        "id": "cet-allotment-order"
+      }
+    ],
+    "steps": [
+      {
+        "te": "నేషనల్ స్కాలర్‌షిప్ పోర్టల్‌లో OTR (వన్ టైమ్ రిజిస్ట్రేషన్) చేయండి (ఫేస్ ఆథెంటికేషన్).",
+        "en": "Do the One Time Registration (OTR) on the National Scholarship Portal (face authentication)."
+      },
+      {
+        "te": "స్కాలర్‌షిప్ ఎంచుకుని దరఖాస్తు నింపండి, పత్రాలు అప్‌లోడ్ చేయండి.",
+        "en": "Choose the scholarship, fill the form and upload documents."
+      },
+      {
+        "te": "మీ కాలేజీ వెరిఫై చేస్తుంది, తర్వాత రాష్ట్రం వెరిఫై చేస్తుంది.",
+        "en": "Your college verifies it, then the state verifies it."
       }
     ]
   }

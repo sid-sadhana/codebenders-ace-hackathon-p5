@@ -73,7 +73,7 @@ const QUESTION_TEXT: Partial<Record<ProfileField, LocalizedString>> = {
   monthlyElectricityUnits: { te: "నెలకు సుమారు ఎన్ని యూనిట్ల కరెంటు వాడతారు?", en: "About how many units of electricity do you use a month?" },
   hasLpgInOwnName: { te: "గ్యాస్ కనెక్షన్ మీ (మహిళ) పేరు మీద ఉందా?", en: "Is the gas connection in your (the woman's) name?" },
   householdHasLpg: { te: "మీ ఇంట్లో గ్యాస్ కనెక్షన్ ఉందా?", en: "Does your household have a gas connection?" },
-  daughterMarriagePlanned: { te: "త్వరలో మీ కూతురి పెళ్లి ఉందా?", en: "Is your daughter's wedding coming up?" },
+  daughterMarriagePlanned: { te: "మీ ఇంట్లో త్వరలో పెళ్లి ఉందా (మీది లేదా మీ కూతురిది)?", en: "Is a wedding coming up in your family (yours or your daughter's)?" },
   receivesPension: { te: "మీకు ఇప్పటికే ఏదైనా ప్రభుత్వ పింఛన్ వస్తోందా?", en: "Do you already get any government pension?" },
   isGovtEmployeeFamily: { te: "మీ కుటుంబంలో ఎవరైనా ప్రభుత్వ ఉద్యోగి ఉన్నారా?", en: "Is anyone in your family a government employee?" },
   isIncomeTaxPayer: { te: "మీరు ఆదాయపు పన్ను కడతారా?", en: "Do you pay income tax?" },

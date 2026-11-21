@@ -402,9 +402,10 @@ export const FIELD_SPECS: FieldSpec[] = [
   {
     field: "daughterMarriagePlanned",
     kind: "boolean",
-    label: { te: "కూతురి పెళ్లి", en: "Daughter's wedding" },
-    valueLabels: { true: yes("కూతురి పెళ్లి త్వరలో", "Daughter's wedding planned"), false: yes("లేదు", "No") },
-    meaning: "true if a daughter's (or the bride's own) wedding is planned or happened recently.",
+    label: { te: "పెళ్లి", en: "Wedding" },
+    valueLabels: { true: yes("త్వరలో పెళ్లి ఉంది", "Wedding coming up"), false: yes("పెళ్లి లేదు", "No wedding planned") },
+    meaning:
+      "true if a wedding is coming up for the bride: the person herself (a girl or woman who wants to marry, is getting married, 'పెళ్లి చేసుకోవాలి', 'పెళ్లి కుదిరింది', 'wanting to marry', 'engaged') or their daughter ('మా అమ్మాయి పెళ్లి', 'daughter's marriage'). A recent wedding also counts.",
   },
   {
     field: "receivesPension",

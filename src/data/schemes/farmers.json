@@ -57,6 +57,31 @@
         "te": "డబ్బులు రాకపోతే పాస్‌బుక్, బ్యాంకు వివరాలతో AEO/MAOని కలవండి",
         "en": "If you were missed, meet the AEO/MAO with your passbook and bank details"
       }
+    ],
+    "documents": [
+      {
+        "id": "pattadar-passbook"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "aadhaar-card"
+      }
+    ],
+    "steps": [
+      {
+        "te": "భూమి భూ భారతిలో మీ పేరు మీద ఉంటే డబ్బులు ఆటోమేటిక్‌గా బ్యాంకుకు వస్తాయి.",
+        "en": "If the land is in your name in Bhu Bharati, money is paid automatically."
+      },
+      {
+        "te": "రాకపోతే పాస్‌బుక్, బ్యాంకు వివరాలతో AEO / MAOని కలవండి.",
+        "en": "If you were missed, meet the AEO / MAO with your passbook and bank details."
+      },
+      {
+        "te": "సమస్య తీరకపోతే కలెక్టర్‌కు ఫిర్యాదు చేయండి.",
+        "en": "If it isn't fixed, complain to the Collector."
+      }
     ]
   },
   {
@@ -131,6 +156,31 @@
           "op": "is_false"
         }
       }
+    ],
+    "documents": [
+      {
+        "id": "pattadar-passbook"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "aadhaar-card"
+      }
+    ],
+    "steps": [
+      {
+        "te": "pmkisan.gov.in లో 'New Farmer Registration' చేయండి, లేదా CSC / AEO ద్వారా.",
+        "en": "Do 'New Farmer Registration' on pmkisan.gov.in, or through a CSC or AEO."
+      },
+      {
+        "te": "e-KYC పూర్తి చేయండి.",
+        "en": "Complete e-KYC."
+      },
+      {
+        "te": "ఏడాదికి మూడు విడతల్లో డబ్బులు వస్తాయి.",
+        "en": "Money is paid in 3 instalments a year."
+      }
     ]
   },
   {
@@ -168,6 +218,43 @@
             "tenant_farmer"
           ]
         }
+      }
+    ],
+    "documents": [
+      {
+        "id": "pattadar-passbook",
+        "onlyIf": {
+          "field": "isPattadar",
+          "op": "is_true"
+        }
+      },
+      {
+        "id": "cultivation-proof",
+        "onlyIf": {
+          "field": "occupation",
+          "op": "eq",
+          "value": "tenant_farmer"
+        }
+      },
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "passport-photo"
+      }
+    ],
+    "steps": [
+      {
+        "te": "మీ బ్యాంకు, PACS లేదా jansamarth.in లో దరఖాస్తు చేయండి.",
+        "en": "Apply at your bank, PACS or jansamarth.in."
+      },
+      {
+        "te": "బ్యాంకు భూమి / సాగు వివరాలు చూసి కార్డు ఇస్తుంది.",
+        "en": "The bank checks land or cultivation details and issues the card."
+      },
+      {
+        "te": "సకాలంలో కడితే వడ్డీ 4% మాత్రమే.",
+        "en": "Repay on time to pay only 4% interest."
       }
     ]
   },
@@ -243,6 +330,13 @@
           "op": "eq",
           "value": "rural"
         }
+      }
+    ],
+    "documents": [],
+    "steps": [
+      {
+        "te": "చెల్లింపులు ఆగిపోయాయి. కొత్త సమాచారం కోసం గ్రామ పంచాయతీని అడగండి; ఎవరికీ డబ్బులు ఇవ్వకండి.",
+        "en": "Payments have stopped. Ask the Gram Panchayat for updates; don't pay anyone."
       }
     ]
   },
@@ -322,6 +416,13 @@
           "value": 5
         }
       }
+    ],
+    "documents": [],
+    "steps": [
+      {
+        "te": "2026-27 ప్రీమియం కట్టలేదు. AEO దగ్గర స్థితి కనుక్కోండి; కొత్త 'ఇందిరమ్మ కుటుంబ జీవిత బీమా' చూడండి.",
+        "en": "The 2026-27 premium wasn't paid. Check the status with your AEO; see the new Indiramma Kutumba Jeevitha Bima."
+      }
     ]
   },
   {
@@ -360,6 +461,13 @@
             "tenant_farmer"
           ]
         }
+      }
+    ],
+    "documents": [],
+    "steps": [
+      {
+        "te": "తెలంగాణలో ప్రస్తుతం అమలులో లేదు.",
+        "en": "Not running in Telangana right now."
       }
     ]
   }

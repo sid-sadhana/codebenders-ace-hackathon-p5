@@ -1,249 +1,1192 @@
 [
   {
     "id": "ts-cheyutha-old-age",
-    "name": { "te": "చేయూత వృద్ధాప్య పింఛన్", "en": "Cheyutha Old Age Pension" },
+    "name": {
+      "te": "చేయూత వృద్ధాప్య పింఛన్",
+      "en": "Cheyutha Old Age Pension"
+    },
     "level": "state",
-    "audience": ["senior"],
+    "audience": [
+      "senior"
+    ],
     "status": "window_closed",
     "confidence": "medium",
     "needsVerification": true,
     "verificationNotes": "Old-age category was not included in the latest drive (Aug 2026).",
-    "benefit": { "te": "నెలకు ₹2,016", "en": "₹2,016 a month" },
+    "benefit": {
+      "te": "నెలకు ₹2,016",
+      "en": "₹2,016 a month"
+    },
     "benefitValue": 24192,
-    "usualWindow": { "te": "డ్రైవ్‌లలో మాత్రమే. గత డ్రైవ్ 10-31 ఆగస్టు 2026 (వృద్ధాప్య వర్గం లేదు)", "en": "Only in drives. Last drive 10 to 31 Aug 2026 (old-age category not included)" },
+    "usualWindow": {
+      "te": "డ్రైవ్‌లలో మాత్రమే. గత డ్రైవ్ 10-31 ఆగస్టు 2026 (వృద్ధాప్య వర్గం లేదు)",
+      "en": "Only in drives. Last drive 10 to 31 Aug 2026 (old-age category not included)"
+    },
     "officialSourceUrl": "https://cheyutha.telangana.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "age", "text": { "te": "వయస్సు 57 లేదా ఎక్కువ", "en": "Age 57 or above" }, "if": { "field": "age", "op": "gte", "value": 57 } },
+      {
+        "id": "age",
+        "text": {
+          "te": "వయస్సు 57 లేదా ఎక్కువ",
+          "en": "Age 57 or above"
+        },
+        "if": {
+          "field": "age",
+          "op": "gte",
+          "value": 57
+        }
+      },
       {
         "id": "income",
-        "text": { "te": "కుటుంబ ఆదాయం ₹1.5 లక్షలు (గ్రామీణ) / ₹2 లక్షలు (పట్టణ) లోపు", "en": "Family income up to ₹1.5 lakh (rural) / ₹2 lakh (urban)" },
-        "if": { "any": [
-          { "field": "annualFamilyIncome", "op": "lte", "value": 150000 },
-          { "all": [ { "field": "area", "op": "eq", "value": "urban" }, { "field": "annualFamilyIncome", "op": "lte", "value": 200000 } ] }
-        ] }
+        "text": {
+          "te": "కుటుంబ ఆదాయం ₹1.5 లక్షలు (గ్రామీణ) / ₹2 లక్షలు (పట్టణ) లోపు",
+          "en": "Family income up to ₹1.5 lakh (rural) / ₹2 lakh (urban)"
+        },
+        "if": {
+          "any": [
+            {
+              "field": "annualFamilyIncome",
+              "op": "lte",
+              "value": 150000
+            },
+            {
+              "all": [
+                {
+                  "field": "area",
+                  "op": "eq",
+                  "value": "urban"
+                },
+                {
+                  "field": "annualFamilyIncome",
+                  "op": "lte",
+                  "value": 200000
+                }
+              ]
+            }
+          ]
+        }
       },
-      { "id": "no-pension", "exclusion": true, "text": { "te": "ఇప్పటికే ప్రభుత్వ పింఛన్ రావడం లేదు", "en": "Not already getting a government pension" }, "if": { "field": "receivesPension", "op": "is_false" } },
-      { "id": "no-govt-job", "exclusion": true, "text": { "te": "కుటుంబంలో ప్రభుత్వ ఉద్యోగి లేరు", "en": "No government employee in the family" }, "if": { "field": "isGovtEmployeeFamily", "op": "is_false" } },
-      { "id": "land", "exclusion": true, "text": { "te": "భూమి 7.5 ఎకరాల (మెట్ట) లోపు", "en": "Land up to 7.5 acres (dry)" }, "if": { "field": "landAcres", "op": "lte", "value": 7.5 } }
+      {
+        "id": "no-pension",
+        "exclusion": true,
+        "text": {
+          "te": "ఇప్పటికే ప్రభుత్వ పింఛన్ రావడం లేదు",
+          "en": "Not already getting a government pension"
+        },
+        "if": {
+          "field": "receivesPension",
+          "op": "is_false"
+        }
+      },
+      {
+        "id": "no-govt-job",
+        "exclusion": true,
+        "text": {
+          "te": "కుటుంబంలో ప్రభుత్వ ఉద్యోగి లేరు",
+          "en": "No government employee in the family"
+        },
+        "if": {
+          "field": "isGovtEmployeeFamily",
+          "op": "is_false"
+        }
+      },
+      {
+        "id": "land",
+        "exclusion": true,
+        "text": {
+          "te": "భూమి 7.5 ఎకరాల (మెట్ట) లోపు",
+          "en": "Land up to 7.5 acres (dry)"
+        },
+        "if": {
+          "field": "landAcres",
+          "op": "lte",
+          "value": 7.5
+        }
+      }
     ],
-    "alsoRequired": [ { "te": "కుటుంబానికి కారు లేదా పెద్ద వ్యాపారం ఉండకూడదు", "en": "Family should not own a four-wheeler or a large business" } ],
-    "conflictsWith": ["ts-cheyutha-widow", "ts-cheyutha-disabled", "ts-cheyutha-single-women", "ts-cheyutha-weavers", "ts-cheyutha-toddy-tappers", "ts-cheyutha-beedi"]
+    "alsoRequired": [
+      {
+        "te": "కుటుంబానికి కారు లేదా పెద్ద వ్యాపారం ఉండకూడదు",
+        "en": "Family should not own a four-wheeler or a large business"
+      }
+    ],
+    "conflictsWith": [
+      "ts-cheyutha-widow",
+      "ts-cheyutha-disabled",
+      "ts-cheyutha-single-women",
+      "ts-cheyutha-weavers",
+      "ts-cheyutha-toddy-tappers",
+      "ts-cheyutha-beedi"
+    ],
+    "documents": [
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "ration-card"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "age-proof"
+      },
+      {
+        "id": "passport-photo"
+      }
+    ],
+    "steps": [
+      {
+        "te": "చేయూత దరఖాస్తు ఫారం (తెలుగు / ఇంగ్లీష్) తీసుకోండి.",
+        "en": "Get the Cheyutha application form (Telugu or English)."
+      },
+      {
+        "te": "గ్రామ పంచాయతీ కార్యదర్శి / వార్డు అధికారి, MPDO లేదా మీసేవలో ఇవ్వండి.",
+        "en": "Submit it to the Panchayat Secretary or Ward Officer, MPDO, or a MeeSeva centre."
+      },
+      {
+        "te": "అధికారులు ఇంటికి వచ్చి వివరాలు చెక్ చేస్తారు; కలెక్టర్ ఆమోదిస్తారు.",
+        "en": "Officials verify at your home; the Collector approves."
+      },
+      {
+        "te": "మంజూరు లెటర్ వస్తుంది; పింఛన్ బ్యాంకు / పోస్టాఫీసుకు వస్తుంది.",
+        "en": "You receive a sanction letter; the pension is paid to your bank or post office."
+      },
+      {
+        "te": "ప్రజా పాలన / గ్రామ సభలో ఇప్పటికే పూర్తి పత్రాలతో దరఖాస్తు చేసి ఉంటే మళ్లీ అవసరం లేదు.",
+        "en": "If you already applied in Praja Palana or a Gram Sabha with full documents, you don't need to apply again."
+      }
+    ]
   },
   {
     "id": "ts-cheyutha-widow",
-    "name": { "te": "చేయూత వితంతు పింఛన్", "en": "Cheyutha Widow Pension" },
+    "name": {
+      "te": "చేయూత వితంతు పింఛన్",
+      "en": "Cheyutha Widow Pension"
+    },
     "level": "state",
-    "audience": ["senior", "women"],
+    "audience": [
+      "senior",
+      "women"
+    ],
     "status": "window_closed",
     "confidence": "medium",
     "needsVerification": false,
-    "benefit": { "te": "నెలకు ₹2,016", "en": "₹2,016 a month" },
+    "benefit": {
+      "te": "నెలకు ₹2,016",
+      "en": "₹2,016 a month"
+    },
     "benefitValue": 24192,
-    "usualWindow": { "te": "డ్రైవ్‌లలో మాత్రమే. గత డ్రైవ్ 10-31 ఆగస్టు 2026", "en": "Only in drives. Last drive 10 to 31 Aug 2026" },
+    "usualWindow": {
+      "te": "డ్రైవ్‌లలో మాత్రమే. గత డ్రైవ్ 10-31 ఆగస్టు 2026",
+      "en": "Only in drives. Last drive 10 to 31 Aug 2026"
+    },
     "officialSourceUrl": "https://cheyutha.telangana.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "widowed", "text": { "te": "భర్త చనిపోయారు (వితంతువు)", "en": "Husband has passed away (widow)" }, "if": { "field": "maritalStatus", "op": "eq", "value": "widowed" } },
-      { "id": "age", "text": { "te": "వయస్సు 18 లేదా ఎక్కువ", "en": "Age 18 or above" }, "if": { "field": "age", "op": "gte", "value": 18 } },
+      {
+        "id": "widowed",
+        "text": {
+          "te": "భర్త చనిపోయారు (వితంతువు)",
+          "en": "Husband has passed away (widow)"
+        },
+        "if": {
+          "field": "maritalStatus",
+          "op": "eq",
+          "value": "widowed"
+        }
+      },
+      {
+        "id": "age",
+        "text": {
+          "te": "వయస్సు 18 లేదా ఎక్కువ",
+          "en": "Age 18 or above"
+        },
+        "if": {
+          "field": "age",
+          "op": "gte",
+          "value": 18
+        }
+      },
       {
         "id": "income",
-        "text": { "te": "కుటుంబ ఆదాయం ₹1.5 లక్షలు (గ్రామీణ) / ₹2 లక్షలు (పట్టణ) లోపు", "en": "Family income up to ₹1.5 lakh (rural) / ₹2 lakh (urban)" },
-        "if": { "any": [
-          { "field": "annualFamilyIncome", "op": "lte", "value": 150000 },
-          { "all": [ { "field": "area", "op": "eq", "value": "urban" }, { "field": "annualFamilyIncome", "op": "lte", "value": 200000 } ] }
-        ] }
+        "text": {
+          "te": "కుటుంబ ఆదాయం ₹1.5 లక్షలు (గ్రామీణ) / ₹2 లక్షలు (పట్టణ) లోపు",
+          "en": "Family income up to ₹1.5 lakh (rural) / ₹2 lakh (urban)"
+        },
+        "if": {
+          "any": [
+            {
+              "field": "annualFamilyIncome",
+              "op": "lte",
+              "value": 150000
+            },
+            {
+              "all": [
+                {
+                  "field": "area",
+                  "op": "eq",
+                  "value": "urban"
+                },
+                {
+                  "field": "annualFamilyIncome",
+                  "op": "lte",
+                  "value": 200000
+                }
+              ]
+            }
+          ]
+        }
       },
-      { "id": "no-pension", "exclusion": true, "text": { "te": "ఇప్పటికే ప్రభుత్వ పింఛన్ రావడం లేదు", "en": "Not already getting a government pension" }, "if": { "field": "receivesPension", "op": "is_false" } },
-      { "id": "no-govt-job", "exclusion": true, "text": { "te": "కుటుంబంలో ప్రభుత్వ ఉద్యోగి లేరు", "en": "No government employee in the family" }, "if": { "field": "isGovtEmployeeFamily", "op": "is_false" } }
+      {
+        "id": "no-pension",
+        "exclusion": true,
+        "text": {
+          "te": "ఇప్పటికే ప్రభుత్వ పింఛన్ రావడం లేదు",
+          "en": "Not already getting a government pension"
+        },
+        "if": {
+          "field": "receivesPension",
+          "op": "is_false"
+        }
+      },
+      {
+        "id": "no-govt-job",
+        "exclusion": true,
+        "text": {
+          "te": "కుటుంబంలో ప్రభుత్వ ఉద్యోగి లేరు",
+          "en": "No government employee in the family"
+        },
+        "if": {
+          "field": "isGovtEmployeeFamily",
+          "op": "is_false"
+        }
+      }
     ],
-    "alsoRequired": [ { "te": "భర్త మరణ ధృవీకరణ పత్రం", "en": "Husband's death certificate" } ],
-    "conflictsWith": ["ts-cheyutha-old-age", "ts-cheyutha-disabled", "ts-cheyutha-single-women"]
+    "alsoRequired": [
+      {
+        "te": "భర్త మరణ ధృవీకరణ పత్రం",
+        "en": "Husband's death certificate"
+      }
+    ],
+    "conflictsWith": [
+      "ts-cheyutha-old-age",
+      "ts-cheyutha-disabled",
+      "ts-cheyutha-single-women"
+    ],
+    "documents": [
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "ration-card"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "age-proof"
+      },
+      {
+        "id": "passport-photo"
+      },
+      {
+        "id": "spouse-death-certificate"
+      }
+    ],
+    "steps": [
+      {
+        "te": "చేయూత దరఖాస్తు ఫారం (తెలుగు / ఇంగ్లీష్) తీసుకోండి.",
+        "en": "Get the Cheyutha application form (Telugu or English)."
+      },
+      {
+        "te": "గ్రామ పంచాయతీ కార్యదర్శి / వార్డు అధికారి, MPDO లేదా మీసేవలో ఇవ్వండి.",
+        "en": "Submit it to the Panchayat Secretary or Ward Officer, MPDO, or a MeeSeva centre."
+      },
+      {
+        "te": "అధికారులు ఇంటికి వచ్చి వివరాలు చెక్ చేస్తారు; కలెక్టర్ ఆమోదిస్తారు.",
+        "en": "Officials verify at your home; the Collector approves."
+      },
+      {
+        "te": "మంజూరు లెటర్ వస్తుంది; పింఛన్ బ్యాంకు / పోస్టాఫీసుకు వస్తుంది.",
+        "en": "You receive a sanction letter; the pension is paid to your bank or post office."
+      },
+      {
+        "te": "ప్రజా పాలన / గ్రామ సభలో ఇప్పటికే పూర్తి పత్రాలతో దరఖాస్తు చేసి ఉంటే మళ్లీ అవసరం లేదు.",
+        "en": "If you already applied in Praja Palana or a Gram Sabha with full documents, you don't need to apply again."
+      }
+    ]
   },
   {
     "id": "ts-cheyutha-disabled",
-    "name": { "te": "చేయూత దివ్యాంగుల పింఛన్", "en": "Cheyutha Disability Pension" },
+    "name": {
+      "te": "చేయూత దివ్యాంగుల పింఛన్",
+      "en": "Cheyutha Disability Pension"
+    },
     "level": "state",
-    "audience": ["senior", "family"],
+    "audience": [
+      "senior",
+      "family"
+    ],
     "status": "window_closed",
     "confidence": "medium",
     "needsVerification": false,
-    "benefit": { "te": "నెలకు ₹4,016", "en": "₹4,016 a month" },
+    "benefit": {
+      "te": "నెలకు ₹4,016",
+      "en": "₹4,016 a month"
+    },
     "benefitValue": 48192,
-    "usualWindow": { "te": "డ్రైవ్‌లలో మాత్రమే. గత డ్రైవ్ 10-31 ఆగస్టు 2026", "en": "Only in drives. Last drive 10 to 31 Aug 2026" },
+    "usualWindow": {
+      "te": "డ్రైవ్‌లలో మాత్రమే. గత డ్రైవ్ 10-31 ఆగస్టు 2026",
+      "en": "Only in drives. Last drive 10 to 31 Aug 2026"
+    },
     "officialSourceUrl": "https://cheyutha.telangana.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "disability", "text": { "te": "40% లేదా ఎక్కువ వైకల్యం (వినికిడి 51%)", "en": "Disability of 40% or more (hearing 51%)" }, "if": { "field": "disabilityPercent", "op": "gte", "value": 40 } },
+      {
+        "id": "disability",
+        "text": {
+          "te": "40% లేదా ఎక్కువ వైకల్యం (వినికిడి 51%)",
+          "en": "Disability of 40% or more (hearing 51%)"
+        },
+        "if": {
+          "field": "disabilityPercent",
+          "op": "gte",
+          "value": 40
+        }
+      },
       {
         "id": "income",
-        "text": { "te": "కుటుంబ ఆదాయం ₹1.5 లక్షలు (గ్రామీణ) / ₹2 లక్షలు (పట్టణ) లోపు", "en": "Family income up to ₹1.5 lakh (rural) / ₹2 lakh (urban)" },
-        "if": { "any": [
-          { "field": "annualFamilyIncome", "op": "lte", "value": 150000 },
-          { "all": [ { "field": "area", "op": "eq", "value": "urban" }, { "field": "annualFamilyIncome", "op": "lte", "value": 200000 } ] }
-        ] }
+        "text": {
+          "te": "కుటుంబ ఆదాయం ₹1.5 లక్షలు (గ్రామీణ) / ₹2 లక్షలు (పట్టణ) లోపు",
+          "en": "Family income up to ₹1.5 lakh (rural) / ₹2 lakh (urban)"
+        },
+        "if": {
+          "any": [
+            {
+              "field": "annualFamilyIncome",
+              "op": "lte",
+              "value": 150000
+            },
+            {
+              "all": [
+                {
+                  "field": "area",
+                  "op": "eq",
+                  "value": "urban"
+                },
+                {
+                  "field": "annualFamilyIncome",
+                  "op": "lte",
+                  "value": 200000
+                }
+              ]
+            }
+          ]
+        }
       },
-      { "id": "no-pension", "exclusion": true, "text": { "te": "ఇప్పటికే ప్రభుత్వ పింఛన్ రావడం లేదు", "en": "Not already getting a government pension" }, "if": { "field": "receivesPension", "op": "is_false" } },
-      { "id": "no-govt-job", "exclusion": true, "text": { "te": "కుటుంబంలో ప్రభుత్వ ఉద్యోగి లేరు", "en": "No government employee in the family" }, "if": { "field": "isGovtEmployeeFamily", "op": "is_false" } }
+      {
+        "id": "no-pension",
+        "exclusion": true,
+        "text": {
+          "te": "ఇప్పటికే ప్రభుత్వ పింఛన్ రావడం లేదు",
+          "en": "Not already getting a government pension"
+        },
+        "if": {
+          "field": "receivesPension",
+          "op": "is_false"
+        }
+      },
+      {
+        "id": "no-govt-job",
+        "exclusion": true,
+        "text": {
+          "te": "కుటుంబంలో ప్రభుత్వ ఉద్యోగి లేరు",
+          "en": "No government employee in the family"
+        },
+        "if": {
+          "field": "isGovtEmployeeFamily",
+          "op": "is_false"
+        }
+      }
     ],
-    "alsoRequired": [ { "te": "సదరం (SADAREM) / UDID వైకల్య ధృవీకరణ పత్రం", "en": "SADAREM / UDID disability certificate" } ],
-    "conflictsWith": ["ts-cheyutha-old-age", "ts-cheyutha-widow"]
+    "alsoRequired": [
+      {
+        "te": "సదరం (SADAREM) / UDID వైకల్య ధృవీకరణ పత్రం",
+        "en": "SADAREM / UDID disability certificate"
+      }
+    ],
+    "conflictsWith": [
+      "ts-cheyutha-old-age",
+      "ts-cheyutha-widow"
+    ],
+    "documents": [
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "ration-card"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "age-proof"
+      },
+      {
+        "id": "passport-photo"
+      },
+      {
+        "id": "disability-certificate"
+      }
+    ],
+    "steps": [
+      {
+        "te": "చేయూత దరఖాస్తు ఫారం (తెలుగు / ఇంగ్లీష్) తీసుకోండి.",
+        "en": "Get the Cheyutha application form (Telugu or English)."
+      },
+      {
+        "te": "గ్రామ పంచాయతీ కార్యదర్శి / వార్డు అధికారి, MPDO లేదా మీసేవలో ఇవ్వండి.",
+        "en": "Submit it to the Panchayat Secretary or Ward Officer, MPDO, or a MeeSeva centre."
+      },
+      {
+        "te": "అధికారులు ఇంటికి వచ్చి వివరాలు చెక్ చేస్తారు; కలెక్టర్ ఆమోదిస్తారు.",
+        "en": "Officials verify at your home; the Collector approves."
+      },
+      {
+        "te": "మంజూరు లెటర్ వస్తుంది; పింఛన్ బ్యాంకు / పోస్టాఫీసుకు వస్తుంది.",
+        "en": "You receive a sanction letter; the pension is paid to your bank or post office."
+      },
+      {
+        "te": "ప్రజా పాలన / గ్రామ సభలో ఇప్పటికే పూర్తి పత్రాలతో దరఖాస్తు చేసి ఉంటే మళ్లీ అవసరం లేదు.",
+        "en": "If you already applied in Praja Palana or a Gram Sabha with full documents, you don't need to apply again."
+      }
+    ]
   },
   {
     "id": "ts-cheyutha-single-women",
-    "name": { "te": "చేయూత ఒంటరి మహిళల పింఛన్", "en": "Cheyutha Single Women Pension" },
+    "name": {
+      "te": "చేయూత ఒంటరి మహిళల పింఛన్",
+      "en": "Cheyutha Single Women Pension"
+    },
     "level": "state",
-    "audience": ["women"],
+    "audience": [
+      "women"
+    ],
     "status": "window_closed",
     "confidence": "medium",
     "needsVerification": false,
-    "benefit": { "te": "నెలకు ₹2,016", "en": "₹2,016 a month" },
+    "benefit": {
+      "te": "నెలకు ₹2,016",
+      "en": "₹2,016 a month"
+    },
     "benefitValue": 24192,
-    "usualWindow": { "te": "డ్రైవ్‌లలో మాత్రమే", "en": "Only in drives" },
+    "usualWindow": {
+      "te": "డ్రైవ్‌లలో మాత్రమే",
+      "en": "Only in drives"
+    },
     "officialSourceUrl": "https://cheyutha.telangana.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "female", "text": { "te": "మహిళ", "en": "Woman" }, "if": { "field": "gender", "op": "eq", "value": "female" } },
+      {
+        "id": "female",
+        "text": {
+          "te": "మహిళ",
+          "en": "Woman"
+        },
+        "if": {
+          "field": "gender",
+          "op": "eq",
+          "value": "female"
+        }
+      },
       {
         "id": "single",
-        "text": { "te": "భర్త నుంచి విడిపోయారు, లేదా పెళ్లి కాలేదు మరియు వయస్సు 30 పైన (గ్రామీణ) / 35 పైన (పట్టణ)", "en": "Separated from husband, or unmarried and over 30 (rural) / 35 (urban)" },
-        "if": { "any": [
-          { "field": "maritalStatus", "op": "eq", "value": "separated" },
-          { "all": [
-            { "field": "maritalStatus", "op": "eq", "value": "unmarried" },
-            { "any": [
-              { "all": [ { "field": "area", "op": "eq", "value": "rural" }, { "field": "age", "op": "gt", "value": 30 } ] },
-              { "all": [ { "field": "area", "op": "eq", "value": "urban" }, { "field": "age", "op": "gt", "value": 35 } ] }
-            ] }
-          ] }
-        ] }
+        "text": {
+          "te": "భర్త నుంచి విడిపోయారు, లేదా పెళ్లి కాలేదు మరియు వయస్సు 30 పైన (గ్రామీణ) / 35 పైన (పట్టణ)",
+          "en": "Separated from husband, or unmarried and over 30 (rural) / 35 (urban)"
+        },
+        "if": {
+          "any": [
+            {
+              "field": "maritalStatus",
+              "op": "eq",
+              "value": "separated"
+            },
+            {
+              "all": [
+                {
+                  "field": "maritalStatus",
+                  "op": "eq",
+                  "value": "unmarried"
+                },
+                {
+                  "any": [
+                    {
+                      "all": [
+                        {
+                          "field": "area",
+                          "op": "eq",
+                          "value": "rural"
+                        },
+                        {
+                          "field": "age",
+                          "op": "gt",
+                          "value": 30
+                        }
+                      ]
+                    },
+                    {
+                      "all": [
+                        {
+                          "field": "area",
+                          "op": "eq",
+                          "value": "urban"
+                        },
+                        {
+                          "field": "age",
+                          "op": "gt",
+                          "value": 35
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       },
       {
         "id": "income",
-        "text": { "te": "కుటుంబ ఆదాయం ₹1.5 లక్షలు (గ్రామీణ) / ₹2 లక్షలు (పట్టణ) లోపు", "en": "Family income up to ₹1.5 lakh (rural) / ₹2 lakh (urban)" },
-        "if": { "any": [
-          { "field": "annualFamilyIncome", "op": "lte", "value": 150000 },
-          { "all": [ { "field": "area", "op": "eq", "value": "urban" }, { "field": "annualFamilyIncome", "op": "lte", "value": 200000 } ] }
-        ] }
+        "text": {
+          "te": "కుటుంబ ఆదాయం ₹1.5 లక్షలు (గ్రామీణ) / ₹2 లక్షలు (పట్టణ) లోపు",
+          "en": "Family income up to ₹1.5 lakh (rural) / ₹2 lakh (urban)"
+        },
+        "if": {
+          "any": [
+            {
+              "field": "annualFamilyIncome",
+              "op": "lte",
+              "value": 150000
+            },
+            {
+              "all": [
+                {
+                  "field": "area",
+                  "op": "eq",
+                  "value": "urban"
+                },
+                {
+                  "field": "annualFamilyIncome",
+                  "op": "lte",
+                  "value": 200000
+                }
+              ]
+            }
+          ]
+        }
       },
-      { "id": "no-pension", "exclusion": true, "text": { "te": "ఇప్పటికే ప్రభుత్వ పింఛన్ రావడం లేదు", "en": "Not already getting a government pension" }, "if": { "field": "receivesPension", "op": "is_false" } }
+      {
+        "id": "no-pension",
+        "exclusion": true,
+        "text": {
+          "te": "ఇప్పటికే ప్రభుత్వ పింఛన్ రావడం లేదు",
+          "en": "Not already getting a government pension"
+        },
+        "if": {
+          "field": "receivesPension",
+          "op": "is_false"
+        }
+      }
     ],
-    "alsoRequired": [ { "te": "విడిపోయి ఒక సంవత్సరం పైగా అయి ఉండాలి", "en": "Separated for more than one year" } ],
-    "conflictsWith": ["ts-cheyutha-old-age", "ts-cheyutha-widow"]
+    "alsoRequired": [
+      {
+        "te": "విడిపోయి ఒక సంవత్సరం పైగా అయి ఉండాలి",
+        "en": "Separated for more than one year"
+      }
+    ],
+    "conflictsWith": [
+      "ts-cheyutha-old-age",
+      "ts-cheyutha-widow"
+    ],
+    "documents": [
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "ration-card"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "age-proof"
+      },
+      {
+        "id": "passport-photo"
+      }
+    ],
+    "steps": [
+      {
+        "te": "చేయూత దరఖాస్తు ఫారం (తెలుగు / ఇంగ్లీష్) తీసుకోండి.",
+        "en": "Get the Cheyutha application form (Telugu or English)."
+      },
+      {
+        "te": "గ్రామ పంచాయతీ కార్యదర్శి / వార్డు అధికారి, MPDO లేదా మీసేవలో ఇవ్వండి.",
+        "en": "Submit it to the Panchayat Secretary or Ward Officer, MPDO, or a MeeSeva centre."
+      },
+      {
+        "te": "అధికారులు ఇంటికి వచ్చి వివరాలు చెక్ చేస్తారు; కలెక్టర్ ఆమోదిస్తారు.",
+        "en": "Officials verify at your home; the Collector approves."
+      },
+      {
+        "te": "మంజూరు లెటర్ వస్తుంది; పింఛన్ బ్యాంకు / పోస్టాఫీసుకు వస్తుంది.",
+        "en": "You receive a sanction letter; the pension is paid to your bank or post office."
+      },
+      {
+        "te": "ప్రజా పాలన / గ్రామ సభలో ఇప్పటికే పూర్తి పత్రాలతో దరఖాస్తు చేసి ఉంటే మళ్లీ అవసరం లేదు.",
+        "en": "If you already applied in Praja Palana or a Gram Sabha with full documents, you don't need to apply again."
+      }
+    ]
   },
   {
     "id": "ts-cheyutha-weavers",
-    "name": { "te": "చేయూత చేనేత కార్మికుల పింఛన్", "en": "Cheyutha Weavers Pension" },
+    "name": {
+      "te": "చేయూత చేనేత కార్మికుల పింఛన్",
+      "en": "Cheyutha Weavers Pension"
+    },
     "level": "state",
-    "audience": ["senior", "worker"],
+    "audience": [
+      "senior",
+      "worker"
+    ],
     "status": "window_closed",
     "confidence": "medium",
     "needsVerification": false,
-    "benefit": { "te": "నెలకు ₹2,016", "en": "₹2,016 a month" },
+    "benefit": {
+      "te": "నెలకు ₹2,016",
+      "en": "₹2,016 a month"
+    },
     "benefitValue": 24192,
-    "usualWindow": { "te": "డ్రైవ్‌లలో మాత్రమే", "en": "Only in drives" },
+    "usualWindow": {
+      "te": "డ్రైవ్‌లలో మాత్రమే",
+      "en": "Only in drives"
+    },
     "officialSourceUrl": "https://cheyutha.telangana.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "occupation", "text": { "te": "చేనేత కార్మికులు", "en": "Weaver" }, "if": { "field": "occupation", "op": "eq", "value": "weaver" } },
-      { "id": "age", "text": { "te": "వయస్సు 50 లేదా ఎక్కువ", "en": "Age 50 or above" }, "if": { "field": "age", "op": "gte", "value": 50 } },
-      { "id": "no-pension", "exclusion": true, "text": { "te": "ఇప్పటికే ప్రభుత్వ పింఛన్ రావడం లేదు", "en": "Not already getting a government pension" }, "if": { "field": "receivesPension", "op": "is_false" } }
+      {
+        "id": "occupation",
+        "text": {
+          "te": "చేనేత కార్మికులు",
+          "en": "Weaver"
+        },
+        "if": {
+          "field": "occupation",
+          "op": "eq",
+          "value": "weaver"
+        }
+      },
+      {
+        "id": "age",
+        "text": {
+          "te": "వయస్సు 50 లేదా ఎక్కువ",
+          "en": "Age 50 or above"
+        },
+        "if": {
+          "field": "age",
+          "op": "gte",
+          "value": 50
+        }
+      },
+      {
+        "id": "no-pension",
+        "exclusion": true,
+        "text": {
+          "te": "ఇప్పటికే ప్రభుత్వ పింఛన్ రావడం లేదు",
+          "en": "Not already getting a government pension"
+        },
+        "if": {
+          "field": "receivesPension",
+          "op": "is_false"
+        }
+      }
     ],
-    "conflictsWith": ["ts-cheyutha-old-age"]
+    "conflictsWith": [
+      "ts-cheyutha-old-age"
+    ],
+    "documents": [
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "ration-card"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "age-proof"
+      },
+      {
+        "id": "passport-photo"
+      },
+      {
+        "id": "occupation-certificate"
+      }
+    ],
+    "steps": [
+      {
+        "te": "చేయూత దరఖాస్తు ఫారం (తెలుగు / ఇంగ్లీష్) తీసుకోండి.",
+        "en": "Get the Cheyutha application form (Telugu or English)."
+      },
+      {
+        "te": "గ్రామ పంచాయతీ కార్యదర్శి / వార్డు అధికారి, MPDO లేదా మీసేవలో ఇవ్వండి.",
+        "en": "Submit it to the Panchayat Secretary or Ward Officer, MPDO, or a MeeSeva centre."
+      },
+      {
+        "te": "అధికారులు ఇంటికి వచ్చి వివరాలు చెక్ చేస్తారు; కలెక్టర్ ఆమోదిస్తారు.",
+        "en": "Officials verify at your home; the Collector approves."
+      },
+      {
+        "te": "మంజూరు లెటర్ వస్తుంది; పింఛన్ బ్యాంకు / పోస్టాఫీసుకు వస్తుంది.",
+        "en": "You receive a sanction letter; the pension is paid to your bank or post office."
+      },
+      {
+        "te": "ప్రజా పాలన / గ్రామ సభలో ఇప్పటికే పూర్తి పత్రాలతో దరఖాస్తు చేసి ఉంటే మళ్లీ అవసరం లేదు.",
+        "en": "If you already applied in Praja Palana or a Gram Sabha with full documents, you don't need to apply again."
+      }
+    ]
   },
   {
     "id": "ts-cheyutha-toddy-tappers",
-    "name": { "te": "చేయూత గీత కార్మికుల పింఛన్", "en": "Cheyutha Toddy Tappers Pension" },
+    "name": {
+      "te": "చేయూత గీత కార్మికుల పింఛన్",
+      "en": "Cheyutha Toddy Tappers Pension"
+    },
     "level": "state",
-    "audience": ["senior", "worker"],
+    "audience": [
+      "senior",
+      "worker"
+    ],
     "status": "window_closed",
     "confidence": "medium",
     "needsVerification": false,
-    "benefit": { "te": "నెలకు ₹2,016", "en": "₹2,016 a month" },
+    "benefit": {
+      "te": "నెలకు ₹2,016",
+      "en": "₹2,016 a month"
+    },
     "benefitValue": 24192,
-    "usualWindow": { "te": "డ్రైవ్‌లలో మాత్రమే", "en": "Only in drives" },
+    "usualWindow": {
+      "te": "డ్రైవ్‌లలో మాత్రమే",
+      "en": "Only in drives"
+    },
     "officialSourceUrl": "https://cheyutha.telangana.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "occupation", "text": { "te": "గీత కార్మికులు", "en": "Toddy tapper" }, "if": { "field": "occupation", "op": "eq", "value": "toddy_tapper" } },
-      { "id": "age", "text": { "te": "వయస్సు 50 లేదా ఎక్కువ", "en": "Age 50 or above" }, "if": { "field": "age", "op": "gte", "value": 50 } },
-      { "id": "no-pension", "exclusion": true, "text": { "te": "ఇప్పటికే ప్రభుత్వ పింఛన్ రావడం లేదు", "en": "Not already getting a government pension" }, "if": { "field": "receivesPension", "op": "is_false" } }
+      {
+        "id": "occupation",
+        "text": {
+          "te": "గీత కార్మికులు",
+          "en": "Toddy tapper"
+        },
+        "if": {
+          "field": "occupation",
+          "op": "eq",
+          "value": "toddy_tapper"
+        }
+      },
+      {
+        "id": "age",
+        "text": {
+          "te": "వయస్సు 50 లేదా ఎక్కువ",
+          "en": "Age 50 or above"
+        },
+        "if": {
+          "field": "age",
+          "op": "gte",
+          "value": 50
+        }
+      },
+      {
+        "id": "no-pension",
+        "exclusion": true,
+        "text": {
+          "te": "ఇప్పటికే ప్రభుత్వ పింఛన్ రావడం లేదు",
+          "en": "Not already getting a government pension"
+        },
+        "if": {
+          "field": "receivesPension",
+          "op": "is_false"
+        }
+      }
     ],
-    "alsoRequired": [ { "te": "గీత కార్మికుల సహకార సంఘం సభ్యత్వం", "en": "Toddy tappers' cooperative society membership" } ],
-    "conflictsWith": ["ts-cheyutha-old-age"]
+    "alsoRequired": [
+      {
+        "te": "గీత కార్మికుల సహకార సంఘం సభ్యత్వం",
+        "en": "Toddy tappers' cooperative society membership"
+      }
+    ],
+    "conflictsWith": [
+      "ts-cheyutha-old-age"
+    ],
+    "documents": [
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "ration-card"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "age-proof"
+      },
+      {
+        "id": "passport-photo"
+      },
+      {
+        "id": "society-membership"
+      }
+    ],
+    "steps": [
+      {
+        "te": "చేయూత దరఖాస్తు ఫారం (తెలుగు / ఇంగ్లీష్) తీసుకోండి.",
+        "en": "Get the Cheyutha application form (Telugu or English)."
+      },
+      {
+        "te": "గ్రామ పంచాయతీ కార్యదర్శి / వార్డు అధికారి, MPDO లేదా మీసేవలో ఇవ్వండి.",
+        "en": "Submit it to the Panchayat Secretary or Ward Officer, MPDO, or a MeeSeva centre."
+      },
+      {
+        "te": "అధికారులు ఇంటికి వచ్చి వివరాలు చెక్ చేస్తారు; కలెక్టర్ ఆమోదిస్తారు.",
+        "en": "Officials verify at your home; the Collector approves."
+      },
+      {
+        "te": "మంజూరు లెటర్ వస్తుంది; పింఛన్ బ్యాంకు / పోస్టాఫీసుకు వస్తుంది.",
+        "en": "You receive a sanction letter; the pension is paid to your bank or post office."
+      },
+      {
+        "te": "ప్రజా పాలన / గ్రామ సభలో ఇప్పటికే పూర్తి పత్రాలతో దరఖాస్తు చేసి ఉంటే మళ్లీ అవసరం లేదు.",
+        "en": "If you already applied in Praja Palana or a Gram Sabha with full documents, you don't need to apply again."
+      }
+    ]
   },
   {
     "id": "ts-cheyutha-beedi",
-    "name": { "te": "చేయూత బీడీ కార్మికుల పింఛన్", "en": "Cheyutha Beedi Workers Pension" },
+    "name": {
+      "te": "చేయూత బీడీ కార్మికుల పింఛన్",
+      "en": "Cheyutha Beedi Workers Pension"
+    },
     "level": "state",
-    "audience": ["worker", "women"],
+    "audience": [
+      "worker",
+      "women"
+    ],
     "status": "window_closed",
     "confidence": "medium",
     "needsVerification": true,
     "verificationNotes": "Beedi category was excluded from the latest drive.",
-    "benefit": { "te": "నెలకు ₹2,016", "en": "₹2,016 a month" },
+    "benefit": {
+      "te": "నెలకు ₹2,016",
+      "en": "₹2,016 a month"
+    },
     "benefitValue": 24192,
-    "usualWindow": { "te": "గత డ్రైవ్‌లో ఈ వర్గం లేదు", "en": "This category was not part of the last drive" },
+    "usualWindow": {
+      "te": "గత డ్రైవ్‌లో ఈ వర్గం లేదు",
+      "en": "This category was not part of the last drive"
+    },
     "officialSourceUrl": "https://cheyutha.telangana.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "occupation", "text": { "te": "బీడీ కార్మికులు", "en": "Beedi worker" }, "if": { "field": "occupation", "op": "eq", "value": "beedi_worker" } },
-      { "id": "no-pension", "exclusion": true, "text": { "te": "ఇప్పటికే ప్రభుత్వ పింఛన్ రావడం లేదు", "en": "Not already getting a government pension" }, "if": { "field": "receivesPension", "op": "is_false" } }
+      {
+        "id": "occupation",
+        "text": {
+          "te": "బీడీ కార్మికులు",
+          "en": "Beedi worker"
+        },
+        "if": {
+          "field": "occupation",
+          "op": "eq",
+          "value": "beedi_worker"
+        }
+      },
+      {
+        "id": "no-pension",
+        "exclusion": true,
+        "text": {
+          "te": "ఇప్పటికే ప్రభుత్వ పింఛన్ రావడం లేదు",
+          "en": "Not already getting a government pension"
+        },
+        "if": {
+          "field": "receivesPension",
+          "op": "is_false"
+        }
+      }
     ],
-    "alsoRequired": [ { "te": "28-02-2014 కంటే ముందు పని మొదలుపెట్టి ఉండాలి", "en": "Started beedi work before 28-02-2014" } ],
-    "conflictsWith": ["ts-cheyutha-old-age"]
+    "alsoRequired": [
+      {
+        "te": "28-02-2014 కంటే ముందు పని మొదలుపెట్టి ఉండాలి",
+        "en": "Started beedi work before 28-02-2014"
+      }
+    ],
+    "conflictsWith": [
+      "ts-cheyutha-old-age"
+    ],
+    "documents": [
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "ration-card"
+      },
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "age-proof"
+      },
+      {
+        "id": "passport-photo"
+      },
+      {
+        "id": "occupation-certificate"
+      }
+    ],
+    "steps": [
+      {
+        "te": "చేయూత దరఖాస్తు ఫారం (తెలుగు / ఇంగ్లీష్) తీసుకోండి.",
+        "en": "Get the Cheyutha application form (Telugu or English)."
+      },
+      {
+        "te": "గ్రామ పంచాయతీ కార్యదర్శి / వార్డు అధికారి, MPDO లేదా మీసేవలో ఇవ్వండి.",
+        "en": "Submit it to the Panchayat Secretary or Ward Officer, MPDO, or a MeeSeva centre."
+      },
+      {
+        "te": "అధికారులు ఇంటికి వచ్చి వివరాలు చెక్ చేస్తారు; కలెక్టర్ ఆమోదిస్తారు.",
+        "en": "Officials verify at your home; the Collector approves."
+      },
+      {
+        "te": "మంజూరు లెటర్ వస్తుంది; పింఛన్ బ్యాంకు / పోస్టాఫీసుకు వస్తుంది.",
+        "en": "You receive a sanction letter; the pension is paid to your bank or post office."
+      },
+      {
+        "te": "ప్రజా పాలన / గ్రామ సభలో ఇప్పటికే పూర్తి పత్రాలతో దరఖాస్తు చేసి ఉంటే మళ్లీ అవసరం లేదు.",
+        "en": "If you already applied in Praja Palana or a Gram Sabha with full documents, you don't need to apply again."
+      }
+    ]
   },
   {
     "id": "central-ayushman-vay-vandana",
-    "name": { "te": "ఆయుష్మాన్ వయ వందన కార్డు (70 ఏళ్లు పైబడిన వారికి)", "en": "Ayushman Vay Vandana Card (age 70+)" },
+    "name": {
+      "te": "ఆయుష్మాన్ వయ వందన కార్డు (70 ఏళ్లు పైబడిన వారికి)",
+      "en": "Ayushman Vay Vandana Card (age 70+)"
+    },
     "level": "central",
-    "audience": ["senior"],
+    "audience": [
+      "senior"
+    ],
     "status": "rolling",
     "confidence": "high",
     "needsVerification": false,
-    "benefit": { "te": "ఏడాదికి ₹5 లక్షల ఆరోగ్య బీమా. ఆదాయ పరిమితి లేదు.", "en": "₹5 lakh a year health cover. No income limit." },
+    "benefit": {
+      "te": "ఏడాదికి ₹5 లక్షల ఆరోగ్య బీమా. ఆదాయ పరిమితి లేదు.",
+      "en": "₹5 lakh a year health cover. No income limit."
+    },
     "benefitValue": 500000,
     "officialSourceUrl": "https://beneficiary.nha.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "age", "text": { "te": "వయస్సు 70 లేదా ఎక్కువ", "en": "Age 70 or above" }, "if": { "field": "age", "op": "gte", "value": 70 } }
+      {
+        "id": "age",
+        "text": {
+          "te": "వయస్సు 70 లేదా ఎక్కువ",
+          "en": "Age 70 or above"
+        },
+        "if": {
+          "field": "age",
+          "op": "gte",
+          "value": 70
+        }
+      }
+    ],
+    "documents": [
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "age-proof"
+      }
+    ],
+    "steps": [
+      {
+        "te": "ఆయుష్మాన్ యాప్ లేదా beneficiary.nha.gov.in తెరవండి.",
+        "en": "Open the Ayushman app or beneficiary.nha.gov.in."
+      },
+      {
+        "te": "ఆధార్ e-KYC చేసి వయ వందన కార్డు తీసుకోండి.",
+        "en": "Complete Aadhaar e-KYC and download the Vay Vandana card."
+      },
+      {
+        "te": "లేదా ఎంప్యానెల్డ్ ఆసుపత్రి / CSC కేంద్రంలో నమోదు చేసుకోండి.",
+        "en": "Or enrol at an empanelled hospital or a CSC centre."
+      }
     ]
   },
   {
     "id": "central-atal-pension-yojana",
-    "name": { "te": "అటల్ పెన్షన్ యోజన", "en": "Atal Pension Yojana" },
+    "name": {
+      "te": "అటల్ పెన్షన్ యోజన",
+      "en": "Atal Pension Yojana"
+    },
     "level": "central",
-    "audience": ["worker"],
+    "audience": [
+      "worker"
+    ],
     "status": "rolling",
     "confidence": "high",
     "needsVerification": false,
-    "benefit": { "te": "60 ఏళ్ల తర్వాత నెలకు ₹1,000 నుంచి ₹5,000 పింఛన్", "en": "₹1,000 to ₹5,000 a month pension from age 60" },
+    "benefit": {
+      "te": "60 ఏళ్ల తర్వాత నెలకు ₹1,000 నుంచి ₹5,000 పింఛన్",
+      "en": "₹1,000 to ₹5,000 a month pension from age 60"
+    },
     "benefitValue": 12000,
     "officialSourceUrl": "https://www.pfrda.org.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "age", "text": { "te": "చేరేటప్పుడు వయస్సు 18 నుంచి 40", "en": "Age 18 to 40 when joining" }, "if": { "field": "age", "op": "between", "value": [18, 40] } },
-      { "id": "no-tax", "exclusion": true, "text": { "te": "ఆదాయపు పన్ను కట్టేవారు కాదు", "en": "Not an income-tax payer" }, "if": { "field": "isIncomeTaxPayer", "op": "is_false" } }
+      {
+        "id": "age",
+        "text": {
+          "te": "చేరేటప్పుడు వయస్సు 18 నుంచి 40",
+          "en": "Age 18 to 40 when joining"
+        },
+        "if": {
+          "field": "age",
+          "op": "between",
+          "value": [
+            18,
+            40
+          ]
+        }
+      },
+      {
+        "id": "no-tax",
+        "exclusion": true,
+        "text": {
+          "te": "ఆదాయపు పన్ను కట్టేవారు కాదు",
+          "en": "Not an income-tax payer"
+        },
+        "if": {
+          "field": "isIncomeTaxPayer",
+          "op": "is_false"
+        }
+      }
     ],
-    "alsoRequired": [ { "te": "బ్యాంకు లేదా పోస్టాఫీసు ఖాతా", "en": "A bank or post office account" } ]
+    "alsoRequired": [
+      {
+        "te": "బ్యాంకు లేదా పోస్టాఫీసు ఖాతా",
+        "en": "A bank or post office account"
+      }
+    ],
+    "documents": [
+      {
+        "id": "bank-passbook"
+      },
+      {
+        "id": "aadhaar-card"
+      }
+    ],
+    "steps": [
+      {
+        "te": "మీ బ్యాంకు లేదా పోస్టాఫీసులో APY ఫారం నింపండి.",
+        "en": "Fill the APY form at your bank or post office."
+      },
+      {
+        "te": "కావలసిన పింఛన్ (₹1,000 నుంచి ₹5,000) ఎంచుకోండి.",
+        "en": "Choose the pension you want (₹1,000 to ₹5,000)."
+      },
+      {
+        "te": "నెలవారీ వాటా ఖాతా నుంచి ఆటోమేటిక్‌గా కట్ అవుతుంది.",
+        "en": "Your monthly contribution is auto-debited from the account."
+      }
+    ]
   },
   {
     "id": "ts-indiramma-kutumba-jeevitha-bima",
-    "name": { "te": "ఇందిరమ్మ కుటుంబ జీవిత బీమా", "en": "Indiramma Kutumba Jeevitha Bima" },
+    "name": {
+      "te": "ఇందిరమ్మ కుటుంబ జీవిత బీమా",
+      "en": "Indiramma Kutumba Jeevitha Bima"
+    },
     "level": "state",
-    "audience": ["family", "worker"],
+    "audience": [
+      "family",
+      "worker"
+    ],
     "status": "open",
     "confidence": "low",
     "needsVerification": true,
     "verificationNotes": "Launched 19 Nov 2026. Reports conflict on the last date; no official portal or GO found yet.",
-    "benefit": { "te": "₹5 లక్షల జీవిత బీమా; ప్రీమియం ప్రభుత్వమే కడుతుంది", "en": "₹5 lakh life cover; the state pays the premium" },
+    "benefit": {
+      "te": "₹5 లక్షల జీవిత బీమా; ప్రీమియం ప్రభుత్వమే కడుతుంది",
+      "en": "₹5 lakh life cover; the state pays the premium"
+    },
     "benefitValue": 500000,
-    "usualWindow": { "te": "గ్రామ పంచాయతీ / వార్డు కార్యాలయంలో ప్రత్యేక క్యాంపులు; చివరి తేదీ ఇంకా ఖచ్చితంగా తెలియదు", "en": "Special camps at the Gram Panchayat or ward office; last date not confirmed" },
+    "usualWindow": {
+      "te": "గ్రామ పంచాయతీ / వార్డు కార్యాలయంలో ప్రత్యేక క్యాంపులు; చివరి తేదీ ఇంకా ఖచ్చితంగా తెలియదు",
+      "en": "Special camps at the Gram Panchayat or ward office; last date not confirmed"
+    },
     "officialSourceUrl": "https://www.telangana.gov.in",
     "lastVerified": "2026-11-21",
     "rules": [
-      { "id": "age", "text": { "te": "బీమా చేసే సభ్యుని వయస్సు 18 నుంచి 59", "en": "Insured member aged 18 to 59" }, "if": { "field": "age", "op": "between", "value": [18, 59] } }
+      {
+        "id": "age",
+        "text": {
+          "te": "బీమా చేసే సభ్యుని వయస్సు 18 నుంచి 59",
+          "en": "Insured member aged 18 to 59"
+        },
+        "if": {
+          "field": "age",
+          "op": "between",
+          "value": [
+            18,
+            59
+          ]
+        }
+      }
     ],
-    "alsoRequired": [ { "te": "కుటుంబంలో సంపాదించే ఒక్క సభ్యునికే", "en": "One earning member per family" } ]
+    "alsoRequired": [
+      {
+        "te": "కుటుంబంలో సంపాదించే ఒక్క సభ్యునికే",
+        "en": "One earning member per family"
+      }
+    ],
+    "documents": [
+      {
+        "id": "aadhaar-card"
+      },
+      {
+        "id": "ration-card"
+      },
+      {
+        "id": "bank-passbook"
+      }
+    ],
+    "steps": [
+      {
+        "te": "గ్రామ పంచాయతీ / వార్డు కార్యాలయంలో జరిగే ప్రత్యేక క్యాంపుకు వెళ్లండి.",
+        "en": "Go to the special camp at the Gram Panchayat or ward office."
+      },
+      {
+        "te": "బీమా చేయాల్సిన సంపాదించే సభ్యుడిని ఎంచుకోండి.",
+        "en": "Choose the earning member to insure."
+      },
+      {
+        "te": "ఫారంపై సంతకం చేయండి; ప్రీమియం ప్రభుత్వం కడుతుంది.",
+        "en": "Sign the form; the state pays the premium."
+      }
+    ]
   }
 ]

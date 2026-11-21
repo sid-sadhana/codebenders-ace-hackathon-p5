@@ -136,6 +136,21 @@ describe("demo users", () => {
 });
 
 describe("recommendations", () => {
+  it("puts the most specific match first (SC girl who wants to marry)", () => {
+    const facts: Profile = {
+      gender: "female",
+      socialCategory: "SC",
+      educationLevel: "none",
+      classXIIPercentile: 90,
+      daughterMarriagePlanned: true,
+    };
+    const rec = recommend(facts, schemes, { today: TODAY });
+    expect(rec.applyNow[0].scheme.id).toBe("ts-kalyana-lakshmi");
+    // Schemes nothing matches yet are kept out of the main list.
+    expect(rec.applyNow.some((e) => e.scheme.id === "central-ayushman-vay-vandana")).toBe(false);
+    expect(rec.needsMoreInfo.some((e) => e.scheme.id === "central-ayushman-vay-vandana")).toBe(true);
+  });
+
   it("moves a scheme whose deadline has passed out of 'apply now'", () => {
     const facts = profileOf("sravani");
     const before = recommend(facts, schemes, { today: TODAY });

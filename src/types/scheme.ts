@@ -82,6 +82,12 @@ export const schemeSchema = z.object({
   /** Conditions we cannot check from a profile; shown as "also needed". */
   alsoRequired: z.array(localizedStringSchema).default([]),
   conflictsWith: z.array(z.string()).default([]),
+  /** Documents to prepare; `onlyIf` personalises the checklist. */
+  documents: z
+    .array(z.object({ id: z.string().min(1), onlyIf: conditionSchema.optional() }))
+    .default([]),
+  /** Step-by-step guide to applying. */
+  steps: z.array(localizedStringSchema).default([]),
 });
 export type Scheme = z.infer<typeof schemeSchema>;
 export type SchemeStatus = Scheme["status"];
