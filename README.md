@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Claim What's Yours
 
-## Getting Started
+Claim What's Yours helps students and families in Telangana find government scholarships and schemes they are likely eligible for. Describe your situation in your own words, in Telugu or English, and see which schemes may fit you, with the reason for each.
 
-First, run the development server:
+## Who it's for
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Students from low-income families, from Class 9 to PG, diploma and ITI
+- Senior citizens
+- Farmers
+- Women
+- Families
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What it does
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Lets you describe your situation in plain language, with no long forms.
+- Shows which schemes you are likely eligible for, and why.
+- Gives you a checklist of the documents you need.
+- Explains where and how to apply.
+- Helps you track your applications and deadlines.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Important
 
-## Learn More
+- This is guidance, not an official decision. The issuing department decides final eligibility.
+- Applying for government schemes is free. Never pay anyone to apply for you.
+- We never ask for your Aadhaar or any ID number.
+- Scheme information comes from public sources and may be out of date. Always check the official portal before applying.
 
-To learn more about Next.js, take a look at the following resources:
+## Languages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Telugu is the default language. English is also available.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## About this project
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This is a hackathon project (ACE Builders Hackathon 2026), built for educational purposes only. It is not a government website and does not imitate any official website.
