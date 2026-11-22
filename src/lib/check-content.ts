@@ -18,6 +18,11 @@ const checkSchema = z.object({
     translated: s,
     errors: z.object({ empty: s, too_long: s, unavailable: s, not_configured: s }),
     useQuestions: s,
+    pii: z.object({
+      title: s,
+      text: s,
+      kinds: z.object({ aadhaar: s, phone: s, email: s, pan: s }),
+    }),
   }),
   understood: z.object({ title: s, hint: s, none: s, edit: s }),
   question: z.object({ title: s, hint: s, skip: s, save: s, done: s, answered: s }),

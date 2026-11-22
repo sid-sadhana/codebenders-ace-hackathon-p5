@@ -1,13 +1,14 @@
 "use client";
 
 import { useMemo, useState, useTransition } from "react";
-import { Keyboard, ListChecks, Loader2, RotateCcw, Sparkles, UserRound, X } from "lucide-react";
+import { Keyboard, ListChecks, Loader2, RotateCcw, ShieldCheck, Sparkles, UserRound, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { schemes } from "@/data/schemes";
 import { applyAnswer, questionFor, type AnswerValue } from "@/lib/eligibility/questions";
 import { recommend } from "@/lib/eligibility/recommend";
 import { understandAction } from "@/lib/extract/actions";
 import { MAX_INPUT_CHARS } from "@/lib/extract/limits";
+import { redactIdentifiers, type PiiKind } from "@/lib/extract/redact";
 import type { CheckContent } from "@/lib/check-content";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 import type { LocalizedString } from "@/lib/i18n/types";
@@ -43,6 +44,7 @@ export function CheckView({ content, saved, notice, owner }: CheckViewProps) {
   const [facts, setFacts] = useState<Profile>({});
   const [asked, setAsked] = useState<ProfileField[]>([]);
   const [text, setText] = useState("");
+  const [piiFound, setPiiFound] = useState<PiiKind[]>([]);
   const [error, setError] = useState<ReadError | null>(null);
   const [translation, setTranslation] = useState("");
   const [queue, setQueue] = useState<DialogItem[]>([]);
@@ -118,6 +120,7 @@ export function CheckView({ content, saved, notice, owner }: CheckViewProps) {
     setFacts({});
     setAsked([]);
     setText("");
+    setPiiFound([]);
     setTranslation("");
     setQueue([]);
     setError(null);
@@ -185,7 +188,12 @@ export function CheckView({ content, saved, notice, owner }: CheckViewProps) {
                   id="describe"
                   value={text}
                   maxLength={MAX_INPUT_CHARS}
-                  onChange={(event) => setText(event.target.value)}
+                  onChange={(event) => {
+                    // Hide ID numbers the moment they're typed; they never leave the browser.
+                    const { text: clean, found } = redactIdentifiers(event.target.value);
+                    setText(clean);
+                    if (found.length) setPiiFound((prev) => [...new Set([...prev, ...found])]);
+                  }}
                   placeholder={t(content.text.placeholder)}
                   rows={5}
                   disabled={reading}
@@ -198,6 +206,20 @@ export function CheckView({ content, saved, notice, owner }: CheckViewProps) {
                     {text.length}/{MAX_INPUT_CHARS}
                   </p>
                 </div>
+                {piiFound.length > 0 && (
+                  <div role="status" className="flex gap-2 rounded-lg border border-accent/50 bg-accent/10 px-3 py-2 text-sm">
+                    <ShieldCheck aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-warning" />
+                    <div>
+                      <p className="font-semibold">{t(content.text.pii.title)}</p>
+                      <p>
+                        {t(content.text.pii.text).replace(
+                          "{types}",
+                          piiFound.map((kind) => t(content.text.pii.kinds[kind])).join(", "),
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                )}
                 {error && (
                   <div role="alert" className="space-y-2 rounded-lg border border-destructive/30 bg-destructive/5 px-3 py-2 text-sm text-destructive">
                     <p>{t(content.text.errors[error])}</p>

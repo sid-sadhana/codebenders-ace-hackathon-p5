@@ -77,6 +77,34 @@
     "useQuestions": {
       "te": "ప్రశ్నలతో కొనసాగండి",
       "en": "Continue with questions"
+    },
+    "pii": {
+      "title": {
+        "te": "వ్యక్తిగత ID గుర్తించి తీసేశాం",
+        "en": "Personal ID detected and removed"
+      },
+      "text": {
+        "te": "{types} ను ******** తో దాచాం. ఇది ఎక్కడికీ పంపము, సేవ్ చేయము.",
+        "en": "We hid your {types} with ********. It is never sent or stored."
+      },
+      "kinds": {
+        "aadhaar": {
+          "te": "ఆధార్ నంబర్",
+          "en": "Aadhaar number"
+        },
+        "phone": {
+          "te": "ఫోన్ నంబర్",
+          "en": "phone number"
+        },
+        "email": {
+          "te": "ఈమెయిల్",
+          "en": "email"
+        },
+        "pan": {
+          "te": "పాన్ నంబర్",
+          "en": "PAN number"
+        }
+      }
     }
   },
   "understood": {
