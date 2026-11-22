@@ -14,10 +14,12 @@ type SiteShellProps = {
   account: AccountContent;
   user: SessionUser | null;
   title: LocalizedString;
+  /** Hide the full footer on desktop (the page shows its own compact notice). */
+  footerMobileOnly?: boolean;
   children: React.ReactNode;
 };
 
-export function SiteShell({ chrome, account, user, title, children }: SiteShellProps) {
+export function SiteShell({ chrome, account, user, title, footerMobileOnly = false, children }: SiteShellProps) {
   const { t } = useLanguage();
 
   return (
@@ -33,7 +35,9 @@ export function SiteShell({ chrome, account, user, title, children }: SiteShellP
       <main id="main" className="flex-1">
         {children}
       </main>
-      <SiteFooter footer={chrome.footer} hrefs={chrome.hrefs} showLogin={!user} />
+      <div className={footerMobileOnly ? "lg:hidden" : undefined}>
+        <SiteFooter footer={chrome.footer} hrefs={chrome.hrefs} showLogin={!user} />
+      </div>
     </div>
   );
 }

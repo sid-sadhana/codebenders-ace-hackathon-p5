@@ -1,0 +1,438 @@
+{
+  "title": {
+    "te": "మీ పథకాలు చూడండి",
+    "en": "Check your schemes"
+  },
+  "intro": {
+    "te": "మీ గురించి మీ మాటల్లో చెప్పండి, లేదా చిన్న ప్రశ్నలకు సమాధానం ఇవ్వండి. ప్రతి సమాధానంతో ఫలితాలు మారుతాయి.",
+    "en": "Tell us about yourself in your own words, or answer short questions. Results update with every answer."
+  },
+  "modes": {
+    "text": {
+      "te": "మీ మాటల్లో చెప్పండి",
+      "en": "Describe in your words"
+    },
+    "questions": {
+      "te": "అవును / కాదు ప్రశ్నలు",
+      "en": "Answer yes/no questions"
+    }
+  },
+  "saved": {
+    "title": {
+      "te": "మీ సేవ్ చేసిన వివరాలు",
+      "en": "Your saved details"
+    },
+    "text": {
+      "te": "{name}గా లాగిన్ అయ్యారు. మీ ప్రొఫైల్‌తో వెంటనే ఫలితాలు చూడవచ్చు.",
+      "en": "You're logged in as {name}. See results from your profile right away."
+    },
+    "button": {
+      "te": "నా వివరాలు వాడండి",
+      "en": "Use my details"
+    }
+  },
+  "text": {
+    "label": {
+      "te": "మీ గురించి చెప్పండి",
+      "en": "Tell us about yourself"
+    },
+    "placeholder": {
+      "te": "ఉదాహరణ: నేను నల్గొండలో బి.టెక్ రెండో సంవత్సరం చదువుతున్న బీసీ-బి విద్యార్థినిని. మా కుటుంబ ఆదాయం సంవత్సరానికి 1.2 లక్షలు. తెల్ల రేషన్ కార్డు ఉంది.",
+      "en": "Example: I am a BC-B girl in B.Tech 2nd year in Nalgonda. Our family income is 1.2 lakh a year. We have a white ration card."
+    },
+    "privacy": {
+      "te": "మీ వివరాలు అర్థం చేసుకోవడానికి మాత్రమే ఈ వాక్యం Google Geminiకి వెళ్తుంది. ఆధార్, ఫోన్, బ్యాంకు నంబర్లు టైప్ చేయకండి (ఉన్నా మేము తీసేస్తాం).",
+      "en": "This text is sent to Google Gemini only to read your details. Don't type Aadhaar, phone or bank numbers (we remove them anyway)."
+    },
+    "submit": {
+      "te": "నా పథకాలు చూపించు",
+      "en": "Find my schemes"
+    },
+    "reading": {
+      "te": "మీ వివరాలు చదువుతున్నాం… కొన్ని సెకన్లు పట్టవచ్చు",
+      "en": "Reading your details… this can take a few seconds"
+    },
+    "translated": {
+      "te": "ఇంగ్లీష్‌లో మేము అర్థం చేసుకున్నది",
+      "en": "What we read, in English"
+    },
+    "errors": {
+      "empty": {
+        "te": "ముందు మీ గురించి కొంచెం రాయండి.",
+        "en": "Please write a little about yourself first."
+      },
+      "too_long": {
+        "te": "500 అక్షరాల లోపు రాయండి.",
+        "en": "Please keep it under 500 characters."
+      },
+      "unavailable": {
+        "te": "ఇప్పుడు చదవలేకపోయాం. బదులుగా కొన్ని చిన్న ప్రశ్నలకు సమాధానం ఇవ్వండి.",
+        "en": "We couldn't read that right now. You can answer a few short questions instead."
+      },
+      "not_configured": {
+        "te": "ఈ డెమోలో వాక్యం చదివే సౌకర్యం ఆన్ చేయలేదు. ప్రశ్నలతో కొనసాగండి.",
+        "en": "Reading free text isn't switched on in this demo. Please continue with questions."
+      }
+    },
+    "useQuestions": {
+      "te": "ప్రశ్నలతో కొనసాగండి",
+      "en": "Continue with questions"
+    }
+  },
+  "understood": {
+    "title": {
+      "te": "మేము అర్థం చేసుకున్నది",
+      "en": "What we understood"
+    },
+    "hint": {
+      "te": "ఏదైనా వివరం మార్చడానికి దానిపై నొక్కండి.",
+      "en": "Tap any detail to change it."
+    },
+    "none": {
+      "te": "ఇంకా వివరాలు లేవు.",
+      "en": "No details yet."
+    },
+    "edit": {
+      "te": "మార్చు",
+      "en": "Change"
+    }
+  },
+  "question": {
+    "title": {
+      "te": "ఒక చిన్న ప్రశ్న",
+      "en": "A quick question"
+    },
+    "hint": {
+      "te": "దీనికి సమాధానం ఇస్తే ఫలితాలు మరింత ఖచ్చితంగా వస్తాయి.",
+      "en": "Answering this makes your results more accurate."
+    },
+    "skip": {
+      "te": "దాటవేయి",
+      "en": "Skip"
+    },
+    "save": {
+      "te": "సేవ్",
+      "en": "Save"
+    },
+    "done": {
+      "te": "ఇప్పటికి ప్రశ్నలు అయిపోయాయి. మీ ఫలితాలు చూడండి.",
+      "en": "That's all the questions for now. See your results."
+    },
+    "answered": {
+      "te": "{n} సమాధానాలు",
+      "en": "{n} answered"
+    }
+  },
+  "modal": {
+    "confirmTitle": {
+      "te": "ఇది సరైనదేనా?",
+      "en": "Is this right?"
+    },
+    "confirmText": {
+      "te": "మేము ఇలా అర్థం చేసుకున్నాం:",
+      "en": "We understood:"
+    },
+    "yes": {
+      "te": "అవును, సరైనదే",
+      "en": "Yes, that's right"
+    },
+    "no": {
+      "te": "కాదు, మార్చాలి",
+      "en": "No, change it"
+    },
+    "clarifyTitle": {
+      "te": "కొంచెం స్పష్టత కావాలి",
+      "en": "Help us understand"
+    },
+    "youWrote": {
+      "te": "మీరు రాసింది:",
+      "en": "You wrote:"
+    },
+    "editTitle": {
+      "te": "వివరం మార్చండి",
+      "en": "Change this detail"
+    },
+    "close": {
+      "te": "మూసివేయి",
+      "en": "Close"
+    },
+    "remaining": {
+      "te": "ఇంకా {n} ప్రశ్నలు",
+      "en": "{n} more to check"
+    }
+  },
+  "startOver": {
+    "te": "మళ్లీ మొదలుపెట్టండి",
+    "en": "Start over"
+  },
+  "seeResults": {
+    "te": "ఫలితాలు చూడండి",
+    "en": "See results"
+  },
+  "results": {
+    "title": {
+      "te": "మీ పథకాలు",
+      "en": "Your schemes"
+    },
+    "empty": {
+      "te": "మీ గురించి కొంచెం చెప్పగానే మీకు సరిపోయే పథకాలు ఇక్కడ కనిపిస్తాయి.",
+      "en": "Schemes that fit you will appear here as soon as you tell us a little about yourself."
+    },
+    "summary": {
+      "te": "{likely} పథకాలకు అర్హత ఉండే అవకాశం ఉంది, {possibly} పథకాలకు ఇంకా కొన్ని వివరాలు కావాలి.",
+      "en": "{likely} likely, {possibly} need a few more details."
+    },
+    "sections": {
+      "applyNow": {
+        "te": "ఇప్పుడే దరఖాస్తు చేయవచ్చు",
+        "en": "You can apply now"
+      },
+      "notOpenNow": {
+        "te": "అర్హత ఉండొచ్చు, కానీ ఇప్పుడు దరఖాస్తులు లేవు",
+        "en": "Looks eligible, but not open right now"
+      },
+      "stalled": {
+        "te": "ప్రకటించారు, కానీ ఇంకా చెల్లించడం లేదు",
+        "en": "Announced, but not being paid"
+      },
+      "notEligible": {
+        "te": "అర్హత లేకపోవచ్చు",
+        "en": "Probably not eligible"
+      }
+    },
+    "stalledNote": {
+      "te": "వీటి కోసం ఎవరికీ డబ్బులు ఇవ్వకండి.",
+      "en": "Don't pay anyone to apply for these."
+    },
+    "eligibility": {
+      "likely": {
+        "te": "అర్హత ఉండే అవకాశం ఉంది",
+        "en": "Likely eligible"
+      },
+      "possibly": {
+        "te": "అర్హత ఉండొచ్చు",
+        "en": "May be eligible"
+      },
+      "not": {
+        "te": "అర్హత లేకపోవచ్చు",
+        "en": "Probably not eligible"
+      }
+    },
+    "status": {
+      "deadline": {
+        "te": "చివరి తేదీ {date}",
+        "en": "Apply by {date}"
+      },
+      "daysLeft": {
+        "te": "ఇంకా {n} రోజులు",
+        "en": "{n} days left"
+      },
+      "lastDay": {
+        "te": "ఈరోజే చివరి రోజు",
+        "en": "Last day today"
+      },
+      "rolling": {
+        "te": "ఎప్పుడైనా దరఖాస్తు చేయవచ్చు",
+        "en": "Apply any time"
+      },
+      "automatic": {
+        "te": "సాధారణంగా ఆటోమేటిక్‌గా వస్తుంది",
+        "en": "Usually paid automatically"
+      },
+      "closed": {
+        "te": "ఇప్పుడు దరఖాస్తులు తెరవలేదు",
+        "en": "Not open right now"
+      }
+    },
+    "why": {
+      "te": "ఎందుకు?",
+      "en": "Why?"
+    },
+    "outcome": {
+      "pass": {
+        "te": "సరిపోతుంది",
+        "en": "Matches"
+      },
+      "fail": {
+        "te": "సరిపోదు",
+        "en": "Doesn't match"
+      },
+      "unknown": {
+        "te": "ఇంకా తెలియదు",
+        "en": "Not known yet"
+      },
+      "assumed": {
+        "te": "దయచేసి చెక్ చేయండి",
+        "en": "Please check"
+      }
+    },
+    "youSaid": {
+      "te": "మీరు చెప్పింది",
+      "en": "You said"
+    },
+    "answerToConfirm": {
+      "te": "నిర్ధారించడానికి సమాధానం ఇవ్వండి",
+      "en": "Answer to confirm"
+    },
+    "alsoNeeded": {
+      "te": "ఇవి కూడా అవసరం",
+      "en": "Also needed"
+    },
+    "officialSite": {
+      "te": "అధికారిక వెబ్‌సైట్",
+      "en": "Official website"
+    },
+    "opensNewTab": {
+      "te": "(కొత్త ట్యాబ్‌లో తెరుచుకుంటుంది)",
+      "en": "(opens in a new tab)"
+    },
+    "pending": {
+      "te": "వివరాలు ఇంకా నిర్ధారించాలి",
+      "en": "Details pending verification"
+    },
+    "lastVerified": {
+      "te": "చివరిగా చెక్ చేసింది {date}",
+      "en": "Last verified {date}"
+    },
+    "conflict": {
+      "te": "సాధారణంగా వీటిలో ఒక్కటే వస్తుంది: {a} / {b}",
+      "en": "You can usually get only one of these: {a} / {b}"
+    },
+    "showNotEligible": {
+      "te": "అర్హత లేని {n} పథకాలు, కారణాలతో చూపించు",
+      "en": "Show {n} schemes you may not qualify for, with reasons"
+    },
+    "hideNotEligible": {
+      "te": "దాచు",
+      "en": "Hide"
+    },
+    "level": {
+      "state": {
+        "te": "తెలంగాణ ప్రభుత్వం",
+        "en": "Telangana Govt"
+      },
+      "central": {
+        "te": "కేంద్ర ప్రభుత్వం",
+        "en": "Central Govt"
+      }
+    },
+    "showMore": {
+      "te": "ఇంకా {n} పథకాలు చూపించు",
+      "en": "Show {n} more"
+    },
+    "needsMoreInfo": {
+      "te": "ఇంకా {n} పథకాలకు మీ వివరాలు కావాలి. ఎడమవైపు ప్రశ్నలకు సమాధానం ఇస్తే అవి కూడా కనిపిస్తాయి.",
+      "en": "{n} more schemes need a few details. Answer the questions to see if they fit you."
+    }
+  },
+  "guide": {
+    "howToApply": {
+      "te": "ఎలా దరఖాస్తు చేయాలి",
+      "en": "How to apply"
+    },
+    "documents": {
+      "te": "మీకు కావలసిన పత్రాలు",
+      "en": "Documents you need"
+    },
+    "docsHint": {
+      "te": "మీకు వర్తించే పత్రాలు మాత్రమే చూపిస్తున్నాం. మీ దగ్గర ఉన్నవి టిక్ చేయండి.",
+      "en": "Only the documents that apply to you. Tick the ones you already have."
+    },
+    "docsProgress": {
+      "te": "{total}లో {done} సిద్ధం",
+      "en": "{done} of {total} ready"
+    },
+    "whereToGet": {
+      "te": "ఎక్కడ దొరుకుతుంది",
+      "en": "Where to get it"
+    },
+    "noDocs": {
+      "te": "దీనికి ప్రత్యేక పత్రాలు అవసరం లేదు.",
+      "en": "No special documents needed for this."
+    },
+    "steps": {
+      "te": "దరఖాస్తు చేసే విధానం",
+      "en": "Steps to apply"
+    },
+    "close": {
+      "te": "మూసివేయి",
+      "en": "Close"
+    }
+  },
+  "tracker": {
+    "track": {
+      "te": "ట్రాక్ చేయండి",
+      "en": "Track this"
+    },
+    "tracking": {
+      "te": "ట్రాక్ చేస్తున్నాం",
+      "en": "Tracking"
+    },
+    "untrack": {
+      "te": "ట్రాకింగ్ ఆపండి",
+      "en": "Stop tracking"
+    },
+    "title": {
+      "te": "నా దరఖాస్తులు",
+      "en": "My applications"
+    },
+    "hint": {
+      "te": "ఈ పరికరంలో సేవ్ అయ్యాయి. ఏదైనా తెరిచి పత్రాలు, స్థితి మార్చండి.",
+      "en": "Saved on this device. Open one to update documents and status."
+    },
+    "statusLabel": {
+      "te": "మీ దరఖాస్తు ఎక్కడ ఉంది?",
+      "en": "Where is your application?"
+    },
+    "statuses": {
+      "saved": {
+        "te": "సేవ్ చేశారు",
+        "en": "Saved"
+      },
+      "documents_ready": {
+        "te": "పత్రాలు సిద్ధం",
+        "en": "Documents ready"
+      },
+      "applied": {
+        "te": "దరఖాస్తు చేశారు",
+        "en": "Applied"
+      },
+      "approved": {
+        "te": "మంజూరైంది",
+        "en": "Approved"
+      }
+    },
+    "remind": {
+      "te": "చివరి తేదీకి ముందు గుర్తు చేయండి",
+      "en": "Remind me before the deadline"
+    },
+    "remindOn": {
+      "te": "రిమైండర్లు: {dates}",
+      "en": "Reminders on: {dates}"
+    },
+    "remindNoDate": {
+      "te": "తేదీలు ప్రకటించగానే ఇక్కడ గుర్తు చేస్తాం.",
+      "en": "We'll remind you here as soon as dates are announced."
+    },
+    "remindDemo": {
+      "te": "డెమో: రిమైండర్లు ఈ యాప్‌లోనే కనిపిస్తాయి. SMS లేదా మెసేజ్ పంపము.",
+      "en": "Demo: reminders appear here in the app. No SMS or message is sent."
+    },
+    "dueSoon": {
+      "te": "{name}: చివరి తేదీకి ఇంకా {n} రోజులు",
+      "en": "{name} closes in {n} days"
+    },
+    "dueToday": {
+      "te": "{name}: ఈరోజే చివరి రోజు",
+      "en": "{name} closes today"
+    },
+    "docsCount": {
+      "te": "పత్రాలు {done}/{total}",
+      "en": "Documents {done}/{total}"
+    },
+    "open": {
+      "te": "తెరవండి",
+      "en": "Open"
+    }
+  }
+}
